@@ -106,7 +106,7 @@ define('DATA_DIR', $ecs->data_dir());
 define('IMAGE_DIR', $ecs->image_dir());
 //域名判断,防止盗用 李云鹏20160601
 $url=$GLOBALS['ecs']->url();
-if ($url!="http://ys.lltqc.com/" && $url!="http://localhost/"){
+if ($url!="http://ys.lltqc.com/mobile/" && $url!="http://localhost/mobile/"){
     die('<meta charset=UTF-8>服务器配置错误');
 }
 /* 初始化数据库类 */
