@@ -1,0 +1,52 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>{$page_title}</title>
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<link href="css/brand_list.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<body>
+<div class="showpage">
+    <div>
+    <!-- 头部 start -->
+    <header class="header">
+      <div class="tab_nav">
+        <div class="header">
+          <div class="h-left"><a class="sb-back" href="javascript:history.back(-1)" title="返回"></a></div>
+          <div class="h-mid">名人堂</div>
+          <div class="h-right">
+
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--  头部 end -->
+    </div>
+
+    <div class="ccontainer">
+      <div class="jxyh_logo clearfix">
+        {foreach from=$brand_list item=brand_data name=brand_list_foreach}
+         <!-- {if $brand_data.brand_logo} -->
+         <a href="{$brand_data.url}"><img src="{$brand_data.brand_logo}" alt="{$brand_data.brand_name|escape:html}" /></a>
+         <!-- {else} -->
+         <a href="{$brand_data.url}">{$brand_data.brand_name|escape:html}</a>
+         <!-- {/if} -->
+
+        {/foreach}
+        </div>
+    </div>
+
+    <!--底部 footer -->
+    <div style="height:12px; line-height:12px; clear:both;"></div>
+        <!-- #BeginLibraryItem "/library/footer_nav.lbi" --> <!-- #EndLibraryItem -->
+    </div>
+</div>
+<!-- #BeginLibraryItem "/library/search_page.lbi" --> <!-- #EndLibraryItem -->
+</body>
+</html>

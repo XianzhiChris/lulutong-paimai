@@ -1,0 +1,18 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<dl class="sortproduct">
+    <dt>{$goods_cat.name|escape:html}<a href="{$goods_cat.url}">更多>></a></dt>
+    <!--{foreach from=$cat_goods item=goods}-->
+    <dd>
+        <a href="{$goods.url}" style="background:url({$goods.thumb}) center no-repeat;"></a>
+        <div class="zt">
+            <div class="chujia">
+            <i></i>
+            <em>{$goods.chujia_count}</em>次出价</div>
+            <div class="name"><a href="{$goods.url}">{$goods.short_name|escape:html}</a></div>
+            <div class="sysj" data-startTime="{$goods.start_time}" data-endTime="{$goods.end_time}">{$lang.please_waiting}</div>
+        </div>
+        <div class="clear"></div>
+    </dd>
+    <!--{/foreach}-->
+    <div class="clear"></div>
+</dl>

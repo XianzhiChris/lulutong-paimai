@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- #BeginLibraryItem "/library/header.lbi" --><!-- #EndLibraryItem -->
+	<title>{$page_title}</title>
+	<meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+</head>
+<body>
+  <!-- #BeginLibraryItem "/library/page_paimai_header.lbi" --><!-- #EndLibraryItem -->
+  <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+<div id="brand">
+  <div class="w main">
+    <dl class="jieshao">
+        <dt>{$brand.brand_name}</dt>
+        <dd>
+            <!-- {if $brand.brand_logo} -->
+            <img src="data/brandlogo/{$brand.brand_logo}" />
+            <!-- {/if} -->
+            <p>{$brand.brand_desc|nl2br}</p>
+            <div class="clear"></div>
+        </dd>
+    </dl>
+    <dl class="zuopin">
+        <dt>作品展示</dt>
+        <!--{foreach from=$goods_list item=goods name=name}-->
+        <dd>
+            <a href="{$goods.url}" style="background:url({$goods.goods_thumb}) center no-repeat;"></a>
+            <p>
+                {$goods.act_name}
+                <span><em>{$goods.count}</em>次围观</span>
+            </p>
+        </dd>
+        <!--{/foreach}-->
+        <div class="clear"></div>
+    </dl>
+    <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+  </div>
+</div>
+<!-- #BeginLibraryItem "/library/page_paimai_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

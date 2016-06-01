@@ -1,0 +1,13 @@
+<!--{if $prompt}-->
+<div class="order">
+    <!--{foreach from=$prompt item=item}-->
+    <div class="order_list">
+        <h2> <a href="{$item.url}"><span>{$item.act_name}</span></a></h2>
+
+        <div class="pic">结束时间:{$item.end_time}<span>状态:{$item.text}</span></div>
+    </div>
+    <!--{/foreach}-->
+</div>
+<!--{else}-->
+<div id="list_0_0" class="font12">{$lang.order_empty}</div>
+<!--{/if}-->

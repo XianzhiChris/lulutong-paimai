@@ -1,0 +1,384 @@
+<!--header开始-->
+<div class="uh ub bg-color-w maxh ubb border-hui head-h p-fixed">
+  <div class="nav-btn1" id="nav-left">
+  	 <div class="ub-img icon-back1"></div>
+  </div>
+  <div class="ub ub-pc ub-f1 ulev-3">
+    <div class="goods-check ub ub-ac goods-check-on">
+      <div>商品</div>
+    </div>
+    <div class="goods-check ub ub-ac">
+      <div>详情</div>
+    </div>
+    <div class="goods-check ub ub-ac">
+      <div>评论</div>
+    </div>
+  </div>
+  <div class="nav-btn1" id="nav-right">
+  		<div class="ub-img top-more"></div>
+  </div>
+</div>
+<!--header结束-->
+<div class='ub swiper-container' id='swiper_container_1' style='height:100%;'>
+  <div class='ub swiper-wrapper' style='overflow-y:hidden;overflow-x:hidden;'>
+    <!--商品页-->
+    <div class="ub-f1 tx-l goods-con-p swiper-slide" style='overflow-x:hidden;overflow-y: scroll;'>
+      <div class="swiper-container" id='swiper_container_2'>
+        <div class="ub swiper-wrapper" style='height:10em;'>
+          {if $pictures}
+		  {foreach from=$pictures item=picture}
+          {include file='library/goods_gallery.lib'}
+		  {/foreach}
+          {else}
+          <img class='ub swiper-slide' src='{$url}{$goods.goods_img}' />
+          {/if}
+        </div>
+        <div class="ub swiper-pagination" id='swiper_pagination_2' style='height:1em;'></div>
+      </div>
+      <!--商品信息-->
+      <div class="ub goods_title ub-ac p-t-b6">
+        <div class="ub-f1 ulev-9 bc-text l-h-1 p-l-r3" id='goods_name_label'>{$goods.goods_style_name}</div>
+        <div class="ub-ver ubl border-hui ub ub-ac ub-pc p-l-r1" id='share_button'>
+          <div class="to-share ub-img"></div>
+          <div class="sc-text-hui ulev-2 tx-c m-top2">分享</div>
+        </div>
+      </div>
+      <div class="bg-color-w goods-pad">
+        <div class="ub ub-ac">
+          <div class="f-color-red ulev-9">￥</div>
+          <div class="f-color-red ulev2" id='goods_price_label'>{if $goods.is_promote and $goods.gmt_end_time }{$goods.promote_price}{else}{$goods.shop_price}{/if}</div>
+		  {if $goods.is_promote and $goods.gmt_end_time }
+          <div class="goods-red f-color-white ulev-2">促销</div>
+          <div class="pro_time ub-img m-l1"></div><div id="leftTime" class="ulev-2 m-l2 sc-text-hui">{$lang.please_waiting}</div>
+		  {/if}
+        </div>
+        
+        <div class="f-color-6 ulev-1 m-top1">
+          <div class="goods-u-m">可用积分：{$goods.integral} {$points_name}</div>
+          <div class="goods-u-m">商品货号：{$goods.goods_sn}</div>
+          <div class="clear1"></div>
+        </div>
+      </div>
+       <div class="ubt ubb border-faxian ub bc-grey goods-pad ulev-1 f-color-6">
+        <div class="ub-f1">累计评价 <font class="f-color-red">{$review_count}</font> 人评价</div>
+        <div class="ub-f1">累计销量 <font class="f-color-red">{$goods.count}</font></div>
+        <div class="ub-f1">赠送积分 <font class="f-color-red">
+          {if $goods.give_integral_2 eq '-1'}
+          {$goods.give_integral}
+          {elseif $goods.give_integral_2 gt 0}
+          {$goods.give_integral}
+          {else}
+          0
+          {/if}
+          </font>
+        </div>
+      </div>
+	   {if $promotion}
+      <div class="ubb border-hui bg-color-w goods-pad ulev-1">
+        {foreach from=$promotion item=item key=key name=name}
+        {if $item.type eq "snatch"}
+        <div class="ub ub-ac  m-top1">
+          <div class="goods-red1 ulev-2">{$lang.snatch}</div>
+          <div>{$item.act_name}</div>
+        </div>
+        {elseif $item.type eq "group_buy"}
+        <div class="ub ub-ac  m-top1">
+          <div class="goods-red1 ulev-2">{$lang.group_buy}</div>
+          <div>{$item.act_name}</div>
+        </div>
+        {elseif $item.type eq "auction"}
+        <div class="ub ub-ac  m-top1">
+          <div class="goods-red1 ulev-2">{$lang.auction}</div>
+          <div>{$item.act_name}</div>
+        </div>
+        {elseif $item.type eq "favourable"}
+        <div 
+        {if $item.gift !== array()} 
+        class="ub ub-ac m-top1 has_gift_popup" 
+        gift-popup-id='{$smarty.foreach.name.iteration}' 
+        {else}
+        class="ub ub-ac m-top1" 
+        {/if}>
+        <div class="ub ub-f1 ub-ac">
+            <div class="goods-red1 ulev-2">{$item.act_type}</div>
+            <div class="f-color-6">{$item.act_name}</div>
+        </div>
+        <div class="ub-pe top-more ub-img"></div>
+      </div>
+      {if $item.gift !== array()}
+      <!--满赠弹出框-->
+      <div class="zoom-anim-dialog mfp-hide" style="position:fixed; width:100%; bottom:0" id='goods_gift_{$smarty.foreach.name.iteration}'>
+         <div class="ub ubb border-hui ub-ac p-t-b4 bg-color-w">
+        	<div class="ub-f1 ulev-9 bc-text m-l1">
+            {if $item.act_range eq 0}
+            优惠范围：全部商品
+            {elseif $item.act_range eq 1}
+            优惠范围：全部分类
+            {elseif $item.act_range eq 2}
+            优惠范围：品牌
+            {elseif $item.act_range eq 3}
+            优惠范围：商品
+            {/if}
+          </div>
+        </div>
+        <div class="uinn-a1 bc-grey tx-l">
+          {foreach from=$item.gift item=gift}
+           <div class="ub-ver float-l mar-ar1">
+            <div class="ub-img goods h-w-7" style="background-image:url({$url}{$gift.thumb});" goods_id="{$gift.id}"></div>
+            <div class="ulev-1 tx-c f-color-red p-t-b6">{$gift.price}元</div>
+          </div>
+          {/foreach}
+          <div class="clear1"></div>
+        </div>
+      </div>
+      {/if}
+      {/if}
+      {/foreach}
+    </div>
+	{/if}
+    <!-- <div class="ubb border-hui bg-color-w goods-pad ulev-1 ub ub-ac" id='pickup_button'>
+      <div class="ub-f1">自提</div>
+      <div class="ub-pe">...</div>
+    </div> -->
+    {if $specification}
+    <div class="ubb border-hui bg-color-w goods-pad ulev-1 ub ub-ac umar-t1 f-color-6" id='goods_attr_button'>
+      <div class="ub-f1">选择{$spec_desc}</div>
+      <div class="ub-pe top-more ub-img"></div>
+    </div>
+    {/if}
+    <div class="ubb border-hui bg-color-w goods-pad ulev-1 ub ub-ac umar-t1 f-color-6" id='goods_desc_button'>
+      <div class="ub-f1">规格参数</div>
+      <div class="ub-pe top-more ub-img"></div>
+    </div>
+    <!--店铺介绍-->
+    <div class="ubb border-hui bg-color-w goods-pad umar-t1">
+      <div class="ub">
+        {if $shoplogo}<div class="shop-logo"><img src="{$url}{$shoplogo}"/></div>{/if}
+        <div class="ub-ver m-l1">
+          {if $suppliername}<div class="ulev-9 f-color-zi">{$suppliername}</div>{/if}
+          {if $shopname}<div class="ulev-2 sc-text-hui m-top3">卖家：{$shopname}</div>{/if}
+        </div>
+      </div>
+      <div class="ub umar-t1 f-color-6">
+        <div class="shop-btn ub-f1 ub-ac ub-pc ub">
+          <div class="shop_icon ub-img h-w-6"></div>
+          <div class="m-l2 ulev-1">进入店铺</div>
+        </div>
+        <div class="shop-btn ub-f1 ub-ac ub-pc ub m-l2">
+           <div class="shop_phone ub-img h-w-6"></div>
+          <div class="m-l2 ulev-1">联系卖家</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--详情-->
+  <div class="ub-f1 tx-l goods-con-p swiper-slide" style='overflow-x:hidden;overflow-y: scroll;'>
+  {$goods.goods_desc}
+  </div>
+  <!--评论-->
+  <div class="ub-f1 tx-l goods-con-p swiper-slide" style='overflow-x:hidden;overflow-y: scroll;'>
+    {include file='library/my_comments.lib'}
+  </div>
+</div>
+</div>
+<!--footer开始-->
+<div class="uf t-bla ub ubt border-hui p-fixed-btm1 bc-grey h-min1">
+  <div class="ub-ver ub ub-pc ub-ac p-l-r1 ubr border-hui" id='cart_button'>    
+    <div class="ub-img gouwuche h-w-6">
+    	<div class="cart-num bc-head1 f-color-white tx-c"><div class="ulev-2">1</div></div>
+    </div>
+    <div class="ulev-2 sc-text-hui m-top4">购物车</div>
+  </div>
+  <div class="ub-ver ub ub-pc ub-ac p-l-r1 p-t-b3" id='collect_button' is_collect='{$goods.is_collet}' collect_id='{$goods.collect_id}'>
+	{if $goods.is_collet eq 1}
+    <div class="shoucang-on h-w-6 ub-img"></div>
+	<div class="ulev-2 sc-text-hui m-top4">已收藏</div>
+	{else}
+    <div class="shoucang-off h-w-6 ub-img"></div>
+	<div class="ulev-2 sc-text-hui m-top4">收藏</div>
+	{/if}
+  </div>
+  <div class="ub ub-pc ub-ac ub-f1 bc-yellow" id='buy_now'>
+    <div class="bc-text-head ulev0">立即购买</div>
+  </div>
+  <div class="ub ub-pc ub-ac ub-f1 bc-head1" id='add_to_cart'>
+    <div class="bc-text-head ulev0">加入购物车</div>
+  </div>
+</div>
+<!--footer结束-->
+<!--商品属性弹出框-->
+<div class="into-cart bg-color-w zoom-anim-dialog mfp-hide" id='popup' style="position: fixed;bottom: 0;width:100%">
+  <div class="goods-pad">
+    <div class="ub ubb border-hui">
+      <div class="into-cart-img bg-color-w ub-f1">
+      	<div class="h-w-7"><img src="img/goods.jpg" class="h-w-7"/></div>
+      </div>
+      <div class="ub-f2 ub-ver p-l">
+        <div class="f-color-red ulev0" id='ECS_GOODS_AMOUNT'>{if $goods.is_promote and $goods.gmt_end_time }{$goods.promote_price}{else}{$goods.shop_price}{/if}</div>
+        <div class="ulev-9 f-color-zi" id='goods_number'>库存： {$goods.goods_number} 件</div>
+      </div>
+    </div>
+   <!-- {* 开始循环所有可选属性 *} --> 
+  <!-- {foreach from=$specification item=spec key=spec_key name="name"} -->
+     <!-- {* 判断属性是复选还是单选 *} --> 
+	  <!-- {if $spec.attr_type eq 1} --> 
+	  <!-- {if $cfg.goodsattr_style eq 1} --> 
+    <div class="ubb border-hui p-t-b4">
+      <div class="">{$spec.name}：</div>
+      <div class="shuxing ub spec_key" id='spec_key_{$spec_key}' spec_key='{$spec_key}'>
+        <!-- {foreach from=$spec.values item=value key=key} --> 
+        <!-- {if $value.goods_attr_thumb} --> <div style='background:url({$url}{$value.goods_attr_thumb}) no-repeat center;'>&nbsp;</div><!-- {/if} -->
+        <div class='goods_attr {if $spec_key eq $attr_id}gallery_attr{/if}' id='spec_key_{$spec_key}_attr_id_{$value.id}' attr_id='{$value.id}' spec_key='{$spec_key}'>{$value.label}</div>
+        <!-- {/foreach} -->
+      </div>
+    </div>
+    <!-- {else} -->
+    <!-- {foreach from=$spec.values item=value key=key} -->
+    <!-- {/foreach} -->
+    <!-- {/if} --> 
+    <!-- {else} --> 
+    <!-- {foreach from=$spec.values item=value key=key} -->
+    <!-- {/foreach} -->
+    <!-- {/if} --> 
+    <!-- {/foreach} --> 
+    <div class="ub p-t-b4 ub-ac">
+      <div class="ub-f1">购买数量</div>
+      <div class="ub-pe ub uba border-hui uc-t1 uc-b1">
+        <div class="ubr border-hui uinn1" id='reduce_goods_button'>-</div>
+        <input name='number' id='number' type="text" class="text-b1" value="1"/>
+        <div class="ubl border-hui uinn1" id='increase_goods_button'>+</div>
+      </div>
+    </div>
+  </div>
+  <div class="ub" id='popup_footer_1'>
+    <div class="ub ub-f1 bc-yellow" id='buy_now_2'>
+    <div class="ub ub-f1 bc-red">立即购买</div>
+  </div>
+  <div class="ub ub-pc ub-ac ub-f1 bc-head1" id='add_to_cart_2'>
+    <div class="bc-text-head ulev1">加入购物车</div>
+  </div>
+  </div>
+  <div class="bc-head1 p-t-b4 ub ub-pc"  id='popup_footer_2'>
+    <div class="f-color-white" id='confirm_button'>确定</div>
+  </div>
+</div>
+<!--产品参数弹出框-->
+<div class="into-cart zoom-anim-dialog mfp-hide" style="position:fixed; width:100%; bottom:0;" id='goods_desc_popup'>
+  <div class="ub ubb border-hui ub-ac p-t-b4 bg-color-w">
+    <div class="ub-f1 ulev-9 bc-text m-l1">规格参数</div>
+  </div>
+  <div class="p-l bc-grey tx-l">
+    <div class="ub ubb border-hui ulev-1 p-t-b4">
+      <div class="w-min3 sc-text-hui">商品名称：</div>
+      <div class="ub-f1 tx-l f-color-6">{$goods.goods_style_name}</div>
+    </div>
+    <div class="ub ubb border-hui ulev-1 p-t-b4">
+      <div class="w-min3 sc-text-hui">商品编号：</div>
+      <div class="ub-f1 tx-l f-color-6">{$goods.goods_sn}</div>
+    </div>
+    <div class="ub ubb border-hui ulev-1 p-t-b4">
+      <div class="w-min3 sc-text-hui">品牌：</div>
+      <div class="ub-f1 tx-l f-color-6">{$goods.goods_brand}</div>
+    </div>
+    <div class="ub ubb border-hui ulev-1 p-t-b4">
+      <div class="w-min3 sc-text-hui">上架时间：</div>
+      <div class="ub-f1 tx-l f-color-6">{$goods.add_time}</div>
+    </div>
+    <div class="ub ubb border-hui ulev-1 p-t-b4">
+      <div class="w-min3 sc-text-hui">商品毛重：</div>
+      <div class="ub-f1 tx-l f-color-6">{$goods.goods_weight}</div>
+    </div>
+    <div class="ub ubb border-hui ulev-1 p-t-b4">
+      <div class="w-min3 sc-text-hui">库存：</div>
+      <div class="ub-f1 tx-l f-color-6">
+        <!-- {if $goods.goods_number eq 0} --> 
+        {$lang.stock_up} 
+        <!-- {else} --> 
+        {$goods.goods_number} {$goods.measure_unit} 
+        <!-- {/if} --> 
+      </div>
+    </div>
+    <!-- {if $properties} --> 
+    <!-- {foreach from=$properties item=property_group key=key} --> 
+    <!-- {foreach from=$property_group item=property} -->
+    <div class="ub ubb border-hui ulev-1 p-t-b4">
+      <div class="w-min3 sc-text-hui">{$property.name|escape:html}：</div>
+      <div class="ub-f1 tx-l f-color-6">{$property.value}</div>
+    </div>
+    <!-- {/foreach}--> 
+    <!-- {/foreach}--> 
+    <!-- {/if} -->
+  </div>
+</div>
+<!--地区选择弹出框-->
+<div class="bg-color-w zoom-anim-dialog mfp-hide" style="position:fixed; width:100%; bottom:0" id='region_popup'>
+  <div class="ub ubb border-hui ub-ac p-t-b4 ulev-9">
+    <div class="ub-f1">请选择：省</div>
+  </div>
+  <div class="p-l" style="height:10em; overflow-y:scroll">
+    <div class="ubb border-hui ulev-1 p-t-b4">
+      <div class="">河北省</div>
+    </div>
+    <div class="ubb border-hui ulev-1 p-t-b4">
+      <div class="">河北省</div>
+    </div>
+    <div class="ubb border-hui ulev-1 p-t-b4">
+      <div class="">河北省</div>
+    </div>
+  </div>
+</div>
+<!--分享弹出框-->
+<div class="bc-grey zoom-anim-dialog mfp-hide uinn-p2 p-b2" style="position:fixed; width:100%; bottom:0" id='share_popup'>
+	<div class="line-th ub ub-ac ub-pc m-all1"><div class="ub ulev-9 f-color-6 bc-grey p-l-r3">分享到</div></div>
+  <div class="ub p-all1 ulev-9">
+    <div class="ub-ver ub ub-f1 ub-ac ub-pc">
+      <div class="ub-img h-w-7" style="background-image:url(img/share/social_sina_weibo_press.png)"></div>
+      <div class="p-t-b6 ulev-1 f-color-6 tx-c">新浪微博</div>
+    </div>
+    <div class="ub-ver ub ub-f1 ub-ac ub-pc">
+      <div class="ub-img h-w-7" style="background-image:url(img/share/social_qzone_press.png)"></div>
+      <div class="p-t-b6 ulev-1 f-color-6 tx-c">QQ空间</div>
+    </div>
+    <div class="ub-ver ub ub-f1 ub-ac ub-pc">
+      <div class="ub-img h-w-7" style="background-image:url(img/share/social_tencent_weibo_press.png)"></div>
+      <div class="p-t-b6 ulev-1 f-color-6 tx-c">腾讯微博</div>
+    </div>
+    <div class="ub-ver ub ub-f1 ub-ac ub-pc">
+      <div class="ub-img h-w-7" style="background-image:url(img/share/social_wx_press.png)"></div>
+      <div class="p-t-b6 ulev-1 f-color-6 tx-c">微信好友</div>
+    </div>
+  </div>
+  <div class="ub p-l-r3 ulev-9">
+    <div class="ub-ver ub ub-f1 ub-ac ub-pc">
+      <div class="ub-img h-w-7" style="background-image:url(img/share/social_wx_circle_press.png)"></div>
+      <div class="p-t-b6 ulev-1 f-color-6 tx-c">朋友圈</div>
+    </div>
+    <div class="ub-ver ub ub-f1 ub-ac ub-pc">
+      <div class="ub-img h-w-7" style="background-image:url(img/share/social_douban_press.png)"></div>
+     <div class="p-t-b6 ulev-1 f-color-6 tx-c">豆瓣</div>
+    </div>
+    <div class="ub-ver ub ub-f1 ub-ac ub-pc">
+      <div class="ub-img h-w-7" style="background-image:url(img/share/social_message_press.png)"></div>
+      <div class="p-t-b6 ulev-1 f-color-6 tx-c">短信</div>
+    </div>
+    <div class="ub-ver ub ub-f1 ub-ac ub-pc">
+      <div class="ub-img h-w-7" style="background-image:url(img/share/social_renren_press.png)"></div>
+      <div class="p-t-b6 ulev-1 f-color-6 tx-c">人人</div>
+    </div>
+  </div>
+  
+</div>
+<script type="text/javascript">
+var goodsattr_style = {$cfg.goodsattr_style|default:1};
+var gmt_end_time = {$promote_end_time|default:0};
+{foreach from=$lang.goods_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+var goodsId = {$goods_id};
+var now_time = {$now_time};
+var prod_exist_arr=new Array();
+{literal}
+{foreach from=$prod_exist_arr key=pkey item=prod}
+prod_exist_arr[{$pkey}]="{$prod}";
+{/foreach}
+</script>

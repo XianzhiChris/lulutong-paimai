@@ -1,0 +1,59 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div id="pphead">
+    <div class="topmenu">
+        <div class="w">
+            <ul class="r">
+                {insert name='member_info'}
+                <li><a href="user.php?act=order_list">我的交易</a></li>
+                <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav } -->
+                <li><a href="{$nav.url}">{$nav.name}</a></li>
+                <!-- {/foreach} -->
+                <li><a href="">关注我们</a></li>
+                <li><a href="">手机端</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="app">
+        <div class="w">
+            {insert name='ads' id=58 num=1}
+        </div>
+    </div>
+    <div class="pplogo">
+        <div class="w">
+            <img src="images/logo.jpg" alt="">
+
+
+            <form action="search.php" method="get" id="searchForm" name="searchForm">
+                <input type='hidden' name='type' id="searchtype" value="{$smarty.request.type|default:0}">
+                <input type="text" name="keywords" placeholder="{if $search_keywords}{$search_keywords|escape}{else}请输入关键词{/if}" required>
+                <input type="submit">
+                <div class="wdpm">
+                    <div class="pman">
+                        <i class="left"></i>
+                        <i class="right"><s>◇</s></i>
+                        <a href="user.php?act=auction_list">我的拍卖</a>
+                    </div>
+                    <div class="pmxl" style="display:none">
+                        <div class="spacer"></div>
+                        <a href="user.php?act=auction_list">我的竞拍</a>
+                        <a href="">我的获拍</a>
+                        <a href="">我的保证金</a>
+                    </div>
+                </div>
+            </form>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="w">
+            <ul>
+                <li><a href="/">首页</a><span>/</span></li>
+                <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav } -->
+                <li><a href="{$nav.url}">{$nav.name}</a><span>/</span></li>
+                <!-- {/foreach} -->
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>

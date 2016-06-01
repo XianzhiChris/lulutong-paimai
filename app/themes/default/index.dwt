@@ -1,0 +1,196 @@
+{if $banner}
+<div id="swiper1" class="uh-ele1 ub-fh t-bla uof bg-color-w swiper-container">
+  <div class='ub swiper-wrapper' style="padding:0; margin:0;">
+  {foreach from=$banner item=item name=swiper1}
+  <div class='ub swiper-slide' id='swiper1_slide_{$smarty.foreach.swiper1.iteration}'>
+  <img class='lazy_load' data-original='{$url}data/afficheimg/{$item.ad_code}'></img>
+  </div>
+  {/foreach}
+  </div>
+  <div class="swiper-pagination" id='swiper1_pagination'></div>
+</div>
+{/if}
+<!--九宫格菜单-->
+<div class="ub-f1 ub ub-ver p-t-b1 ubb bc-bt uof border-hui bg-color-w">
+{foreach from=$menu item=row name='menu_row'}
+<div class="ub p-all1">
+{foreach from=$row item=menu_item name=menu_item}
+	<div class="ub-f1 ub ub-ver ub-ac ub-pc menu_item" page='{$menu_item.page}' title='{$menu_item.title}'>
+      <div class="ub-img uwh-acc2 accIcon_{$smarty.foreach.menu_row.iteration}_{$smarty.foreach.menu_item.iteration}"></div>
+      <div class="ub ub-pc"><div class="ulev-1 f-color-6"> {$menu_item.title}</div></div>
+    </div>
+{/foreach}
+</div>
+{/foreach}
+</div>
+
+<!--促销列表-->
+<div class="uof bg-color-w ubt ubb border-hui swiper-container" id='swiper2'>
+  <div class="ub bc-text ub-ac" data-index="0">
+    <div class="title-left bc-head1"></div>
+    <div class="ub-f1 ub ub-ver ut-m line1 umar-l f-color-red ulev0">今日秒杀</div>
+    <div class="tx-r sc-text ulev-1 umar-r">更多</div>
+    <div class="ub-img umar-ar6 title-more"></div>
+  </div>
+  <div class="ub umar-t swiper-wrapper">
+  {foreach from=$promote item=row}
+  <div class='swiper-slide ub'>
+  {foreach from=$row item=goods}
+  <div class="ub ub-f1 ub-ver mar-ar1 p-w0 goods" goods_id="{$goods.goods_id}">
+	<div class="ub-f1 mar-ar1 ub-fh goods-img" >
+	<img class='lazy_load' data-original="{$url}{$goods.goods_thumb}" class="uh-pic3"/> </div>
+	<div class="ut-m bc-text ulev-4 l-h-pic tx-l f-color-zi p-b1 m-top3">{$goods.goods_name}</div>
+	<div class="ub ub-ac ut-s sc-text umar-t p-t1 ubt border-faxian">
+	  <div class="ub-f1 f-color-red ulev-9">{$goods.formatted_promote_price}</div>
+	  <div class="ub-pe into-flow ub-img add_to_cart_button"></div>
+	</div>
+  </div>
+  {/foreach}
+  </div>
+  {/foreach}
+  </div>
+  <div class="swiper-pagination" id='swiper2_pagination'></div>
+</div>
+
+<!--广告位-->
+  {if $ad1_0 && $ad1_1 && $ad1_2}
+<div class="sc-bg umar-t1 uof ad_img">
+  <div class="ub ubt bc-bt border-hui">
+    <div class="ub-fh1 ubr bc-bt border-hui">
+    	<img class='lazy_load' data-original="{$url}data/afficheimg/{$ad1_0.ad_code}"/>
+    </div>
+    <div class="ub-fh1 ub-ver">
+      <div class="ubb bc-bt border-hui">
+      	 <img class='lazy_load' data-original="{$url}data/afficheimg/{$ad1_1.ad_code}"/>
+      </div>
+      <div>
+      	<img class='lazy_load' data-original="{$url}data/afficheimg/{$ad1_2.ad_code}"/>
+      </div>
+    </div>
+  </div>
+  {/if}
+  {if $ad2_0 && $ad2_1 && $ad2_2}
+  <div class="ub ubt ubb bc-bt border-hui">
+    <div class="ub-fh1 ubr bc-bt border-hui">
+    	<img class='lazy_load' data-original="{$url}data/afficheimg/{$ad2_0.ad_code}"/>
+    </div>
+    <div class="ub-fh1 ub-ver">
+      <div class="ubb bc-bt border-hui">
+      	 <img class='lazy_load' data-original="{$url}data/afficheimg/{$ad2_1.ad_code}"/>
+      </div>
+      <div>
+      	<img class='lazy_load' data-original="{$url}data/afficheimg/{$ad2_2.ad_code}"/>
+      </div>
+    </div>
+  </div>
+</div>
+{/if}
+<!--新品列表-->
+<div class="uof bg-color-w ubt ubb border-hui  swiper-container" id='swiper3'>
+  <div class="ub bc-text ub-ac" data-index="0">
+    <div class="title-left bc-grey1"></div>
+    <div class="ub-f1 ub ub-ver ut-m line1 umar-l bc-text ulev0">新品上市</div>
+    <div class="tx-r sc-text ulev-1 umar-r">更多</div>
+    <div class="ub-img umar-ar6 title-more"></div>
+  </div>
+  <div class="ub umar-t swiper-wrapper">
+    {foreach from=$new item=row}
+	  <div class='swiper-slide ub'>
+	  {foreach from=$row item=goods}
+	  <div class="ub ub-f1 ub-ver mar-ar1 p-w0 goods" goods_id="{$goods.goods_id}">
+		<div class="ub-f1 mar-ar1 ub-fh goods-img">
+		<img class='lazy_load' data-original="{$url}{$goods.goods_thumb}" class="uh-pic3"/> </div>
+		<div class="ut-m bc-text ulev-4 l-h-pic tx-l f-color-zi p-b1 m-top3">{$goods.goods_name}</div>
+		<div class="ub ub-ac ut-s sc-text umar-t p-t1 ubt border-faxian">
+		  <div class="ub-f1 f-color-red ulev-9">{$goods.formatted_shop_price}</div>
+		  <div class="ub-pe into-flow ub-img add_to_cart_button"></div>
+		</div>
+	  </div>
+	  {/foreach}
+	  </div>
+	  {/foreach}
+  </div>
+  <div class="swiper-pagination"  id='swiper3_pagination'></div>
+</div>
+
+<!--热卖列表-->
+<div class="uof bg-color-w ubt ubb border-hui  swiper-container" id='swiper4'>
+  <div class="ub bc-text ub-ac" data-index="0">
+    <div class="title-left bc-grey1"></div>
+    <div class="ub-f1 ub ub-ver ut-m line1 umar-l bc-text ulev0">热卖商品</div>
+    <div class="tx-r sc-text ulev-1 umar-r">更多</div>
+    <div class="ub-img umar-ar6 title-more"></div>
+  </div>
+  <div class="ub umar-t swiper-wrapper">
+    {foreach from=$hot item=row}
+	  <div class='swiper-slide ub'>
+	  {foreach from=$row item=goods}       
+      <div class="ub ub-f1 ub-ver mar-ar1 p-w0 goods" goods_id="{$goods.goods_id}">
+		<div class="ub-f1 mar-ar1 ub-fh goods-img">
+		<img class='lazy_load' data-original="{$url}{$goods.goods_thumb}" class="uh-pic3"/> </div>
+		<div class="ut-m bc-text ulev-4 l-h-pic tx-l f-color-zi p-b1 m-top3">{$goods.goods_name}</div>
+		<div class="ub ub-ac ut-s sc-text umar-t p-t1 ubt border-faxian">
+		  <div class="ub-f1 f-color-red ulev-9">{$goods.formatted_shop_price}</div>
+		  <div class="ub-pe into-flow ub-img add_to_cart_button"></div>
+		</div>
+	  </div>
+	  {/foreach}
+	  </div>
+	  {/foreach}
+  </div>
+  <div class="swiper-pagination"  id='swiper4_pagination'></div>
+</div>
+
+<!--精品列表-->
+<div class="uof bg-color-w ubt ubb border-hui  swiper-container" id='swiper5'>
+  <div class="ub bc-text ub-ac" data-index="0">
+    <div class="title-left bc-grey1"></div>
+    <div class="ub-f1 ub ub-ver ut-m line1 umar-l bc-text ulev0">精品选购</div>
+    <div class="tx-r sc-text ulev-1 umar-r">更多</div>
+    <div class="ub-img umar-ar6 title-more"></div>
+  </div>
+  <div class="ub umar-t swiper-wrapper">
+    {foreach from=$best item=row}
+	  <div class='swiper-slide ub'>
+	  {foreach from=$row item=goods}
+	  <div class="ub ub-f1 ub-ver mar-ar1 p-w0 goods" goods_id="{$goods.goods_id}">
+		<div class="ub-f1 mar-ar1 ub-fh goods-img">
+		<img class='lazy_load' data-original="{$url}{$goods.goods_thumb}" class="uh-pic3"/> </div>
+		<div class="ut-m bc-text ulev-4 l-h-pic tx-l f-color-zi p-b1 m-top3">{$goods.goods_name}</div>
+		<div class="ub ub-ac ut-s sc-text umar-t p-t1 ubt border-faxian">
+		  <div class="ub-f1 f-color-red ulev-9">{$goods.formatted_shop_price}</div>
+		  <div class="ub-pe into-flow ub-img add_to_cart_button"></div>
+		</div>
+	  </div>
+	  {/foreach}
+	  </div>
+	  {/foreach}
+  </div>
+  <div class="swiper-pagination"  id='swiper5_pagination'></div>
+</div>
+
+<!--分类列表-->
+{foreach from=$cat_arr item=cat key=cat_id}
+<div class="uof bg-color-w ubt ubb border-hui umar-t1 p-t-b4">
+  <div class="ub bc-text ub-ac" data-index="0">
+    <div class="title-left bc-grey1"></div>
+    <div class="ub-f1 ub ub-ver ut-m line1 umar-l bc-text ulev0">{$cat.cat_name}</div>
+    <div class="tx-r sc-text ulev-1 umar-r">更多 &gt;</div>
+  </div>
+  {foreach from=$cat.goods item=row}
+  <div class='ub umar-t1 m-l2'>
+  {foreach from=$row item=goods}
+	<div class="ub ub-f1 ub-ver mar-ar1 p-w0 goodsm-btm4" goods_id="{$goods.goods_id}">
+		<div class="ub-f1 mar-ar1 ub-fh goods-img">
+		<img class='lazy_load' data-original="{$url}{$goods.goods_thumb}" class="uh-pic3"/> </div>
+		<div class="ut-m bc-text ulev-4 l-h-pic tx-l f-color-zi p-b1 m-top3">{$goods.goods_name}</div>
+		<div class="ub ub-ac ut-s sc-text umar-t p-t1 ubt border-faxian">
+		  <div class="ub-f1 f-color-red ulev-9">{$goods.formatted_shop_price}</div>
+		  <div class="ub-pe into-flow ub-img add_to_cart_button"></div>
+		</div>
+	</div>
+  {/foreach}
+  </div>
+  {/foreach}
+</div>
+{/foreach}

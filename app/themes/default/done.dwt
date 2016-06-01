@@ -1,0 +1,46 @@
+<!-- 订单提交成功 -->
+         <div class="flowBox checkBox_jm" style="margin:30px auto 70px auto;">
+      <h6 style="text-align:center; height:30px; line-height:30px;color:#c40000">订单提交成功！</h6>
+  <table width="99%" align="center" border="0" cellpadding="15" cellspacing="0" bgcolor="#fff" class="split_order" style="border:1px solid #ddd; margin:20px auto;">
+    <tr>
+      <td style="padding-bottom:10px;"> {if $split_order.sub_order_count gt 1}
+        <p style="padding-bottom:10px;font-weight:bold;">由于您的商品由不同的商家发出，此订单将分为<font style="color:#ff3300;">{$split_order.sub_order_count}</font>个不同的子订单配送：</p>
+        {/if}
+        <table width="100%" align=left cellpadding=0 cellspacing=0 bgcolor="#fff"  style="border:1px solid #ddd;border-bottom:none">
+          {foreach from=$split_order.suborder_list item=suborder}
+          <tr >
+            <td style="border-bottom:1px solid #ddd;padding-left:15px;background:#FAFAFA" height=30>订单号：{$suborder.order_sn}</td>
+            <td style="border-bottom:1px solid #ddd;background:#FAFAFA">{$order.pay_name}：{$suborder.order_amount_formated}</td>
+            <td style="border-bottom:1px solid #ddd;background:#FAFAFA">{$order.shipping_name}&nbsp;&nbsp;&nbsp;{$order.best_time}</td>
+          </tr>
+          {/foreach}
+        </table></td>
+    
+        <!--{if $total.real_goods_count eq 0}-->
+<tr><td>
+        <table>
+<!--{foreach from=$virtual_card item=virtual_card1}-->
+<!--{foreach from=$virtual_card1.info item=virtual_card2}-->
+        <tr>
+        <td>虚拟商品编号:</td>
+        <td>{$virtual_card2.card_sn}</td>
+        <td><!--{if $virtual_cart2.is_verification eq 0}-->未使用<!--{else}-->已使用<!--{/if}--></td>
+        </tr>
+<!--{/foreach}-->
+<!--{/foreach}-->
+        </table>
+</td></tr>
+        <!--{/if}-->
+    
+    </tr>
+    <tr>
+      <td align="center" style="padding-bottom:30px;"> {if $pay_online}
+        {$pay_online}
+        {else} <a href="user.php?act=order_list"><img src="images/btn_my_orders.gif" border=0 align="absmiddle"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#999999>订单已经提交成功</font> {/if} </td>
+    </tr>
+  </table>
+  <style>
+  		  table.split_order tbody{background:#fff}
+          .submit_back a{ color:#F00;}
+          </style>
+          </div>

@@ -1,0 +1,338 @@
+@charset "utf-8";
+/* CSS Document */
+/*余额支付弹出框*/
+.popup_window {
+	background: #EEEEEE;
+	box-shadow: 0 0 10px #ccc;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	width: 280px;
+	height: auto;
+	left: 50%;
+	top: 50%;
+	margin-left: -140px;
+	margin-top: -105px;
+	position: fixed;
+	display: none;
+	z-index: 9999;
+}
+.yezf_tit  
+{
+    width:90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 8px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    height:30px;
+}
+.yezf_tit  span {display: block;padding:8px 10px 3px;color:#A9A9AA;font-size: 15px;text-align: center;font-weight: bold;}
+#popup_window .yezf_QXB {float:left;margin:8px 0px 15px 26px;height:28px;width:100px;text-align:center;line-height:28px;border:none;background:#FCFCFC;color:#0D0D0D;border-radius: 3px;cursor:pointer;}
+#popup_window .yezf_QRB {float:right;margin:8px 26px 15px 0px;height:28px;width:100px;text-align:center;line-height:28px;border:none;background:#EE2222;color:#FFF;border-radius: 3px;cursor:pointer;}
+/*代码增加_star PC功能同步_自提点*/
+#pickup_point_box p.ziti {
+	width: auto;
+	height: auto;
+	padding: 0px 10px;
+	margin: 0px;
+}
+#pickup_point_box p.ziti span.zitidian {
+	display: block;
+	width: auto;
+	height: 40px;
+	line-height: 40px;
+	color: #FF0000;
+}
+#pickup_point_box p.ziti .revise {
+	display: block;
+	width: auto;
+	color: #000;
+	height: 30px;
+	line-height: 30px;
+}
+#pickup_point_box p.ziti .revise span {
+	display: block;
+	text-align: left;
+	width: 80%;
+	float: left
+}
+#pickup_point_box p.ziti .revise font {
+	display: block;
+	color: #FF0000;
+	width: 20%;
+	text-align: right;
+	float: right;
+}
+.pop {
+	padding: 15px 10px
+}
+.pop .pop_head {
+	background: #F7F7F7;
+	height: 40px;
+	line-height: 40px;
+	text-indent: 10px;
+	font-size: 14px;
+	border-bottom: #D9D9D9 1px solid;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+}
+.pop .pop_body {
+	background: #ffffff;
+	width: 100%;
+}
+.pop .pop_body table {
+}
+.pop .pop_body table.choose_ziti td {
+	padding: 10px 0px;
+	border-bottom: #D9D9D9 1px solid;
+	text-indent: 10px;
+}
+.pop .pop_body table td p.no_ziti {
+	height: 50px;
+	line-height: 50px;
+	text-align: center
+}
+.pop .pop_body table.choose_ziti td.you_ziti {
+	text-indent: 0
+}
+.pop .pop_body table td a.ziti_list {
+	position: relative;
+	display: inline-block;
+	width: 95%;
+	text-align: left;
+}
+.pop .pop_body table td a.ziti_list p {
+	height: 20px;
+	line-height: 20px
+}
+.pop .pop_body table td a.ziti_list p span.phone{
+	margin-left:10px	
+}
+.pop .pop_body table td a.ziti_list p.ziti_name {
+	height: 25px;
+	line-height: 25px
+}
+.pop .pop_body table td a.ziti_list .i-icon-arrow-right {
+	position: absolute;
+	top: 50%;
+	left: 95%;
+	margin-top: -10px
+}
+.pop .pop_body table td a.ziti_list p.ziti_name span {
+	font-size: 14px;
+	color: #666
+}
+#pickup_point {
+	color: #ff3300
+}
+#pickup_point .pickup-location {
+	vertical-align: middle;
+	font-style: normal;
+	display: inline-block;
+	width: 13px;
+	height: 16px;
+	margin-left: 5px;
+	background: url('../img/detail-sprites.png') no-repeat center center;
+	background-size: 11px 16px;
+}
+.sidebar-content {
+	display: none;
+	position: fixed!important;
+	top: 0px;
+	left: 40%;
+	width: 60%;
+	height: 100%;
+	overflow: scroll;
+	z-index: 99999;
+	background: #666;
+	opacity: 0.95;
+	padding: 0px;
+	overflow: hidden;
+}
+#pickup_point_list {
+	width: 100%;
+	height: 100%;
+}
+#pickup_point_list .no_ziti{
+	width: 90%;height: 95%;padding: 5%;text-align:center;color:#fff
+}
+#pickup_point_list ul {
+	width: 90%;
+	height: 95%;
+	padding: 5%;
+	overflow-y: scroll
+}
+#pickup_point_list ul li {
+	margin-bottom: 15px;
+	color: #fff
+}
+#pickup_point_list ul li p {
+	height: 20px;
+	line-height: 20px;
+}
+#pickup_point_list ul li p.shop_name {
+	font-size: 14px;
+	border-bottom: 1px #fff solid;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 5px;
+}
+#BgDiv {
+	background-color: #e3e3e3;
+	position: absolute;
+	z-index: 99;
+	left: 0;
+	top: 0;
+	display: none;
+	width: 100%;
+	height: 100%;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+	-moz-opacity: 0.7;
+}
+/*代码增加_end PC功能同步_自提点*/
+.subbox_other td{
+	height:25px;
+	line-height:25px;
+	padding:5px;	
+}
+#vat_invoice_tbody td{
+	height: 30px;
+  	line-height: 30px;
+}
+.comWidth{
+	border:1px #ddd solid;
+	height:25px;
+	line-height:25px;
+	padding:0px 5px		
+}
+.inputZZS{
+	border:1px #ddd solid;
+	height:25px;
+	line-height:25px;
+	padding:0px 5px		
+}
+/*购物车列表活动*/
+.J_activity{height:auto; line-height:35px; padding-left:10px;padding-bottom:45px;margin-bottom:25px;}
+b.gift_68{
+	width:34px;
+	height:23px;
+	display:inline-block;
+	border:1px solid #FFF;
+	vertical-align:middle;
+	background-image:url(../img/icon-tags-gift.png);
+	}
+a.choose_gift ,a.choose_gift:hover{
+	text-decoration:none;
+	color:#ff0000;
+	margin-right:10px;
+}
+a.choose_gift:hover{
+	color:#e70000
+}
+.flowBox_jm b.gift_68 {
+	width: 34px;
+	height: 23px;
+	display: inline-block;
+	border: 1px solid #FFF;
+	vertical-align: middle;
+	background-image: url(../images/flow/icon-tags-gift.png);
+}
+.choose {
+	background: #fff;
+	border: 1px solid #ddd;
+	font-size: 12px;
+	z-index: 99999;
+	width: 96%;
+	min-height: 300px;
+	left: 50%;/*FF IE7*/
+	top: 50%;/*FF IE7*/
+	margin-left: -48.5%!important;/*FF IE7 该值为本身宽的一半 150 *2 =300 */
+	margin-top: -200px!important;/*FF IE7 该值为本身高的一半 60*2=120 */
+	-webkit-box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.2);
+	position: fixed!important;/*FF IE7*/
+	position: relative;/*IE6*/
+_top:       expression(eval(document.compatMode && document.compatMode=='CSS1Compat') ? documentElement.scrollTop + (document.documentElement.clientHeight-this.offsetHeight)/2 :/*IE6*/
+ document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2);/*IE5 IE5.5*/
+ color:#808080
+}
+.choose-inner {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 10px;
+}
+.bg123 {
+	background-color: #ccc;
+	width: 100%;
+	height: 100%;
+	z-index: 99999998;
+	left: 0;
+	top: 0;/*FF IE7*/
+	filter: alpha(opacity=50);/*IE*/
+	opacity: 0.5;/*FF*/
+	position: fixed!important;/*FF IE7*/
+	position: absolute;/*IE6*/
+ _top:       expression(eval(document.compatMode && document.compatMode=='CSS1Compat') ? documentElement.scrollTop + (document.documentElement.clientHeight-this.offsetHeight)/2 :/*IE6*/
+ document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2);/*IE5 IE5.5*/
+}
+.choose .choose-r {
+	display: block;
+	position: absolute;
+	width: 40px;
+	background: url(../img/cart_pop_close.png) no-repeat 0 0;
+	top: 2px;
+	right: -16px;
+	height: 50px;
+	line-height: 50px;
+	cursor: pointer;
+}
+.choose .choose-title {
+	height: 30px;
+	line-height: 30px;
+	width: 100%;
+	border-bottom: 1px solid #eee;
+	background: #faf7f8;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	font-weight: normal;
+	text-align: left;
+	color: #999;
+	padding: 0px;
+}
+.choose .title-tab {
+	margin: 0px;
+	padding: 0 12px;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	cursor: pointer;
+	border-left: 1px solid #FAF7F8;
+	border-right: 1px solid #FAF7F8;
+}
+.choose .moren{
+	width:3%;
+	overflow:hidden	
+}
+.choose .cur {
+	padding: 0 12px;
+	border-bottom: 1px solid #fff;
+	background: #ffffff;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	color: #ff3300;
+	font-weight: bold;
+}
+table.data_table td{
+	text-align:left	;
+	line-height:1.5em
+}
+.giving-68 {
+	font-size: 14px;
+	color: #ed415b
+}
+.givingColor {
+	color: #ed415b;
+}

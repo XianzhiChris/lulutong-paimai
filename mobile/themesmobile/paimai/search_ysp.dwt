@@ -1,0 +1,59 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>{$page_title}</title>
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<link href="css/public.css" rel="stylesheet" type="text/css"/>
+<link href="css/category_list.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jquery.js"></script>
+{insert_scripts files='jquery.json.js,transport.js'}
+{insert_scripts files='common.js'}
+
+</head>
+<body>
+    <div class="showpage">
+    <div>
+    <section class="_pre" >
+        <header>
+            <section class="header" >
+                <div class="h-left"><a class="sb-back" href="javascript:history.back(-1)" title="返回"></a></div>
+                <div class="h-mid">
+                <!-- {if $act eq 'ysp'} -->
+                艺术品
+                <!-- {else} -->
+                商品搜索
+                <!-- {/if} -->
+                </div>
+                <div class="h-right"></div>
+
+                <section class="filtrate_term" id="product_sort" style="width: 100%;">
+                    <ul class="clear">
+                    <!--{foreach from=get_categories_tree(0) item=cat name=cat0}-->
+                    <li><a href="{$cat.url}">{$cat.name}</a></li>
+                    <!--{/foreach}-->
+                    </ul>
+                </section>
+
+            </section>
+        </header>
+    </section>
+
+    <section>
+        <div style="height:45px;"></div>
+        {$page.display}
+        <div class="touchweb-com_searchListBox openList" id="goods_list">
+
+        <!-- #BeginLibraryItem "/library/search_goods_list.lbi" --><!-- #EndLibraryItem -->
+
+        </div>
+        <!-- #BeginLibraryItem "/library/footer_nav.lbi" --><!-- #EndLibraryItem -->
+    </section>
+    </div>
+    </div>
+    <!-- #BeginLibraryItem "/library/search_page.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

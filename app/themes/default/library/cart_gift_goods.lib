@@ -1,0 +1,50 @@
+<div class="uh bg-color-w f-color-red ub ">
+  <div class="uf t-bla ub gift-line">
+    <div class="ulev-1 ub ub-f1">
+      <div class="ub-f1 ub ub-ver item ub-ac gift-line1">
+        <div class="ulev">自营商品</div>
+      </div>
+    </div>
+    <div class="ulev-1 ub ub-f1">
+      <div class="ub-f1 ub ub-ver item ub-ac gift-line2">
+        <div class="ulev tx-c">商家商品</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gift-ceng">
+  <div class="gift-p ubb border-faxian">
+    <div class="gift-mb ulev-1">从下面的赠品中选择一个（0表示不限制数量）</div>
+    <div class="gift-mb ulev-1">价格满足<span class="f-color-red">2000~5999</span>才可以享受赠品哦！</div>
+    <div class="gift-mb ulev-1">活动时间：2015-8-07 00:00:00 ~ ：2015-8-17 00:00:00</div>
+    <div class="gift-mb ulev-1">参加活动商品<span class="f-color-red">以下活动 热卖手机</span></div>
+  </div>
+  
+  <div class="gift-p">
+    <div class="ubb ub border-faxian t-bla ub-ac lis" data-index="0">
+      <div class="ub ub ub-ver">
+        <div class="">
+          <div class="lis-icon ub-img"><img src="img/goods.jpg" style="width:4.6em; height:4.6em;"></div>
+          <div class="ulev-1 bc-text umar-t"></div>
+        </div>
+      </div>
+      <div class="ub-f1 ub ub-pj ub-ac">
+        <div class="ub-f1 ub ub-ver">
+          <div class="bc-text ub ub-ver ut-m line1 gift-m3">情人节礼物礼物礼物怡吻手工松露巧克力情人节礼物礼物礼物怡吻手工松露巧克力</div>
+          <div class="ulev-1 sc-text1 uinn3 gift-m3">
+            <div class="ub umar-t">
+              <div class="ulev-1 ub ub-f1">数量：
+                <input value="1" type="text" class="gift-text sc-text-hui">
+              </div>
+              <div class="ulev-1 ub ub-f1 ub-pe f-color-red">[ 0.00 ]</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gift-p1"></div>
+    </div>
+  </div>  
+  
+</div>
+</div>

@@ -1,0 +1,45 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!---搜索弹出层--->
+<div id="search_hide" class="search_hide">
+    <h2> <span class="close"><img src="{$ectouch_themes}/images/close.png">取消</span>商品搜索</h2>
+    <div id="mallSearch" class="search_mid">
+        <div id="search_tips" style="display:none;"></div>
+        <div class="searchdotm">
+            <form class="mallSearch-form" method="get" name="searchForm" id="searchForm" action="search.php" onSubmit="return checkSearchForm()">
+                <input type='hidden' name='type' id="searchtype" value="{$smarty.request.type|default:0}" >
+                <div class="mallSearch-input">
+                    <div id="s-combobox-135">
+                        <input aria-haspopup="true" role="combobox" class="s-combobox-input" name="keywords" id="keyword" tabindex="9" accesskey="s" onkeyup="STip(this.value, event);" autocomplete="off"  value="{if $search_keywords}{$search_keywords|escape}{else}请输入关键词{/if}" onFocus="if(this.value=='请输入关键词'){this.value='';}else{this.value=this.value;}" onBlur="if(this.value=='')this.value='请输入关键词'" type="text">
+                    </div>
+                    <input type="submit" value="" class="button"  >
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $(function() {
+
+        $('#search_text').click(function(){
+            $(".showpage").children('div').hide();
+            $("#search_hide").css('position','fixed').css('top','0px').css('width','100%').css('z-index','999').show();
+        })
+        $('#get_search_box').click(function(){
+            $(".showpage").children('div').hide();
+            $("#search_hide").css('position','fixed').css('top','0px').css('width','100%').css('z-index','999').show();
+        })
+        $("#search_hide .close").click(function(){
+            $(".showpage").children('div').show();
+            $("#search_hide").hide();
+        })
+    });
+</script>
+
+<script>
+    $('.search-type li').click(function() {
+        $(this).addClass('cur').siblings().removeClass('cur');
+        $('#searchtype').val($(this).attr('num'));
+    });
+    $('#searchtype').val($(this).attr('0'));
+</script>

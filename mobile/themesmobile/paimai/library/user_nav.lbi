@@ -1,0 +1,45 @@
+
+<div class="user_com">
+<!--top-->
+<div class="com_top">
+
+<dl>
+<dt>{if $headimgurl neq ''}<img src="{$headimgurl}">{else}<img src="{$ectouch_themes}/images/user68.jpg">{/if}
+    <span>{$info.username}</span>
+
+    </dt>
+
+</dl>
+</div>
+<div class="uer_topnav">
+<ul>
+<li class="bain"><a href="user.php?act=order_list" ><span>{$info.surplus}</span>余额</a></li>
+<li class="bain"><a href="user.php?act=collection_list"><span>{$info.bonus_count}</span>优惠券</a></li>
+<li><a href="user.php?act=comment_list"><span>{$info.integral}</span>积分</a></li>
+</ul>
+</div>
+<!--我的钱包-->
+<div class="Wallet">
+<dl><a href="user.php?act=account_detail"><em class="Icon Icon1"></em><dt>我的钱包</dt><dd style="color:#aaaaaa;">查看我的钱包</dd></a></dl>
+</div>
+
+<!--菜单-->
+<div class="Wallet">
+<dl><a href="user.php?act=order_list" ><em class="Icon Icon2"></em><dt>全部订单</dt><dd>查看订单</dd></a></dl>
+<dl><a href="user.php?act=auction_list" ><em class="Icon Icon4"></em><dt>我的竞拍</dt><dd>&nbsp;</dd></a></dl>
+<dl><a href="user.php?act=bonus"><em class="Icon Icon3"></em><dt>我的优惠券</dt><dd>&nbsp;</dd></a></dl>
+
+<dl><a href="user.php?act=address_list"><em class="Icon Icon5"></em><dt>地址管理</dt><dd>&nbsp;</dd></a></dl>
+</div>
+<div class="Wallet">
+
+<dl><a href="user.php?act=message_list"><em class="Icon Icon7"></em><dt>我的留言</dt><dd>&nbsp;</dd></a></dl>
+
+</div>
+<div class="Wallet">
+<dl><a href="user.php?act=profile"><em class="Icon Icon6"></em><dt>修改密码</dt><dd>&nbsp;</dd></a></dl>
+
+<dl onClick="window.location.href='user.php?act=logout'"><em class="Icon Icon8"></em><dt>注销登录</dt></dl>
+</div>
+</div>
+

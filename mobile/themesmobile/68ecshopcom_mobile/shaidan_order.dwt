@@ -1,0 +1,52 @@
+<form  method="post" action="user.php?act=shaidan_save">
+<input type="hidden" value="{$goods.rec_id}" name="rec_id">
+<input type="hidden" value="{$goods.goods_id}" name="goods_id">
+晒单商品: {$goods.goods_name}
+<br />
+标题：<input type="text" name="title" id="title" style="width:550px;" />
+<br />
+内容: <textarea name="message" id="message"></textarea>
+<br />
+上传图片：<div><img style="cursor:pointer" id="J_selectImage" src="images/send_shaidan_img.gif" /></div>
+<div id="J_imageView" class="simgs"></div>
+	<script charset="utf-8" src="includes/kindeditor/kindeditor-min.js"></script>
+                            <script charset="utf-8" src="includes/kindeditor/lang/zh_CN.js"></script>
+                            <script>
+                            	var editor;
+                            	KindEditor.ready(function(K) {
+									editor = K.create('textarea[name="message"]', {
+									allowFileManager : false,
+									items : [
+										'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+										'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+										'insertunorderedlist', '|', 'emoticons']
+									});
+									
+									K('#J_selectImage').click(function() {
+										editor.loadPlugin('multiimage', function() {
+											editor.plugin.multiImageDialog({
+												clickFn : function(urlList) {
+													var div = K('#J_imageView');
+													div.html('');
+													K.each(urlList, function(i, data) {
+														div.append('<dl class="clearfix"><dt><img src="' + data.url + '" /></dt><dd><input type="hidden" name="img_srcs[]" value="' + data.url + '" /><textarea name="img_names[]" ></textarea></dd></dl>');
+													});
+													
+													editor.hideDialog();
+												}
+											});
+										});
+									});
+									
+                            	});
+				
+                            </script>
+<br/>
+   <input type="image" src="images/send_shaidan.gif" style="float:left" /><input type="checkbox" name="hide_username" value="1" /> 匿名评价 </div>
+
+
+
+</from>
+
+
+

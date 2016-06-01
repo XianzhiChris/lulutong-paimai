@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta name="viewport" content="width=device-width">
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+<link rel="stylesheet" type="text/css" href="cubebase-min.css">
+<script src="store/js/run_common-min.js" charset="utf-8" type="text/javascript" itemid="run_common.js"></script>
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,global.js,compare.js,transport.js'}
+</head>
+<body class="iframe-body websiteWrapper pageWrapper homePageWrapper portfolioTwoFilterablePageWrapper">
+<div id="content_dom" class="pw-panel-container"> 
+ 11111111111111 
+  <!--文本头部-->
+  <div class="row c-header-title">
+    <div class="small-12">
+      <div class="title">{$cat_name}</div>
+      <a href="javascript:;" class="icon-return"></a> <a href="javascript:;" class="icon-coupon" ></a> </div>
+  </div>
+<!-- #BeginLibraryItem "/library/goods_list.lbi" --><!-- #EndLibraryItem -->
+  <!--分页-->
+<!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+  
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* CSS Document */
+#content .region .product { width: 100%; height: auto; }
+#content .region .fenlan a { color: #ED145B; }
+.product .pro-inner { width: 96%; padding: 2%; padding-bottom: 0px; background: #F6F6F6 }
+.proImg-wrap { width: 100%; }
+.proImg-wrap a img { width: 100%; }
+.proInfo-wrap { background: #fff; padding: 15px; }
+.proInfo-wrap .proTitle { height: 25px; line-height: 25px }
+.title_box .pro_tit { font-weight: bold; color: #ED145B; margin-right: 10px }
+.price_box { width: 100%; float: left; height: 24px; line-height: 24px; }
+.price_box span { margin-right: 20px; float: left }
+.price_box .pnum { font-size: 24px; color: #ED145B; }
+.price_box .shop_price { text-decoration: line-through; color: #999; }
+.price_box .go { float: right; margin-right: 0px; background: #ED145B; padding: 0px 15px; color: #fff }
+.price_box .go a { color: #fff }
+.numtimer_box { height: 30px; line-height: 30px }
+.numtimer_box .time_box { float: left }
+.numtimer_box .num_box { float: right }
+.numtimer_box .time_box em { font-style: normal }
+.numtimer_box .time_box { float: left }
+.pagenav-wrapper .pagenav-content { padding: 10px 10px 20px; text-align: center; line-height: 28px; overflow: hidden; }
+.pagenav-wrapper .pagenav { display: -webkit-box; display: flex }
+.pagenav-wrapper .pagenav a { color: #333; }
+.pagenav-wrapper .pagenav>div { background-color: #fff; border: 1px solid #ccc; line-height: 29px; white-space: nowrap; border-radius: 2px; cursor: pointer; display: inline-block; }
+.pagenav .p-first, .pagenav .p-end { width: 42px }
+.pagenav .p-prev, .pagenav .p-next { width: 59px; margin: 0 5px }
+.pagenav .p-num { width: 30px; margin: 0 5px }
+.pagenav .pagenav-text { min-width: 100px; }
+.pagenav .pagenav-cur { -webkit-box-flex: 1; flex: 1; position: relative; box-shadow: 0 3px 3px #d7d7d7 inset; background: #fff }
+.pagenav .pagenav-select { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; opacity: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-appearance: none; border: 0; border-radius: 0; cursor: pointer }
+.pagenav .pagenav-cur i { display: inline-block; width: 10px; height: 7px; background: url(); background-size: 10px 7px }
+.pagenav-wrapper .pagenav .p-gray { background-color: #fdfdfd; color: #b4b1b1 }
+.pagenav a:hover { text-decoration: none }

@@ -1,0 +1,93 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>{$page_title}</title>
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<link rel="stylesheet" type="text/css" href="themesmobile/68ecshopcom_mobile/css/goods.css"/> 
+<link rel="stylesheet" type="text/css" href="themesmobile/68ecshopcom_mobile/css/public.css"/>
+<script type="text/javascript" src="themesmobile/68ecshopcom_mobile/js/jquery.js"></script>
+{insert_scripts files='common.js'}
+{insert_scripts files='jquery.json.js,transport.js'}
+<style>
+.goods_nav{ width:30%; float:right; right:5px; overflow:hidden; position:fixed;margin-top:25px; z-index:9999999}
+@charset "utf-8";
+
+@media screen {
+	*{-webkit-tap-highlight-color:transparent;overflow:hidden}
+}
+
+</style>
+</head>
+<body>
+<div class="tab_nav">
+        <div class="header">
+          <div class="h-left"><a class="sb-back" href="javascript:history.back(-1)" title="返回"></a></div>
+          <div class="h-mid">
+          优惠套餐
+          </div>
+          <div class="h-right">
+            <aside class="top_bar" style="margin-right:5px;">
+            <div onClick="show_menu();$('#close_btn').addClass('hid');" id="show_more"><a href="javascript:;"></a> </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+<!-- #BeginLibraryItem "/library/up_menu.lbi" --><!-- #EndLibraryItem --> <!--弹出菜单-->  
+      <!-----------------------------------套餐--------------------------------------> 
+<div style=" height:30px;"></div>       
+      {foreach from=$package_goods_list_120 name="pa_list" item=pa_item}
+<div class="Packages">
+ <h2>
+      <span></span>
+     优惠套餐{$smarty.foreach.pa_list.iteration}
+    </h2>
+ <div class="page_guide_slider">
+
+	<div class="page_guide_balloon" style=" display:none">
+		<div class="page_guide_bar">
+			<div class="page_guide_progress">
+             {foreach from=$pa_item.goods_list name="pa_list_goods" item=pa_goods} 
+				<div></div>
+		{/foreach}
+			</div>
+		</div>
+	</div>
+	
+	<div class="page_guide_container" onMouseDown="pageGuideMousedown(this,event)" onMouseMove="pageGuideMousemove(this,event)" onMouseUp="pageGuideMouseup(this,event)" onMouseOut="pageGuideMouseout(this,event)" ontouchstart="pageGuideTouchstart(this,event)" ontouchmove="pageGuideTouchmove(this,event)" ontouchend="pageGuideTouchend(this,event)">
+		<div class="page_guide_items" style=" position:relative">
+		
+		  {foreach from=$pa_item.goods_list name="pa_list_goods" item=pa_goods} 
+          	<div  class="page_guide_item" {if $smarty.foreach.pa_list_goods.last} style="background:url(../images/deng.png) no-repeat right 40%;background-size: auto 25px;"{else} style="background:url(../images/jia.png) no-repeat 97% 40%;background-size: auto 25px;" {/if}>
+				<div class="page_guide_item_text">
+                <a href="goods.php?id={$pa_goods.goods_id}" target="_blank" title="{$pa_goods.goods_name}">
+				<div class="page_guide_item_intr" style="background: url({$pa_goods.goods_thumb}) no-repeat;background-size: auto 150px;"></div>	
+				<p>{$pa_goods.goods_name|truncate:12}{$pa_goods.goods_attr_str}</p>
+			    <font>{$pa_goods.rank_price_zk_format}</font>
+                </a>
+				</div>
+			</div>
+            {/foreach}
+<div class="buypack">
+<strong class="f_pack1" >套餐价:<font class="f_pack" id="price_pack_{$smarty.foreach.pa_list.index}">{$pa_item.package_price}</font></strong><br />
+			{$lang.old_price}<font class="f_yuan" id="price_yuan_{$smarty.foreach.pa_list.index}">{$pa_item.subtotal}</font><br />
+			
+			{$lang.then_old_price}<font class="f_save" id="price_save_{$smarty.foreach.pa_list.index}">{$pa_item.saving} </font><br />
+			<a class="btn_pack" onClick="javascript:addPackageToCart({$pa_item.act_id}, {$smarty.foreach.pa_list.index})" title="购买此套餐">购买此套餐</a>	
+		</div>
+		</div>
+	</div>
+	
+</div>  
+</div>
+{/foreach}   
+<script type="text/javascript">
+reg_package();
+</script>
+<!--滑动js-->
+<script src="themesmobile/68ecshopcom_mobile/js/slider.js" type="text/javascript"></script>
+</body>
+</html>

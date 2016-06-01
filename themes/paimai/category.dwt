@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- #BeginLibraryItem "/library/header.lbi" --><!-- #EndLibraryItem -->
+	<title>{$page_title}</title>
+	<meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+</head>
+<body>
+<div role="navigation" id="site-nav">
+  <!-- #BeginLibraryItem "/library/page_paimai_header.lbi" --><!-- #EndLibraryItem -->
+  <div id="banner">
+  		<div class="banner">
+  		    <!-- TemplateBeginEditable name="全屏幻灯片" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+  		</div>
+  	</div>
+  	<div id="main">
+        <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+        <div class="w">
+            <dl class="sortproduct">
+                <dt></dt>
+                <!--{foreach from=$goods_list item=goods}-->
+                <dd>
+                    <a href="{$goods.url}" style="background:url({$goods.goods_thumb}) center no-repeat;"></a>
+                    <div class="zt">
+                        <div class="chujia">
+                        <a href="{$goods.url}"><span>￥{$goods.chujia}</span></a></div>
+                        <div class="name"><a href="{$goods.url}" title="{$goods.act_name}">{$goods.short_act_name|escape:html}</a>送拍机构：{$goods.songpairen}<br><em>{$goods.chujia_count}</em>次出价</div>
+                        <div class="sysj" data-startTime="{$goods.start_time}" data-endTime="{$goods.end_time}">{$lang.please_waiting}</div>
+                    </div>
+                    <div class="clear"></div>
+                </dd>
+                <!--{/foreach}-->
+                <div class="clear"></div>
+            </dl>
+        	<!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+        </div>
+
+  	</div>
+    <!-- #BeginLibraryItem "/library/page_paimai_footer.lbi" --><!-- #EndLibraryItem -->
+    <script type="text/javascript" src="js/setHdTime.js"></script>
+</body>
+</html>

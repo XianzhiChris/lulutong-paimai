@@ -1,0 +1,1 @@
+<img class='ub swiper-slide' src='{$url}{if $picture.thumb_url}{$picture.thumb_url}{else}{$picture.img_url}{/if}' />

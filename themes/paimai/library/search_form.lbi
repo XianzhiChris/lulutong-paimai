@@ -1,0 +1,19 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<form action="search.php" method="get" id="searchForm" name="searchForm">
+    <input type='hidden' name='type' id="searchtype" value="{$smarty.request.type|default:0}">
+    <input type="text" name="keywords" placeholder="{if $search_keywords}{$search_keywords|escape}{else}请输入关键词{/if}" required>
+    <input type="submit">
+    <div class="wdpm">
+        <div class="pman">
+            <i class="left"></i>
+            <i class="right"><s>◇</s></i>
+            <a href="user.php?act=auction_list">我的拍卖</a>
+        </div>
+        <div class="pmxl" style="display:none">
+            <div class="spacer"></div>
+            <a href="user.php?act=auction_list">我的竞拍</a>
+            <a href="">我的获拍</a>
+            <a href="">我的保证金</a>
+        </div>
+    </div>
+</form>

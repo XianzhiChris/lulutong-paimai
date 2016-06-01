@@ -1,0 +1,57 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="flow-wrap  ">
+<!--{foreach from=$shop_list item=shop}--> 
+	<div class="flow-item first"> 
+      <a href="supplier.php?suppId={$shop.supplier_id}" class="flow-datu" title="{$shop.shop_name}"> 
+        <img alt="" src="../../data/supplier/logo/biglogo_supplier{$shop.supplier_id}.gif" width='90%' style="margin-left:15%"/>
+      </a>
+      <div class="flow-content">
+      	<h4 class="flow-title">
+        	<a href="supplier.php?suppId={$shop.supplier_id}" title="{$shop.shop_name}" style="width:40%"><span>{$shop.shop_name}</span><img alt="" src="../../{$shop.shop_logo}"/></a>
+            <!---{if $shop.shop_closed}--><span class="guanzhu">装修中..</span><!---{else}--><span onclick='guanzhu({$shop.supplier_id});' class="guanzhu">关注</span><!---{/if}-->
+        </h4>
+	  	<p class="flow-desc">
+        	<span>卖家：</span>
+            <a href="supplier.php?suppId={$shop.supplier_id}" title="{$shop.shop_name}管理员" target="_blank">{$shop.user_name}</a>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin={$shop.qq}&site=qq&menu=yes" target="_blank" alt="点击这里联系我" title="点击这里联系我" class="flow-qq"><img src="http://wpa.qq.com/pa?p=1:{$shop.qq}:4" height="16" border="0" alt="QQ" /></a>
+            <a href="http://amos1.taobao.com/msg.ww?v=2&uid={$shop.ww}&s=2" target="_blank" class="flow-qq"><img src="http://amos1.taobao.com/online.ww?v=2&uid={$shop.ww}&s=2" width="16" height="16" border="0" alt="淘宝旺旺" /></a>
+        </p>
+        <p class="flow-desc">
+        	<span>所在地：</span>{$shop.shop_province_name}&nbsp;{$shop.shop_city_name}
+        </p>
+        <p class="flow-desc">
+        	<a href="supplier.php?suppId={$shop.supplier_id}" title="进入店铺，查看所有的商品">共<strong>{$shop.goods_number}</strong>件宝贝>></a>
+        </p>
+      </div>
+	  <div class="flow-main">
+      	<div class="picMarquee-left">
+			<div class="bda">
+				<ul class="picListta">
+                 {foreach from=$shop.goods item=goods name=goods}
+                 {if $smarty.foreach.goods.iteration lt 4}
+					<li>
+						<a href="goods.php?id={$goods.goods_id}" title="{$goods.goods_name}" target="_blank" class="img"> 
+                        	<img src="../../{$goods.goods_thumb}"> <span>{$goods.shop_price}</span> 
+                        </a> 
+                        <a href="goods.php?id={$goods.goods_id}" title="{$goods.goods_name}" target="_blank" class="name">{$goods.goods_name}</a> 
+					</li>
+                  {/if}
+                    {/foreach}
+				</ul>
+               
+			</div>
+		</div>
+      </div>
+	</div>
+<!--{foreachelse}-->
+</div>
+<div class="flow-wrap  "  style="width:1208px;text-align:center;padding:55px 0px;border:1px #dddddd solid;margin:30px auto">
+没有找到相应店铺！
+</div>
+<!--{/foreach}-->	
+
+
+<script id="jsID" type="text/javascript">
+	jQuery(".picMarquee-left").slide({mainCell:".bda ul",autoPage:true,effect:"left",autoPlay:false,vis:5,scroll:1});
+
+		</script>

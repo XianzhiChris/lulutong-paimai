@@ -1,0 +1,33 @@
+<!-- {if ($allow_use_bonus || $allow_use_integral) && $goodsinfo.goodlist } 是否使用红包或者积分 -->
+<div class="uinn-eo5 ub ub-ac">
+  <div class="ub-f1 ulev-4 t-gra-95">使用店铺优惠券和积分</div>
+  <div class="tx-r sc-text f-color-gray1 ulev-1 umar-r lv_subTitle fold" sub_fold_id='coupon_integral_{$key}'>请选择</div>
+</div>
+<div id="coupon_integral_{$key}" style="display:none">
+<div class="uinn-eo8 ub b-gra-d6 ub-ac">
+  <div class="ub-f1 ulev-4 t-gra-95">使用店铺优惠券：</div>
+  <div class="tx-r sc-text f-color-gray1 ulev-1 umar-r lv_subTitle">
+	<div class="select uba border-hui">
+	  <div class="text">请选择优惠券</div>
+	  <div class="icon"></div>
+	  <select class="bonus" key='{$key}'>
+		<option value="0" eq="">{$lang.please_select}</option>
+		<!-- {foreach from=$goodsinfo.redbag item=bonus} -->
+		<option value="{$bonus.bonus_id}">{$bonus.type_name}[{$bonus.bonus_money_formated}]</option>
+		<!-- {/foreach} -->
+	  </select>
+	</div>
+  </div>
+</div>
+<div class="uinn-eo8 ub b-gra-d6 ub-ac">
+<div>或直接输入优惠券号</div>
+<input id='bonus_sn_{$key}' key='{$key}' class='bonus_sn' type="text" size="15"
+value="{if $order.bonus_sn_info[$key]}{$order.bonus_sn_info[$key]}{/if}" placeholder='输入优惠券'/> 
+<input class="validate_bonus" type="button" value="使用" key="{$key}"/>
+</div>
+<div class="uinn-eo8 ub b-gra-d6 ub-ac">
+  <div class="ub-f1 ulev-4 t-gra-95">使用积分</div>
+  <input id='integral_{$key}' class='integral' key='{$key}' type='text' placeholder="请输入店铺积分"/>
+</div>
+</div>
+<!-- {/if} -->

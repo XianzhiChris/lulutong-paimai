@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- #BeginLibraryItem "/library/header.lbi" --><!-- #EndLibraryItem -->
+	<title>{$page_title}</title>
+	<meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,transport.js'}
+<style type="text/css">
+p a {
+	color: #006acd;
+	text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_paimai_header.lbi" --><!-- #EndLibraryItem -->
+<div id="site-nav"> 
+
+  <div class="blank"></div>
+  <div class="block">
+    <div class="box">
+      <div class="box_1">
+        <h3><span>{$lang.system_info}</span></h3>
+        <div class="blank"></div>
+        <div class="boxCenterList RelaArticle" align="center">
+          <div style="margin:20px auto;">
+            <p style="font-size: 14px; font-weight:bold; color: red;">{$message}</p>
+            <div class="blank"></div>
+            <!--{if $virtual_card}-->
+            <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+              <!--{foreach from=$virtual_card item=vgoods}--> 
+              <!--{foreach from=$vgoods.info item=card}-->
+              <tr>
+                <td bgcolor="#FFFFFF">{$vgoods.goods_name}</td>
+                <td bgcolor="#FFFFFF"><!--{if $card.card_sn}--><strong>{$lang.card_sn}:</strong>{$card.card_sn}<!--{/if}--> 
+                  <!--{if $card.card_password}--><strong>{$lang.card_password}:</strong>{$card.card_password}<!--{/if}--> 
+                  <!--{if $card.end_date}--><strong>{$lang.end_date}:</strong>{$card.end_date}<!--{/if}--></td>
+              </tr>
+              <!--{/foreach}--> 
+              <!--{/foreach}-->
+            </table>
+            <!--{/if}--> 
+            <a href="{$shop_url}">{$lang.back_home}</a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- #BeginLibraryItem "/library/page_paimai_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

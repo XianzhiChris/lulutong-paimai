@@ -1,0 +1,16 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $pictures}-->
+<div id="gallery_list">
+    <a id="gallery_left"></a>
+    <a id="gallery_right"></a>
+    <div class="items">
+        <ul>
+            <!-- {foreach from=$pictures item=picture name=pictures}-->
+            <li>
+                <a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '{$picture.img_url}',largeimage: '{$picture.img_original}'}" {if $smarty.foreach.pictures.iteration eq 1}class="zoomThumbActive"{/if}><img src="{$picture.thumb_url}"></a>
+            </li>
+            <!--{/foreach}-->
+        </ul>
+    </div>
+</div>
+<!-- {/if}-->

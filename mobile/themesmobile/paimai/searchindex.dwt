@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--[if lt IE 7]><html lang="zh_cn" class="no-js ie6"><![endif]-->
+<!--[if IE 7]><html lang="zh_cn" class="no-js ie7"><![endif]-->
+<!--[if IE 8]><html lang="zh_cn" class="no-js ie8"><![endif]-->
+<!--[if IE 9]><html lang="zh_cn" class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="zh_cn" class="no-js"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<!--[if IE]>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<![endif]-->
+	<title>{$page_title}</title>
+				<script type="text/javascript" src="static/js/jquery.js"></script>
+	<script src="static/js/modernizr.js"></script>
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="static/js/selectivizr.js"></script>
+	<![endif]-->
+	<link rel="shortcut icon" href="static/img/favicon.png">
+	<link rel="apple-touch-icon-precomposed" href="static/img/website_icon.png">
+	<link rel="stylesheet" type="text/css" href="static/css/search.css"/>
+
+<link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<body class="category_bg">
+<div class="ccontainer">
+<div class="cheader">
+    <div class="chome"> <a class="chome_bg" href="index.php">
+      <nav id="h5back_nick">返回首页</nav>
+      </a> </div>
+    <div class="ctitle">
+      <div><span>搜索</span></div>
+    </div>
+  </div>
+  <header class="region">
+    <div class="content">
+      <div id="fake-search">
+      <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()">
+        <div class="fakeInput">
+          <input name="keywords" id="keyword" type="text" class="search_text" onFocus="if(this.value=='请输入搜索文字'){this.value=''}" onBlur="if(this.value==''){this.value='请输入搜索文字'}" value="请输入搜索文字"/>
+          <input type="submit" class="search_submit" value=""/>
+        </div>
+      </form>
+      </div>
+    </div>
+  </header>
+<div class="clist">
+ <!--{foreach from=$categories item=cat name=name}-->
+    <ul>
+      <li class="crow level1">
+        <div class="crow_row">   
+         <div class="crow_icon"> <img alt="" src="static/img/catalog/catalogbg{$smarty.foreach.name.iteration}.png"> </div>      
+          <div class="crow_title"> <a href="{$cat.url}">{$cat.name|escape:html}</a> </div>
+          <div class="crow_arrow"><img src="static/img/fenlei_xia.png"></div>
+          <div>&nbsp;</div>
+        </div>
+      </li>
+      <ul class="clist clist_sub" style="opacity: 1; display: none; ">
+        <li class="crow">
+         <!--{foreach from=$cat.cat_id item=child}-->
+        <div class="crow_row">
+        <div class="crow_two"> <a href="{$child.url}">{$child.name|escape:html}</a></div>
+        </div>
+         <!--{if $child.cat_id}-->
+          <div class="crow_row">
+          <!--{foreach from=$child.cat_id item=childer}-->
+            <div class="crow_item"><a href="{$childer.url}">{$childer.name}</a></div>
+            <!--{/foreach}-->
+            <div class="clear"></div>
+          </div>
+          <!--{/if}-->
+          <!--{/foreach}-->
+        </li>
+      </ul>
+     
+    </ul>
+    
+    <!--{/foreach}-->
+  </div>
+  </div>
+  <script src="static/js/zepto.min.js"></script>
+<script src="static/js/category.js"></script>
+  <!-- #BeginLibraryItem "/library/footer_nav.lbi" --><!-- #EndLibraryItem -->
+</body>
+
+</html>

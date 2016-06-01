@@ -1,0 +1,18 @@
+{foreach from=$goods_list item=goods}
+<div class="goodlist" goods_id="{$goods.goods_id}">
+	<div class="goods-img"><img src="{$url}{$goods.goods_thumb}"/></div>
+	<div class="goods-con">
+		<div class="goods-name f-color-zi">{$goods.goods_name}</div>
+		<div class="goods-other">
+			<div class="ub-f1">
+				<span class="f-color-red ulev1">{$goods.shop_price}</span> <span class="ulev-1 sc-text-hui sc-text-tab">销量：{$goods.count}</span>
+			 </div>
+			 <div class="ub-pe">
+				<div class="into-flow ub-img"></div>
+			 </div>
+		</div>
+	</div>
+</div>
+{foreachelse}
+<div class='no_goods'>没有商品</div>
+{/foreach}

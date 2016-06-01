@@ -1,0 +1,42 @@
+<!--{if $comments.item_list}-->
+<!--{foreach from=$comments.item_list item=value}-->
+<div class="ubt border-faxian">
+<div class="ub p-t-b4 f-color-zi">
+  <div class="ub-f1">{if $value.hide_username eq 1}匿名{else}{$value.user_name}{/if}</div>
+  <div class="ub-pe ulev-2 sc-text-hui">{$value.add_time_str}</div>
+</div>
+<div class="fa ub umar-t f-color-zi">
+  评论内容评论内容评论内容评论内容评论内容评论内容
+</div>
+<!--  {if $value.tags} -->
+<div class="umar-t"> 标签：
+<!--{foreach from=$value.tags item=name}--> 
+<!-- {if !empty($name)} -->
+<span>{$name}</span>
+<!-- {/if} -->
+<!--{/foreach}-->
+</div>
+<!-- {/if} -->
+
+<!-- {if $value.comment_reps} -->
+<div class="umar-t">客服回复：
+	<!-- {foreach from=$value.comment_reps item=val} -->
+  <div style="color:#F00; padding:10px 0 10px 0">{$val.content}</div>
+  <!-- {/foreach}  -->
+</div>
+<!-- {/if} -->
+<!--{if $value.shaidan_imgs}-->
+<div class="umar-t">
+<!--{foreach from=$value.shaidan_imgs key=key item=img}--> 
+  <div class="ub-img uba border-hui" style="background-image:url({$url}{$img.thumb}); width:4em; height:4em;"></div>
+  <!--{/foreach}--> 
+</div>
+<!--{/if}-->
+</div>
+<!-- {if $value.hide_gnum neq 1} -->
+<div class='good_num ulev-2 sc-text-hui p-t-b4' comment_id="{$value.comment_id}">有用(<span id="good_num_{$value.comment_id}">{$value.good_num}</span>)</div>
+<!-- {/if} -->
+<!-- {/foreach} -->
+<!--{else}-->
+<div class="no_comment">暂时还没有任何评论！</div>
+<!--{/if}-->

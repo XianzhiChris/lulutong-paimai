@@ -1,0 +1,39 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <div class="Personal" style=" border:0px;">
+      <div id="tbh5v0">
+
+     <div class="innercontent11" >
+            <form name="formPassword" action="user.php" method="post" onSubmit="return editPassword()">
+
+      <div class="field_pwd">
+				<label for="password"> 
+					<input type="password" name="old_password" id="password" class="c-f-text" placeholder="{$lang.old_password}"/>
+				</label>
+                </div>          
+      <div class="field_pwd">
+				<label for="new_password"> 
+					<input type="password" name="new_password" id="new_password" class="c-f-text" placeholder="{$lang.new_password}"/>
+				</label>
+              </div>
+     <div class="field_pwd">
+				<label for="comfirm_password"> 
+					<input type="password" name="comfirm_password" id="comfirm_password" class="c-f-text" placeholder="{$lang.confirm_password}"/>
+				</label>
+               </div>
+      <div class="field submit-btn">
+					<input type="submit" value="{$lang.confirm_edit}" class="btn_big1" />
+                    </div>
+	<input type="hidden" name="act" value="act_edit_password"/>
+		</form>
+     </div>             
+ </div>
+</div>
+<script type="text/javascript">
+{foreach from=$lang.profile_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>
+
+
+
+

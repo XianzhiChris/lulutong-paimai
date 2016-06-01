@@ -1,0 +1,9 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $user_info}
+<li><em>{$user_info.username} {$lang.welcome_return}</em></li>
+<li><a class="sn-login" href="user.php" target="_top">{$lang.user_center}</a></li>
+<li><a class="sn-register" href="user.php?act=logout" target="_top">{$lang.user_logout}</a></li>
+{else}
+<li><em>{$lang.welcome}</em><a class="sn-login" href="user.php" target="_top">请登录</a></li>
+<li><a class="sn-register" href="register.php" target="_top">会员注册</a> </li>
+{/if}

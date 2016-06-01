@@ -1,0 +1,36 @@
+<!--{if $orders}-->
+<div class="order">
+          <!--{foreach from=$orders item=item}-->
+          <div class="order_list">
+          <h2> <a href="user.php?act=order_detail&order_id={$item.order_id}"><img src="themesmobile/68ecshopcom_mobile/images/dianpu.png"><span>店铺名称:{$item.shopname}</span><strong>{$item.handler}</strong></a></h2>
+         <a href="user.php?act=order_detail&order_id={$item.order_id}">
+       {foreach from=$item.goods_list item=goods name=goods}
+        <dl>  
+          <dt><img src="./../{$goods.goods_thumb}"></dt>
+          <dd class="name"><strong>{$goods.goods_name}</strong><span>
+            {foreach from=$item.goods_list item=goods name=goods}
+                {if $goods.goods_attr}{$goods.goods_attr|nl2br}{/if}
+            {/foreach}
+          </span></dd>
+          <dd class="pice">{$goods.formated_goods_price}<em>x{$goods.goods_number}</em></dd>
+          </dl>
+        {/foreach}
+          </a>
+          <div class="pic">共{$item.count}件商品<span>实付：</span><strong>{$item.total_fee}</strong></div>
+          <div class="anniu">
+         
+                  {$item.handler}
+          </div>
+         </div>
+          <!--{/foreach}-->
+      <!--{else}-->
+        <div id="list_0_0" class="font12">{$lang.order_empty}</div>
+</div>        
+       <!--{/if}-->
+
+		{include file='library/pages.lbi'}
+<script type="text/javascript">
+{foreach from=$lang.merge_order_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>

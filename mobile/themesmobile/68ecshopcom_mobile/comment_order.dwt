@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<form  method="post" action="user.php?act=my_comment_send">
+<input type="hidden" value="{$goods_id}" name="goods_id">
+<input type="hidden" value="{$rec_id}" name="rec_id">
+<table width="70%" cellspacing="1" cellpadding="0" border="0" style="float:left">
+<tbody>
+<tr>
+<th>心得</th>
+<td>
+<textarea id="content_13" class="inputBorder" style="height:80px; width:580px;" name="content"> </textarea>
+</td>
+</tr>
+<tr>
+<th> </th>
+<td>
+<input type="image" style="float:left" src="themes/68ecshopcom_360buy/images/send_comment.gif">
+<div style="float:left; padding:5px 0px 0 20px;">
+</td>
+</tr>
+</tbody>
+</table>
+</form>
+</body>
+</html>

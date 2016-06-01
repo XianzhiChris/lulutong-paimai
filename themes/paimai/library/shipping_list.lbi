@@ -1,0 +1,24 @@
+
+{if $shipping_list}
+    <ul class="shipping_jm">
+      <li>
+	      <select name='pay_ship[{$suppid}]' id='pay_ship_{$suppid}' onchange='selectShipping(this.value,{$suppid});' class='shipping'>
+	      <!-- {foreach from=$shipping_list item=shipping} 循环配送方式 -->
+	      <option {$shipping.selected} value="{$shipping.shipping_id}" title="{$shipping.shipping_desc}">{$shipping.shipping_name} （{$shipping.format_shipping_fee} 免费额度：{$shipping.free_money}  {$shipping.shipping_desc|truncate:25}）</option>
+	      <!-- {/foreach} -->
+	      </select>
+      </li>
+     <!-- <li style="text-align:right;">
+	<input name="need_insure[{$suppid}]" id="ECS_NEEDINSURE_{$suppid}" type="checkbox"  onclick="selectInsure(this.checked)" value="1" {if $order.need_insure}checked="true"{/if} {if $insure_disabled}disabled="true"{/if}  />
+	{$lang.need_insure}
+      </li>-->
+    </ul>
+{else}
+    <ul class="shipping_jm">
+      <li>
+	      <select name='pay_ship[{$suppid}]' id='pay_ship_{$suppid}' onchange='selectShipping(this.value,{$suppid});' class='shipping'>
+	      <option value='0'>暂不支持收货地址配送</option>
+	      </select>
+      </li>
+    </ul>
+{/if}

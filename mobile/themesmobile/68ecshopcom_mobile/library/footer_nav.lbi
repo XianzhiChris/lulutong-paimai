@@ -1,0 +1,98 @@
+﻿<!--全局导航-Start-->
+
+<div style="height:50px; line-height:50px; clear:both;"></div>
+
+<link rel="stylesheet" type="text/css" href="themesmobile/68ecshopcom_mobile/css/global_nav.css?v=20140408"/>
+
+<div class="global-nav">
+<div class="global-nav__nav-wrap">
+        <div class="global-nav__nav-item">
+            <a href="./" class="global-nav__nav-link">
+                <i class="global-nav__iconfont global-nav__icon-index">&#xe7d5;</i>
+                <span class="global-nav__nav-tit">首页</span>
+            </a>
+        </div>
+        <div class="global-nav__nav-item">
+            <a href="catalog.php" class="global-nav__nav-link">
+	    
+                <i class="global-nav__iconfont global-nav__icon-category">&#xe7d6;</i>
+                <span class="global-nav__nav-tit">分类</span>
+            </a>
+        </div>
+	<div class="global-nav__nav-item">
+           <!-- <a href="javascript:get_search_box();" class="global-nav__nav-link">
+                <i class="global-nav__iconfont global-nav__icon-search">&#xe684;</i>
+                <span class="global-nav__nav-tit">搜索</span>
+            </a>-->
+	    <a href="http://chat32.live800.com/live800/chatClient/chatbox.jsp?companyID=484738&configID=64472&jid=2660150368" class="global-nav__nav-link">
+                <i class="global-nav__iconfont global-nav__icon-search">&#xe712;</i>
+                <span class="global-nav__nav-tit">客服</span>
+            </a>
+        </div>
+
+	 <div class="global-nav__nav-item">
+            <a href="flow.php?step=cart" class="global-nav__nav-link">
+                <i class="global-nav__iconfont global-nav__icon-shop-cart">&#xe751;</i>
+                <span class="global-nav__nav-tit">购物车</span>
+                <span class="global-nav__nav-shop-cart-num" id="ECS_CARTINFO"  style=" margin-top:2px; margin-left:-1px;">{insert name='cart_info'}</span>
+		
+            </a>
+        </div>
+	<div class="global-nav__nav-item">
+            <a href="user.php?act=order_list" class="global-nav__nav-link">
+                <i class="global-nav__iconfont global-nav__icon-my-yhd">&#xe7d7;</i>
+                <span class="global-nav__nav-tit">订单</span>
+            </a>
+        </div>
+        <div class="global-nav__nav-item">
+            
+
+	    <a href="user.php" class="global-nav__nav-link">
+                <i class="global-nav__iconfont global-nav__icon-search">&#xe770;</i>
+                <span class="global-nav__nav-tit">我的</span>
+            </a>
+        </div>
+   </div>
+</div>
+
+<!--全局导航-End-->
+<script type="text/javascript" src="{$ectouch_themes}/js/zepto.min.js?v=20140408"></script>
+<script type="text/javascript">
+Zepto(function($){
+   var $nav = $('.global-nav'), $btnLogo = $('.global-nav__operate-wrap');
+   //点击箭头，显示隐藏导航
+   $btnLogo.on('click',function(){
+     if($btnLogo.parent().hasClass('global-nav--current')){
+       navHide();
+     }else{
+       navShow();
+     }
+   });
+
+   var navShow = function(){
+     $nav.addClass('global-nav--current');
+   }
+
+   var navHide = function(){
+     $nav.removeClass('global-nav--current');
+   }
+   
+   $(window).on("scroll", function() {
+		if($nav.hasClass('global-nav--current')){
+			navShow();
+		}
+	});
+  
+})
+function get_search_box(){
+	try{
+		document.getElementById('get_search_box').click();
+	}catch(err){
+		document.getElementById('keywordfoot').focus();
+ 	}
+}
+</script>
+
+
+
+    

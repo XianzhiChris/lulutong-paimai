@@ -1,0 +1,111 @@
+<!-- {if $inv_content_list || $how_oos_list} 开发票和缺货处理开始 -->
+<div class="uinn-eo5 ub ubt border-hui ub-ac">
+  <div class="checkbox umar-r ulev-1"><input type="checkbox" class="uabs ub-con" ></div>
+  <div class="ub-f1 ulev-4 t-gra-95"> 开发票和缺货处理</div>
+  <div class="tx-r sc-text f-color-gray1 ulev-1 umar-r lv_subTitle fold" sub_fold_id='tr3'>请选择</div>
+</div>
+<div id="tr3" style="display:none">
+  <!-- {if $inv_content_list} 能否开发票 -->
+  <div>开发票</div>
+  <div class="switch uba bc-border" id='need_inv' data-checked="false">
+    <div class="switch-btn sc-bg-active "></div>
+  </div>
+  <div class="uinn-eo8 ub b-gra-d6 ub-ac uhide" id='invoice_fold'>
+    <div class="tx-r sc-text f-color-gray1 ulev-1 umar-r lv_subTitle">
+      <div class="select uba border-hui">
+        <div class="text">发票类型</div>
+      </div>
+	  <select name="inv_type" id="inv_type" {if $order.need_inv neq 1}disabled="true"{/if}>
+        <option value="0">请选择发票类型</option>
+        {html_options options=$inv_type_list selected=$order.inv_type}
+        </select>
+    </div>
+    <div class="tx-r sc-text f-color-gray1 ulev-1 umar-r lv_subTitle">
+      <div class="select uba border-hui">
+        <div class="text">发票内容</div>
+      </div>
+	  <select name="inv_content" id="inv_content" {if $order.need_inv neq 1}disabled="true"{/if}>
+        <option value="0">请选择发票内容</option>
+        {html_options values=$inv_content_list output=$inv_content_list selected=$order.inv_content}
+      </select>
+    </div>
+  </div>
+  <div class="uinn-eo8 ub b-gra-d6 ub-ac uhide" id='inv_type_box'>
+    <!--发票抬头开始-->
+    <div id='normal_invoice_box'>
+        <div class="ub-f1 ulev-4 t-gra-95">发票抬头：</div>
+	  <div class="inv_payee_type selected" inv_payee_type="individual">个人</div>
+	  <div class="inv_payee_type" inv_payee_type="unit">单位</div>
+	  <div id='inv_payee_box' style='display:none;'><input id='inv_payee' type='text' placeholder='请输入单位名称'></input></div>
+    </div>
+    <!--发票抬头结束-->
+    <!--增值税发票开始-->
+    <div  id='vat_invoice_box'>
+      <ul class="uinn-p2">
+        <div class="ub-f1 ulev-4 t-gra-95">公司信息：</div>
+        <li class="ub bg-color-w t-gra-95 ub-ac uinn-eo8" data-index="0">
+          <div class="umar-r ulev-2 js-text1" name="">单位名称：</div>
+          <input id="vat_inv_company_name" type="text" class="js-text">
+        </li>
+        <li class="ub bg-color-w t-gra-95 ub-ac uinn-eo8" data-index="0">
+          <div class="umar-r ulev-2 js-text1" name="">纳税人识别号:</div>
+          <input id="vat_inv_taxpayer_id" type="text" class="js-text">
+        </li>
+        <li class="ub bg-color-w t-gra-95 ub-ac uinn-eo8" data-index="0">
+          <div class="umar-r ulev-2 js-text1" name="">注册地址：</div>
+          <input id="vat_inv_registration_address" type="text" class="js-text">
+        </li>
+        <li class="ub bg-color-w t-gra-95 ub-ac uinn-eo8" data-index="0">
+          <div class="umar-r ulev-2 js-text1" name="">注册电话：</div>
+          <input id="vat_inv_registration_phone" type="text" class="js-text">
+        </li>
+        <li class="ub bg-color-w t-gra-95 ub-ac uinn-eo8" data-index="0">
+          <div class="umar-r ulev-2 js-text1" name="">开户银行：</div>
+          <input id="vat_inv_deposit_bank" type="text" class="js-text">
+        </li>
+        <li class="ub bg-color-w t-gra-95 ub-ac uinn-eo8" data-index="0">
+          <div class="umar-r ulev-2 js-text1" name="">银行账户:</div>
+          <input id="vat_inv_bank_account" type="text" class="js-text">
+        </li>
+      </ul>
+      <ul class="uinn-p2">
+        <div class="ub-f1 ulev-4 t-gra-95">收票人信息：</div>
+        <li class="ub bg-color-w t-gra-95 ub-ac uinn-eo8" data-index="0">
+          <div class="umar-r ulev-2 js-text1" name="">收票人姓名：</div>
+          <input id="inv_consignee_name" type="text" class="js-text">
+        </li>
+        <li class="ub bg-color-w t-gra-95 ub-ac uinn-eo8" data-index="0">
+          <div class="umar-r ulev-2 js-text1" name="">收票人手机:</div>
+          <input id="inv_consignee_phone" type="text" class="js-text">
+        </li>
+        <li class="ub bg-color-w t-gra-95 ub-ac uinn-eo8" data-index="0">
+          <div>收票人省份：</div>
+          <select name="inv_consignee_province" id="inv_consignee_province" onchange="region.changed(this, 2, 'inv_consignee_city');" >
+                <option value="0">{$lang.please_select}{$name_of_region[1]}</option>
+                <!-- {foreach from=$province_list item=province} -->
+                <option value="{$province.region_id}" {if $address.province eq $province.region_id}selected{/if}>{$province.region_name}</option>
+                <!-- {/foreach} -->
+              </select>
+			  <select name="inv_consignee_city" id="inv_consignee_city" onchange="region.changed(this, 3, 'inv_consignee_district');">
+                <option value="0">请选择</option>
+              </select>
+              <select name="inv_consignee_district" id="inv_consignee_district" style='display:none;'>
+                <option value="0">请选择</option>
+              </select></td>
+        </li>
+        <li class="ub bg-color-w t-gra-95 ub-ac uinn-eo8" data-index="0">
+          <div class="umar-r ulev-2 js-text1" name="">详细地址：</div>
+          <input id="inv_consignee_address" type="text" class="js-text">
+        </li>
+      </ul>
+    </div>
+    <!--增值税发票结束-->
+  </div>
+  <!-- {/if} -->
+  <div class="ub-f1 ulev-4 t-gra-95">缺货处理：</div>
+  <!-- {foreach from=$how_oos_list key=how_oos_id item=how_oos_name} -->
+  <div class="how_oos  {if $order.how_oos eq $how_oos_id}selected{/if}" how_oos_id="{$how_oos_id}">{$how_oos_name}</div>
+  <!-- {/foreach} -->
+</div>
+<!--开发票和缺货处理结束-->
+<!-- {/if} -->

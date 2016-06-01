@@ -1,0 +1,25 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<table class="pick_table" width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+	<tr>
+	<td width="7%" bgcolor="#ffffff">选择</td>
+	<td width="33%" bgcolor="#ffffff">{$lang.shop_name}</td>
+	<td width="32%" bgcolor="#ffffff">{$lang.address}</td>
+	<td width="16%"  bgcolor="#ffffff">{$lang.contact}</td>
+	<td width="16%"  bgcolor="#ffffff">{$lang.phone}</td>
+    </tr>
+    <!-- {foreach from=$pickup_point_list item=pickup_point name=pickup_point} -->
+    <tr>
+	<td valign="top" bgcolor="#ffffff"><input type="radio"{if $smarty.foreach.pickup_point.index eq 0} checked="checked"{/if} name="pickup_point" value="{$pickup_point.id}" /></td>
+	<td valign="top" bgcolor="#ffffff">{$pickup_point.shop_name}</td>
+	<td valign="top" bgcolor="#ffffff">{$pickup_point.address}</td>
+	<td valign="top" bgcolor="#ffffff">{$pickup_point.contact}</td>
+	<td valign="top" bgcolor="#ffffff">{$pickup_point.phone}</td>
+    </tr>
+    <!--{foreachelse} -->
+    <tr>
+	<td colspan="5" bgcolor="#ffffff" align="center">{$lang.empty_pickup_point}</td>
+    </tr>
+    <!-- {/foreach} -->
+</table>

@@ -1,0 +1,16 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="row c-rollimage-activity">
+  <div class="small-12">
+    <div class="rollimage" id="jdSlider" initslide="true">
+   <input type="hidden" name='flash_path' id="flash_path" value="{$flash_theme}">
+<script type="text/javascript">
+  var swf_width=990;
+  var swf_height=294;
+  </script>
+<script type="text/javascript" src="/data/flashdata/{$flash_theme}/cycle_image.js"></script>
+<script>
+$importjs('/data/flashdata/{$flash_theme}/data.js', show_flash);
+</script>
+    </div>
+  </div>
+</div>

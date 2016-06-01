@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- #BeginLibraryItem "/library/header.lbi" --><!-- #EndLibraryItem -->
+	<title>{$page_title}</title>
+	<meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_paimai_header.lbi" --><!-- #EndLibraryItem -->
+<div id="banner">
+  		<div class="banner">
+  		    <!-- TemplateBeginEditable name="全屏幻灯片" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+  		</div>
+  	</div>
+<!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+<div id="brand_list">
+  <div class="w">
+    <ul>
+
+      <!-- {foreach from=$brand_list name="brand_list_foreach" item=brand_data} -->
+      <li>
+        <!-- {if $brand_data.brand_logo} -->
+        <a href="{$brand_data.url}" target="_blank"><img src="data/brandlogo/{$brand_data.brand_logo}" alt="{$brand_data.brand_name|escape:html}" /></a>
+        <!-- {else} -->
+        <a href="{$brand_data.url}" target="_blank">{$brand_data.brand_name|escape:html}</a>
+        <!-- {/if} -->
+      </li>
+      <!-- {/foreach} -->
+
+    </ul>
+    <div class="clear"></div>
+  </div>
+</div>
+<!-- #BeginLibraryItem "/library/page_paimai_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

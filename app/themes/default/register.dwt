@@ -1,0 +1,75 @@
+<div class="ub user_check bg-color-w">
+	<div class="ub-f1 checked" id="mobile_tab"><font>手机注册</font></div>
+	<div class="ub-f1" id="email_tab"><font>邮箱注册</font></div>
+</div>
+
+<!--手机注册-->
+<div class="bg-color" id="con_userTab_1">
+  <div class="uc-a1 bg-color-w m-top3 m-btm1 reg-p ubb ubt border-hui f-color-zi">
+    <div class="ub uinn-eo8 ubb border-hui ulev-9 ub-ac p-r1" id='mobile_box'>
+      <div class="uw-reg"> 手机 </div>
+      <div class="ub-f1">
+        <div class="uinput ub-f1">
+          <input id="mobile" placeholder="请输入手机号" type="text" class="f-color-6"/>
+        </div>        
+      </div>
+      <div class="ub-img input-del h-w-6 uhide" id='clear_mobile'></div>
+    </div>
+	<div class="ub uinn-eo8 ubb border-hui ulev-9 ub-ac p-r1 uhide" id='email_box'>
+      <div class="uw-reg"> EMAIL </div>
+      <div class="ub-f1">
+        <div class="uinput ub-f1">
+          <input id="email" placeholder="请输入邮箱" type="text" class="f-color-6"/>
+        </div>
+      </div>
+      <div class="ub-img input-del h-w-6 uhide" id='clear_email'></div>
+    </div>
+    <div class="ub uinn-eo8 ubb border-hui ulev-9 ub-ac p-r1">
+      <div class="uw-reg"> 密码 </div>
+      <div class="ub-f1">
+        <div class="uinput ub-f1">
+          <input id="password" placeholder="请输入6至20位字符" type="password" class="f-color-6"/>
+        </div>
+      </div>
+	  <div class="ub-img input-del h-w-6 uhide" id='clear_password'></div>
+      <div class="ub-img input-eye-off h-w-5 uhide" id='show_password'></div>
+    </div>
+    <div class="ub uinn-eo8 ubb border-hui ulev-9 ub-ac p-r1 " id='mobile_verify_box'>
+      <div class="uw-reg"> 手机验证码 </div>
+      <div class="ub-f1 uinput" style="width:6em">
+          <input id="mobile_code" placeholder="请输入验证码" type="text" class="f-color-6"/>
+      </div>
+		<div class="btn-red-1 ulev-2" id='get_mobile_code' data-count='3' data-origin_html='获取手机验证码' data-origin_count='3'>获取手机验证码</div>
+    </div>
+    <div class="ub uinn-eo8 ubb border-hui ulev-9 ub-ac p-r1 uhide" id='email_verify_box'>
+      <div class="uw-reg"> 邮箱验证码 </div>
+      <div class="ub-f1 uinput" style="width:6em">
+          <input id="email_code" placeholder="请输入验证码" type="text" class="f-color-6"/>
+      </div>
+      <div class="btn-red-1 ulev-2" id='get_email_code' data-count='3' data-origin_html='获取邮箱验证码' data-origin_count='3'>获取邮箱验证码</div>
+    </div>
+    {if $enabled_captcha}
+    <div class="ub uinn-eo8 ulev-9 ub-ac">
+      	<div class="uw-reg ulev-app1"> 验证码 </div>
+        <div class="uinput ub-f1" style="width:6em">
+          <input id="captcha" placeholder="请输入验证码" type="text" class="f-color-6"/>
+        </div>
+        <div class="uinput ub-f1">
+        <img src="{$url}captcha.php?is_register=1&{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='{$url}captcha.php?is_register=1&'+Math.random()" id='captch_img2'/>
+        </div>
+    </div>
+	{/if}
+  </div>
+  <div class="ub ub-pe ub-ac p-l-r3">
+  	<input type="checkbox" class="checkbox" checked=true id='agreement'>
+    <label for="agreement"></label>
+  	<div class="ulev-1 m-l3 sc-text-active1">我已看过并接受《用户协议》</div>
+  </div>
+  <div>
+    <div class="m-all2">
+        <div class="user-btn" id="confirm_register_button">
+            注册
+        </div>
+    </div>
+  </div>
+</div>

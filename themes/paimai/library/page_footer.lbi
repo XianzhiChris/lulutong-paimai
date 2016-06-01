@@ -1,0 +1,27 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- service end  -->
+<div class="site-footer">
+  <div class="wrapper">
+    <div class="footer-info clearfix">
+      <div class="info-text">
+        <p class="nav_bottom">
+        <!-- {if $navigator_list.bottom} -->
+      <!-- {foreach name=nav_bottom_list from=$navigator_list.bottom item=nav} -->
+      <a href="{$nav.url}" <!-- {if $nav.opennew eq 1} -->target="_blank"<!-- {/if} -->>{$nav.name}</a><em {if $smarty.foreach.nav_bottom_list.last}style="display:none"{/if}>|</em>
+         <!-- {/foreach} -->
+      <!-- {/if} -->
+        </p>
+         <p>
+      <a href="javascript:;">{$copyright}</a>
+      </p>
+      </div>
+    </div>
+  </div>
+  <div style="display:none"><script src="http://s4.cnzz.com/stat.php?id=1259134342&web_id=1259134342" language="JavaScript"></script></div>
+</div>
+<!-- footer end  -->
+<script type="text/javascript">
+Ajax.call('api/okgoods.php', '', '', 'GET', 'JSON');
+//预售
+Ajax.call('pre_sale.php?act=check_order', '', '', 'GET', 'JSON');
+</script>

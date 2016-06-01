@@ -1,0 +1,46 @@
+{if $has_no_cat neq 1}
+<div class="ub bg-color-w ub-pc ubb border-faxian bg-color-w" style="overflow-x:scroll;">
+  <div class="ub ub-pc m-l-r2 f-color-white p-t-b4 ulev-1 tx-c {if !$smarty.request.id} selected{/if} cat_type" cat_id=''> 全部 </div>
+  {foreach from=$all item=cat} 
+  <div class="ub ub-pc m-l-r2 f-color-white p-t-b4 ulev-1 tx-c {if $smarty.request.id == $cat.str_id}selected{/if} cat_type" cat_id="{$cat.str_id}"> {$cat.str_name} </div>
+{/foreach}
+</div>
+{/if}
+<!-- {foreach from=$shops_list item=shop name=shop} -->
+<div class="shop_list bg-color-w" id='shop_{$shop.supplier_id}' supplier_id="{$shop.supplier_id}" follow_id='{$shop.is_followed}'>
+  <ul id="into-shop" class="shop_table">
+    <div class="ub ub-pj ub-ac shop_name">
+    <div class="ub ub-ac ub-pc">
+      <div class="ulev-1 f-color-zi"> <img src="{$url}{$logopath}logo_supplier{$shop.supplier_id}.jpg" style="width:4em; height:1.6em;"> </div>
+      <div class="ulev-1 p-l-r2 f-color-zi">{$shop.supplier_title}</div>
+      </div>
+	  <div class="ulev-1 shop_style uc-a1 ub-ac follow_button{if $shop.is_followed gt 0} followed {/if}" >{if $shop.is_followed gt 0}已关注{else}未关注{/if}</div>
+    </div>
+    <li class='shop_item ub ubb border-faxian'>
+      <div class='shop_listimg'> <img src="{$url}{$shop.logo}" style=" width:5em; height:5em;"></div>
+      <div class="shop_item1">
+        <p class="ulev-1 f-color-6 m-btm2">描述相符 ： {if $shop.avg_comment gt 0}{$shop.avg_comment}{else}5{/if}</p>
+        <p class="ulev-1 f-color-6 m-btm2">服务态度 ： {if $shop.avg_comment gt 0}{$shop.avg_server}{else}5{/if}</p>
+        <p class="ulev-1 f-color-6 m-btm2">发货速度 ： {if $shop.avg_comment gt 0}{$shop.avg_shipping}{else}5{/if}</p>
+        <p class='shop_desc ulev-1 sc-text-hui'>所在地：{$shop.address}</p>
+        <p class='shop_style1 ulev-1 sc-text-hui'>共<span class="f-color-red">{$shop.goods_number}</span>件商品>></p>
+      </div>
+    </li>
+	 {if $shop.goods_info}
+    <div class='ub' style='overflow-x:scroll;width:100%;'>
+	{foreach from=$shop.goods_info item=goods name=goods}
+        <div class="ub ub-ver mar-ar1 p-w0">
+          <div class="ub-f1 mar-ar1 ub-fh goods goods-img">
+           <img src="{$url}{$goods.goods_thumb}" style="width:5em; height:5em">
+           <div class="ulev-4 shop-moy bc-text-head">{$goods.shop_p}</div>
+           </div>
+          <div class="shop-name ulev-4 f-color-zi">{$goods.goods_name}</div>
+        </div>
+		{/foreach}
+      </div>
+	  {/if}
+  </ul> 
+</div>
+{foreachelse}
+<div>没有更多店铺</div>
+<!-- {/foreach} -->

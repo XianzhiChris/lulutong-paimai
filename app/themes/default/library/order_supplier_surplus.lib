@@ -1,0 +1,9 @@
+<!-- {if $allow_use_surplus} 是否使用余额 -->
+<div class="uinn-eo5 ub ub-ac">
+  <div class="ub-f1 ulev-4 t-gra-95">使用余额</div>
+  <div class="tx-r sc-text f-color-gray1 ulev-1 umar-r lv_subTitle fold" sub_fold_id='surplus_box_{$key}'>请选择</div>
+</div>
+<div id="surplus_box_{$key}" style="display:none">
+<input type="text" class="surplus" id="surplus_{$key}"  value="{$order.surplus_info[$key]|default:0}" {if $disable_surplus}disabled="disabled"{/if} placeholder='请输入余额' key="{$key}"/>
+&nbsp; 余额：{$your_surplus|default:0}</div>
+<!-- {/if} --> 

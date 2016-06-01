@@ -1,0 +1,14 @@
+<div class="bc-grey p-all1 ulev-5 sc-text-hui">
+<div class="p-all3">
+<font class="f-color-red">快递运输：</font>  其中{if $total.supplier_goodsnumber.1}<font class="f-color-red">{$total.supplier_goodsnumber.1}</font> 件商品由第三方为您配送 {/if} {if $total.supplier_goodsnumber.0}<font  class="f-color-red">{$total.supplier_goodsnumber.0}</font> 件商品由本网站为您配送{/if}
+</div>
+     <table class="fee_table" cellpadding="0" cellspacing="0">
+     {foreach from=$total.supplier_shipping item=supp_ship}
+     <tr height="30">
+     <td >{$supp_ship.supplier_name}</td>
+     <td>运费：&nbsp;&nbsp;</td>
+     <td>{$supp_ship.formated_shipping_fee}</td>
+     </tr>
+     {/foreach}
+     </table>
+</div>

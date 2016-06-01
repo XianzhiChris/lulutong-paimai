@@ -1,0 +1,38 @@
+<div class="checkBox_jm m-top3 bg-color-w">
+  <div class="f-color-black ulev-9 ub ubb border-hui uinn-a1">送货时间</div>
+  
+  <div class="timebox ulev-1 p-t-b5">    
+    <ul>
+      <li class='delivery_time selected' delivery_time='仅工作日送货'>仅工作日送货</li>
+      <li class='delivery_time' delivery_time='仅周末送货'>仅周末送货</li>
+      <li class='delivery_time' delivery_time='工作日/周末/假日均可'>工作日/周末/假日均可</li>
+      <li id='delivery_time_button' class='delivery_time' delivery_time='3'>指定送货时间&nbsp;</li>
+    </ul>
+	<div class="ulev-5 sc-text-hui tx-l p-all1">送货时间仅作参考，快递公司会尽量满足您的要求</div>
+  </div>
+</div>
+<div id="delivery_button_box" class='mfp-hide zoom-anim-dialog'>
+  <table cellpadding=5 cellspacing=0 width="100%">
+	<tr bgcolor=#ffffff>
+	  <td style="padding-left:10px">时间段</td>
+	  {foreach from= $week_list item=week}
+	  <td align=center>{$week.name}<br>
+		{$week.week}</td>
+	  {/foreach} </tr>
+	<tr bgcolor=#ffffff>
+	  <td style="padding-left:10px">9:00--15:00</td>
+	  {foreach from=$week_list item=week}
+	  <td align=center>{if $week.time1}<a href="javascript:void(0);" name="{$week.name} {$week.week} 9:00--15:00" onclick="selTimeSh(this)" >可选</a>{else}&nbsp;{/if}</td>
+	  {/foreach} </tr>
+	<tr bgcolor=#ffffff>
+	  <td style="padding-left:10px">15:00--19:00</td>
+	  {foreach from=$week_list item=week}
+	  <td align=center>{if $week.time2}<a href="javascript:void(0);" name="{$week.name} {$week.week} 15:00--19:00" onclick="selTimeSh(this)" >可选</a>{else}&nbsp;{/if}</td>
+	  {/foreach} </tr>
+	<tr bgcolor=#ffffff>
+	  <td style="padding-left:10px">19:00--22:00</td>
+	  {foreach from=$week_list item=week}
+	  <td align=center>{if $week.time3}<a href="javascript:void(0);" name="{$week.name} {$week.week} 19:00--22:00" onclick="selTimeSh(this)" >可选</a>{else}&nbsp;{/if}</td>
+	  {/foreach} </tr>
+  </table>
+</div>

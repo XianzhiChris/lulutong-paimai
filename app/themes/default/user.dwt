@@ -1,0 +1,164 @@
+<div class="ub ub-ver">
+  <div class="ub-fh ub ub-ver">
+  {if $login eq 1}
+    <!--登录状态头部显示start-->
+    <div id="user-login" class="user-bg ubb border-hui m-btm1">
+        <div class="user-logo-l" id='user_photo_button'></div>
+    	<div class="ub umh5">
+        	<div class="ub-f1"></div>
+        	<div class="setup-meg ub-pe mar-ar1" id="setup-meg"><div class="ulev-2">修改信息</div></div>
+        </div>
+      <div class="ub p-t-b1">
+        <div class="w-min2"></div>
+        <div class="ub-f1">
+          <div class="bc-text-head"> <span class="ulev0 text-bg1">{$username}</span>  <span class="ulev-2 sc-text-warn text-bg1">{$rank_name}</span></div>          
+        </div>
+      </div> 
+      <div class="ub bg-color-w p-t-b4">
+      	 <div class="w-min1"></div>
+         <div class="ub c-wh-per ub-ae ub-f1 f-color-zi">
+            <div class="ub ub-ver ub-f1 ub-pc ubr border-hui" id="user_collection_goods">
+              <div class="ub-ae ufm1 tx-c"> {$collection_count} </div>
+              <div class="ulev-4 tx-c ub-f1 m-top4">商品收藏</div>
+            </div>
+            <div class="ub ub-ver ub-f1 ub-pc ubr border-hui" id="user_collection_shop">
+              <div class="ub-ae ufm1 tx-c"> {$guanzhu_count} </div>
+              <div class="ulev-4 tx-c ub-f1 m-top4">店铺收藏</div>
+            </div>
+            <div class="ub ub-ver ub-f1 ub-pc ub-ac" id='goods_history_button'>
+			  <div class="ub-img history-icon h-w-1"></div>
+              <div class="ulev-4 tx-c ub-f1 m-top4">浏览历史</div>
+            </div>
+          </div>
+      </div>     
+    </div>
+    <!--登录状态头部显示end-->
+	{elseif $login eq 0}
+    <!--未登录状态头部显示start-->
+    <div id="user-nlogin" class="user-bg">
+      <div class="ub ub-pc ub-ac ub-ver p-t-b5" id="login_button">
+      	<div class="user-logo"></div> 
+        <div class="ub ub-ac ub-pc bc-text-head m-top1 ulev-1"> 点击登录 </div>
+      </div>
+    </div>
+    <!--未登录状态头部显示end--> 
+	{/if}
+  </div>
+  
+    <div id="indexCon_2-listview1" class="bg-color-w ubb border-hui f-color-zi">
+      <ul>
+        <li class="ubb border-faxian ub ub-ac user-pad1" id='order_list'>
+          <div class="ulev-9 ub-f1 marg-l ut-m line1">全部订单</div>
+          <div class="ulev-2 umar-r sc-text-hui border-faxianitle">查看全部订单</div>
+          <div class="jiantou-right h-w-1 ub-img"></div>
+        </li>
+      </ul>
+      <div class="ub bg-color-w p-t-b4 ub-ae">
+        <div class="ub ub-ver ub-f1 ub-pc ub-ac">
+            <div class="ub-img user_order user_order1">
+              <div class="user_num"><font class="ulev-2 f-color-red">{$shu.daif}</font></div>
+            </div>
+          <div class="ulev-2 tx-c ub-f1 m-top4">未确认</div>
+        </div>
+        <div class="ub ub-ver ub-f1 ub-pc ub-ac">
+            <div class="ub-img user_order user_order2">
+              <div class="user_num"><font class="ulev-2 f-color-red">{$shu.dais}</font></div>
+            </div>
+          <div class="ulev-2 tx-c ub-f1 m-top4">待付款</div>
+        </div>
+        <div class="ub ub-ver ub-f1 ub-pc ub-ac">
+            <div class="ub-img user_order user_order3">
+              <div class="user_num"><font class="ulev-2 f-color-red">{$await_ship|default:0}</font></div>
+            </div>
+          <div class="ulev-2 tx-c ub-f1 m-top4">待发货</div>
+        </div>
+        <div class="ub ub-ver ub-f1 ub-pc ub-ac">
+            <div class="ub-img user_order user_order4">
+              <div class="user_num"><font class="ulev-2 f-color-red">{$num_comment}</font></div>
+            </div>
+          <div class="ulev-2 tx-c ub-f1 m-top4">待评价</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="indexCon_2-listview1" class="bg-color-w ubb border-hui mar-aT1 f-color-zi">
+      <ul>
+        <li class="ubb border-faxian ub ub-ac user-pad1 user_capital">
+          <div class="ulev-9 ub-f1 marg-l ut-m line1">我的资产</div>
+          <div class="ulev-2 umar-r sc-text-hui border-faxianitle">查看全部资产</div>
+          <div class="jiantou-right h-w-1 ub-img"></div>
+        </li>
+      </ul>
+      <div class="ub bg-color-w p-t-b4 ub-ae">
+        <div class="ub ub-f1 ub-pc ub-ac ulev-1" id="user_red_package">
+          <div class="user-zj-icon1 ub-img h-w-2"></div>
+          <div class="m-l2">红包</div>
+          <div class="m-l2 f-color-red">{$info.bonus|default:0}</div>
+        </div>
+        <div class="ub ub-f1 ub-pc ub-ac ulev-1">
+          <div class="user-zj-icon2 ub-img h-w-2"></div>
+          <div class="m-l2">积分</div>
+          <div class="m-l2 f-color-red">{$info.integral|default:0}</div>
+        </div>
+        <div class="ub ub-f1 ub-pc ub-ac ulev-1 user_capital">
+          <div class="user-zj-icon3 ub-img h-w-2"></div>
+          <div class="m-l2">余额</div>
+          <div class="m-l2 f-color-red">{$info.surplus|default:0}</div>
+        </div>
+      </div>
+    </div>
+   
+   <div class="uinn-p2 ubb border-hui">
+       <div class="ub bg-color-w ub ub-ac ub-pc" id="address-list">
+            <div class="ub-img h-w-6 user-icon1 m-l-r1"></div>
+            <div class="ub ub-ac ubb border-faxian ub-f1 p-t-b4">
+                <div class="ulev-9 f-color-zi ub-f1">收货地址</div>
+                <div class="jiantou-right h-w-1 ub-img umar-ar6"></div>
+            </div>
+       </div>
+       <div class="ub bg-color-w ub ub-ac ub-pc" id="user_store_card">
+            <div class="ub-img h-w-6 user-icon2 m-l-r1"></div>
+            <div class="ub ub-ac ub-f1 p-t-b4">
+                <div class="ulev-9 f-color-zi ub-f1">储值卡充值</div>
+                <div class="jiantou-right h-w-1 ub-img umar-ar6"></div>
+            </div>
+       </div>
+   </div>
+   
+   <div class="uinn-p2 ubb border-hui">
+   		<div class="ub bg-color-w ub ub-ac ub-pc" id="user_sun">
+            <div class="ub-img h-w-6 user-icon6 m-l-r1"></div>
+            <div class="ub ub-ac ubb border-faxian ub-f1 p-t-b4">
+                <div class="ulev-9 f-color-zi ub-f1">商品评价/晒单</div>
+                <div class="jiantou-right h-w-1 ub-img umar-ar6"></div>
+            </div>
+       </div>
+       <div class="ub bg-color-w ub ub-ac ub-pc" id="user_less_list">
+            <div class="ub-img h-w-6 user-icon3 m-l-r1"></div>
+            <div class="ub ub-ac ubb border-faxian ub-f1 p-t-b4">
+                <div class="ulev-9 f-color-zi ub-f1">缺货登记</div>
+                <div class="jiantou-right h-w-1 ub-img umar-ar6"></div>
+            </div>
+       </div>
+       <div class="ub bg-color-w ub ub-ac ub-pc" id="user_message">
+            <div class="ub-img h-w-6 user-icon4 m-l-r1"></div>
+            <div class="ub ub-ac ub-f1 p-t-b4">
+                <div class="ulev-9 f-color-zi ub-f1">我的留言</div>
+                <div class="jiantou-right h-w-1 ub-img umar-ar6"></div>
+            </div>
+       </div>
+   </div>
+  
+  
+  {if $login eq 1}
+  <div class="uinn-p2 ubb border-hui m-btm1">
+       <div class="ub bg-color-w ub ub-ac ub-pc" id='logout_button'>
+            <div class="ub-img h-w-6 user-icon5 m-l-r1"></div>
+            <div class="ub ub-ac ub-f1 p-t-b5">
+                <div class="ulev-9 f-color-zi ub-f1">退出</div>
+                <div class="jiantou-right h-w-1 ub-img umar-ar6"></div>
+            </div>
+       </div>
+   </div>
+  {/if}
+</div>

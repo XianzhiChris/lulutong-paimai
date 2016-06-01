@@ -1,0 +1,50 @@
+{foreach from=$orders item=item}
+<div class="ub ub-ver uba bg-color-w border-hui m-top3">
+    <ul class="uinn-p2">
+      <li class="ubb ub border-hui bg-color-w bc-text ub-ac lis" data-index="2">
+        <div class="lis-icon-s ub-img" style="background-image:url(img/icons/myImg1.png)"></div>
+        <div class="lv_title f-color-black ulev-1 ub-f1 marg-l ub ub-ver ut-m line1">订单状态</div>
+        <div class="f-color-red f-color-gray1 ulev-1 umar-r lv_subTitle">
+		{$item.order_status_text}&nbsp;{$item.pay_status_text}&nbsp;{$item.shipping_status_text}</div>
+      </li>
+    </ul>
+    <div class="uinn-a7 ub ub-ver">
+      <div class="p-t-b5 ub " id="listview">
+        <ul id="check_order_detail">
+		{foreach from=$item.goods_list item=goods name=goods}
+          <li class="ubb ub border-hui t-bla ub-ac lis" data-index="0">
+            <ul class="ub ub ub-ver">
+              <li class="">
+                <div class="lis-icon ub-img" style="background-image:url({$url}{$goods.thumb})"></div>
+                <div class="ulev-1 bc-text umar-t"></div>
+              </li>
+            </ul>
+            <ul class="ub-f1 ub ub-pj ub-ac">
+              <ul class="ub-f1 ub ub-ver marg-l">
+                <li class="bc-text ub ub-ver ut-m line1">{$goods.goods_name}</li>
+                <li class="ulev-2 uinn3">{if $goods.goods_attr}{$goods.goods_attr|nl2br}{/if}</li>
+              </ul>
+              <ul class="ub ub-ver ub-ae umar-r">
+                <li class="bc-text lv_subTitle">{$goods.formated_goods_price}</li>
+                <li class="ulev-2 uinn3">x{$goods.goods_number}</li>
+              </ul>
+            </ul>
+          </li>
+		  {/foreach}
+        </ul>
+      </div>
+      <div class="ub ub-ac uinn-a1 ub-ac ubb border-hui">
+        <div class="ub-f1 ub-pe ub"> <span class="t-gra5 ulev-4">订单总金额：</span><span class="sc-text-warn">{$item.total_fee}</span> </div>
+      </div>
+	  {if $item.handler}
+      <div class="ub ub-pe p-t-b5">
+        <div class="ub ub-ac ub-pe ulev-1">
+		{foreach from=$item.handler item=handler}
+		<div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1 mar-ar1 order_action" data_action="{$handler.code}" order_id="{$item.order_id}"> {$handler.name} </div>
+		{/foreach}
+        </div>
+      </div>
+	  {/if}
+    </div>
+  </div>
+ {/foreach}

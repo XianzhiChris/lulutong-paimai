@@ -1,0 +1,212 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{$page_title}</title>
+    <meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link href="css/public.css" rel="stylesheet" type="text/css"/>
+    <link href="css/auction.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    {insert_scripts files='jquery.json.js,transport.js'}
+    <script type="text/javascript" src="js/touchslider.dev.js"></script>
+    <script type="text/javascript" src="js/paimai.js"></script>
+    <script type="text/javascript" src="js/setHdTime.js"></script>
+    {insert_scripts files='common.js'}
+
+</head>
+<body>
+    <script type="text/javascript">
+        var process_request = "{$lang.process_request}";
+    </script>
+    <script language="javascript">
+        <!--
+        /*屏蔽所有的js错误*/
+        function killerrors() {
+            return true;
+        }
+        window.onerror = killerrors;
+        //-->
+        function tiaozhuan()
+        {
+            var thisurl = window.location.href;
+            location.href='share_goods.php?content={$goods.goods_style_name}&pics={$goods.goods_img}&gid={$goods.goods_id}&url='+thisurl;
+        }
+    </script>
+    <script type="text/javascript">
+        /*第一种形式 第二种形式 更换显示样式*/
+        function setGoodsTab(name,cursel,n){
+            $('html,body').animate({'scrollTop':0},600);
+            for(i=1;i<=n;i++){
+                var menu=document.getElementById(name+i);
+                var con=document.getElementById("user_"+name+"_"+i);
+                menu.className=i==cursel?"on":"";
+                con.style.display=i==cursel?"block":"none";
+            }
+        }
+    </script>
+    <div class="showpage">
+    <!-----------------------------------商品-------------------------------------->
+        <div class="main" id="user_goods_ka_1" style="display:block;">
+            <!-- 单品介绍图片 -->
+            <!-- #BeginLibraryItem "/library/goods_gallery.lbi" --><!-- #EndLibraryItem -->
+            <div class="status clear">
+                <!-- {if $auction.status_no eq 0} 未开始 -->
+                <div class="paimai">尚未开始</div>
+                <div class="time" data-startTime="{$auction.gmt_start_time}" data-endTime="{$auction.gmt_end_time}">{$lang.please_waiting}</div>
+                <!-- {elseif $auction.status_no eq 1} 进行中 -->
+                <div class="paimai">正在进行</div>
+                <div class="time" data-startTime="{$auction.gmt_start_time}" data-endTime="{$auction.gmt_end_time}">{$lang.please_waiting}</div>
+                <!-- {else} 已结束 -->
+                <div class="paimai">拍卖结束</div>
+                <div class="time">结束时间:{$auction.end_time}</div>
+                <!-- {/if} -->
+            </div>
+        <div class="product_info">
+            <div class="info_dottm">
+                <h3 class="name">{$auction.act_name|escape:html}</h3>
+                <div class="right"><a onClick="tiaozhuan()"><div id="pro_share" class="share"></div></a></div>
+            </div>
+            <!--价格-->
+            <dl class="goods_price">
+                <dt>
+                <div class="dqj">
+                    <b>RMB</b>
+                    <span>当前价</span>
+                </div>
+                <span id="ECS_GOODS_AMOUNT" style="  margin-left:10px;">{$auction.formated_current_price}</span><span id="dqj">{$auction.current_price}</span>
+                </dt>
+            </dl>
+            <ul class="price_dottm">
+                <li style=" text-align:left">起拍价<em>{$auction.formated_start_price}</em></li>
+                <li>出价<em>{$auction_log_count}</em>次</li>
+                <li style=" text-align:right">围观<em>{$auction.act_count}</em>次</li>
+            </ul>
+        </div>
+
+        <section id="chujia" class="nr">
+            <div class="ui-sx bian1">
+                <div class="subNavBox">
+                    <!-- {if $auction.status_no eq 0} 未开始 -->
+                    <div class="swks">尚未开始</div>
+                    <!-- {elseif $auction.status_no eq 1} 进行中 -->
+                    <!-- {if $smarty.session.user_id} -->
+                    <div class="cjjl clear">
+                        <form name="theForm" action="auction.php" method="post" onsubmit="return checkchujiaform()">
+                            <div class="inputBg">
+                                <i>出&nbsp;&nbsp;价</i>
+                                <input type="text" value="￥" disabled id="zzjg" >
+                            </div>
+                            <div class="bnt_blue">
+                                <input name="bid" type="submit" value="{$lang.button_bid}"/>
+                            </div>
+                            <div class="cjkj" id="cjkj">
+                                <a data-cj="10">+10</a><a data-cj="50">+50</a><a data-cj="100">+100</a><a data-cj="200">+200</a>
+                            </div>
+                            <input type="hidden" value="" name="price" id="zzjg2" >
+                            <input name="act" type="hidden" value="bid" />
+                            <input name="id" type="hidden" value="{$auction.act_id}" />
+                            <input name="act_count" type="hidden" value="{$auction_log_count}" />
+                        </form>
+                    </div>
+                    <!-- {else}-->
+                    <div class="qdl">请登录会员参与竞拍</div>
+                    <!--{/if}-->
+                    <!-- {else} 已结束 -->
+                    <!-- {if $auction.is_winner} -->
+                    <div class="jsgm">
+                        <!-- {if $auction.closed} -->
+                        <span>拍卖结束超过24小时,交易关闭</span>
+                        <!-- {elseif $auction.is_finished} 购买成功 -->
+                        <span>恭喜您已成功购买此拍品</span>
+                        <!-- {else} -->
+                        <span>{$lang.au_is_winner}</span>
+                        <form name="theForm" action="auction.php" method="post" target="_blank">
+                        <input name="buy" type="submit" class="bnt_blue_1" value="{$lang.button_buy}" />
+                        <input name="act" type="hidden" value="buy" />
+                        <input name="id" type="hidden" value="{$auction.act_id}" />
+                        </form>
+                        <!-- {/if} -->
+                    </div>
+                    <!-- {else} -->
+
+                    <!-- {if $auction_log_count>0} -->
+                    <!-- {if $smarty.session.user_id} -->
+                    <div class="pmjs">
+                        {$lang.au_finished}，{$lang.au_final_bid_not_you}
+                    <!-- {else} -->
+                    <div class="gx">恭喜{$auction.user_name}成功拍到此商品
+                    <!-- {/if} -->
+                    <!-- {else} -->
+                    <div class="pmjs">
+                        {$lang.au_finished}，此商品流拍
+                    <!-- {/if} -->
+                    </div>
+                    <!-- {/if} -->
+                    <!-- {/if} -->
+                </div>
+            </div>
+        </section>
+
+        <section id="search_ka" class="nr">
+            <div class="ui-sx bian1">
+                <div class="subNavBox">
+                    <div class="subNav"><strong>拍卖记录({$auction_log_count})</strong></div>
+                    <ul class="cjlb">
+                        <li>
+                            <dl class="chujiajilu">
+
+                                <!-- {foreach from=$auction_log item=log name=fe_bid_log} -->
+                                <dd{if $smarty.foreach.fe_bid_log.iteration eq 1} class="get"{/if}>
+                                    <span class="zt">
+                                    {if $smarty.foreach.fe_bid_log.iteration eq 1}领先
+                                    {else}出局{/if}
+                                    </span>
+                                    <span class="price"><em class="pm-num">{$log.formated_bid_price}</em></span>
+                                    <span class="user">{$log.user_name}</span>
+                                    <span class="time"><em class="pm-num">{$log.formated_bid_time}</em></span>
+                                </dd>
+                                <!-- {/foreach} -->
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="search_ka" class="nr">
+            <div class="ui-sx bian1">
+                <div class="subNavBox" >
+                    <div class="subNav"><strong>送拍机构：</strong>{$brand_info.brand_name}</div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!---------------------------------详情----------------------------------->
+    <div class="nr" id="user_goods_ka_2">
+        <div class="product_main" style=" margin-top:40px;"> <!-- 产品图片 -->
+            <div class="product_images product_desc" id="product_desc"> {$auction_goods.goods_desc} </div>
+        </div>
+    </div>
+
+    <!---底部导航-->
+    <div>
+    <footer>
+        <!-- #BeginLibraryItem "/library/footer_nav.lbi" -->
+        <!-- #EndLibraryItem -->
+    </footer>
+    </div>
+    <script>
+        function goTop(){
+            $('html,body').animate({'scrollTop':0},600);
+        }
+    </script>
+    <a href="javascript:goTop();" class="gotop"><img src="images/topup.png"></a>
+    <!---搜索弹出层--->
+    <!-- #BeginLibraryItem "/library/search_page.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

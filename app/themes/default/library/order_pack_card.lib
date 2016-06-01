@@ -1,0 +1,34 @@
+<!--使用包装和贺卡开始-->
+<div class="uinn-eo5 ub ubt border-hui ub-ac">
+  <div class="ub-f1 ulev-4 t-gra-95"> 使用包装和贺卡</div>
+  <div class="tx-r sc  rtext f-color-gray1 ulev-1 umar-r lv_subTitle fold" sub_fold_id='tr2'>请选择</div>
+</div>
+<div id="tr2" style="display:none">
+  <div class="uinn-eo8 ub b-gra-d6 ub-ac">
+    <div class="ub-f1 ulev-4 t-gra-95"> 使用包装</div>
+        <select name="pack" id='pack'>
+          <option value="0" {if $order.pack_id eq 0}selected{/if} >不使用包装</option>
+          <!-- {foreach from=$pack_list item=pack} 循环包装 -->
+          <option value="{$pack.pack_id}" {if $order.pack_id eq $pack.pack_id}selected{/if} pack_img="{$url}data/packimg/{$pack.pack_img}">{$pack.pack_name}({$pack.format_pack_fee} 免费额度：{$pack.format_free_money})</option>
+          <!-- {/foreach} -->
+        </select>
+		
+		<div id='pack_img_button' {if $order.pack_id gt 0}style='display:block;'{else}style='display:none;'{/if} >查看包装</div>
+  </div>
+  <div class="uinn-eo8 ub b-gra-d6 ub-ac">
+    <div class="ub-f1 ulev-4 t-gra-95 fold"> 使用贺卡</div>
+	<select name="card" id='card' class="otherinput">
+	  <option value="0" {if $order.card_id eq 0}selected{/if} >{$lang.no_card}</option>
+	  <!-- {foreach from=$card_list item=card} 循环贺卡 -->
+	  <option value="{$card.card_id}" {if $order.card_id eq $card.card_id}selected{/if} card_img="{$url}data/cardimg/{$card.card_img}">{$card.card_name}({$card.format_card_fee} 免费额度：{$card.format_free_money})</option>
+	  <!-- {/foreach} -->
+	</select>
+	<div id='card_img_button' {if $order.card_id gt 0}style='display:block;'{else}style='display:none;'{/if}>查看贺卡</div>
+  </div>
+  <div class="uinn-eo3 bg-color-w checkout_p uinn-eo9">
+    <div class="uinput bg-color uc-a3 ub ub-f1">
+      <textarea id='card_message' placeholder="祝福语" type="text" class="ulev-4 t-gra-95" {if $order.card_id lte 0}disabled=true{/if}></textarea>
+    </div>
+  </div>
+</div>
+<!--使用包装和贺卡结束-->

@@ -1,0 +1,62 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <form name="compareForm" action="compare.php" method="post" onSubmit="return compareGoods(this);">
+  <!--<div class="row row-wrapper c-product-sort" order="1 "> 
+    <!--选中加class：active，默认为升序，降序加class：down-->
+    <div class="small-4 left"> <a href="" class="tab active"> <i class="icon-volume"></i> <span>销量</span> </a> </div>
+    <div class="small-4 left"> <a href="" class="tab"> <i class="icon-price"></i> <span>价格</span> </a> </div>
+    <div class="small-4 left"> <a href="" class="tab"> <i class="icon-new"></i> <span>新品</span> </a> </div>
+  </div>-->
+  <!--商品列表-->
+  <div class="row row-wrapper c-product-list">
+    <div class="small-12 columns">
+   <!-- {if $goods_list} -->
+      <ul class="small-block-grid-2 list">
+      <!--{foreach from=$goods_list item=goods name=s_goods}-->
+      <!-- {if $goods.goods_id != ""} -->
+        <li>
+          <div class="info"> <a class="product-img" href="{$goods.url}"> <img src="{$goods.goods_thumb}" alt="{$goods.goods_name}" srcset="{$goods.goods_thumb}" srcd="{$goods.goods_thumb}"> </a>
+            <div class="layout"> <a class="product-info" href="javascript:;">{$goods.goods_name}</a> <span class="price" jshop="price"><!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}--></span> </div>
+          </div>
+        </li>
+       <!-- {/if}-->
+      <!--{/foreach}-->
+      </ul>
+    <!-- {else} -->
+    <ul class="new-mu_l2w">
+	<div class="new-cp-prom2">
+    <span class="new-logo2"></span>
+    <strong class="new-span-block">抱歉暂时没有相关结果，换个词试试吧</strong>
+    </div>
+	</ul>
+    <!-- {/if}-->
+    </div>
+  </div>
+  </form>
+<script type="Text/Javascript" language="JavaScript">
+<!--
+{literal}
+function selectPage(sel)
+{
+  sel.form.submit();
+}
+{/literal}
+//-->
+</script>
+<script type="text/javascript">
+window.onload = function()
+{
+  Compare.init();
+  fixpng();
+}
+{foreach from=$lang.compare_js item=item key=key}
+{if $key neq 'button_compare'}
+var {$key} = "{$item}";
+{else}
+var button_compare = '';
+{/if}
+{/foreach}
+var compare_no_goods = "{$lang.compare_no_goods}";
+var btn_buy = "{$lang.btn_buy}";
+var is_cancel = "{$lang.is_cancel}";
+var select_spe = "{$lang.select_spe}";
+</script>

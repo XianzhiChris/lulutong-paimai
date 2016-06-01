@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- #BeginLibraryItem "/library/header.lbi" --><!-- #EndLibraryItem -->
+	<title>{$page_title}</title>
+	<meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+    <link href="css/jquery.jqzoom.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!-- #BeginLibraryItem "/library/page_paimai_header.lbi" --><!-- #EndLibraryItem -->
+	<div id="nymain">
+	    <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+        <div class="auction w">
+            <div class="l">
+                <div class="head">
+                    <div class="img">
+                        <div class="goods_img"><a href="{$pictures.0.img_original}" class="jqzoom" rel='gal1' title="triumph" id="jqzoom1">
+                          <!-- {if $pictures}-->
+                          <img src="{$pictures.0.img_url}" />
+                          <!-- {/if}-->
+                          </a> </div>
+                        <div style="height:10px; line-height:10px; clear:both;"></div>
+                        <!--相册 START-->
+                        <!-- #BeginLibraryItem "/library/auction_gallery.lbi" --><!-- #EndLibraryItem -->
+                        <!--相册 END-->
+                    </div>
+                    <div class="info">
+                        <h1>{$auction.act_name|escape:html}</h1>
+                        <div class="status">
+
+                            <!-- {if $auction.status_no eq 0} 未开始 -->
+                            <div class="paimai">尚未开始</div>
+                            <div class="time" data-startTime="{$auction.gmt_start_time}" data-endTime="{$auction.gmt_end_time}">{$lang.please_waiting}</div>
+                            <!-- {elseif $auction.status_no eq 1} 进行中 -->
+                            <div class="paimai">正在进行</div>
+                            <div class="time" data-startTime="{$auction.gmt_start_time}" data-endTime="{$auction.gmt_end_time}">{$lang.please_waiting}</div>
+                            <!-- {else} 已结束 -->
+                            <div class="paimai">拍卖结束</div>
+                            <div class="time">结束时间:{$auction.end_time}</div>
+                            <!-- {/if} -->
+
+                            <div class="people">
+                                <span class="cj"><em>{$auction_log_count}</em>次出价</span>
+                                <span class="wg"><em>{$auction.act_count}</em>次围观</span>
+                                <span class="wg">起拍价:<em>￥{$auction.formated_start_price}</em></span>
+                                <span class="wg">保证金:<em>￥{$auction.formated_deposit}</em></span>
+                            </div>
+                        </div>
+                        <div class="start">
+                            <div class="dqj">当前价：<span>￥{$auction.formated_current_price}</span><span id="dqj">{$auction.current_price}</span></div>
+                            <!-- {if $auction.status_no eq 0} 未开始 -->
+                            <div class="swks">尚未开始</div>
+                            <!-- {elseif $auction.status_no eq 1} 进行中 -->
+                            <!-- {if $smarty.session.user_id} -->
+                            <div class="cj">
+                                <form name="theForm" action="auction.php" method="post" onsubmit="return checkchujiaform()">
+                                    出&nbsp;&nbsp;&nbsp;&nbsp;价：
+                                    <input type="text" value="￥" disabled class="inputBg" id="zzjg" >
+                                    <input type="hidden" value="" name="price" id="zzjg2" >
+                                    <input name="bid" type="submit" class="bnt_blue" value="{$lang.button_bid}"/>
+
+                                    <input name="act" type="hidden" value="bid" />
+                                    <input name="id" type="hidden" value="{$auction.act_id}" />
+                                    <input name="act_count" type="hidden" value="{$auction_log_count}" />
+                                </form>
+                            </div>
+                            <div class="cjkj" id="cjkj">
+                                <a data-cj="10">+10元</a><a data-cj="50">+50元</a><a data-cj="100">+100元</a><a data-cj="200">+200元</a>
+                            </div>
+                            <!-- {else}-->
+                            <div class="qdl"><a href="user.php">本次拍品仅供注册会员参与</a></div>
+                            <!--{/if}-->
+                            <!-- {else} 已结束 -->
+                            <!-- {if $auction.is_winner} -->
+                            <div class="jsgm">
+                                <!-- {if $auction.closed} -->
+                                <span>拍卖结束超过24小时,交易关闭</span>
+                                <!-- {elseif $auction.is_finished} 购买成功 -->
+                                <span>恭喜您已成功购买此拍品</span>
+                                <!-- {else} -->
+                                <span>{$lang.au_is_winner}</span>
+                                <form name="theForm" action="auction.php" method="post" target="_blank">
+                                <input name="buy" type="submit" class="bnt_blue_1" value="{$lang.button_buy}" />
+                                <input name="act" type="hidden" value="buy" />
+                                <input name="id" type="hidden" value="{$auction.act_id}" />
+                                </form>
+                                <!-- {/if} -->
+                            </div>
+                            <!-- {else} -->
+
+                            <!-- {if $auction_log_count>0} -->
+                            <!-- {if $smarty.session.user_id} -->
+                            <div class="pmjs">
+                                {$lang.au_finished}，{$lang.au_final_bid_not_you}
+                            <!-- {else} -->
+                            <div class="gx">恭喜{$auction.user_name}成功拍到此商品
+                            <!-- {/if} -->
+                            <!-- {else} -->
+                            <div class="pmjs">
+                                {$lang.au_finished}，此商品流拍
+                            <!-- {/if} -->
+                            </div>
+                            <!-- {/if} -->
+                            <!-- {/if} -->
+                        </div>
+                        <div class="beizhu">
+                            <ul>
+                                <li>参与资格： </li>
+                                <li>本次拍卖仅支持注册会员参与</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="more">
+                    <div class="jplc"><a href="article.php?id=67" target="_blank"></a><a href="user.php" target="_blank"></a></div>
+                    <div class="info">
+                        <ul id="tab_hd">
+                            <li class="curr">拍品描述</li>
+                            <li>出价记录</li>
+                            <li>卖家承诺</li>
+                        </ul>
+                        <div class="clear"></div>
+                        <ul id="tab_bd">
+                            <li class="curr">{$auction_goods.goods_desc}</li>
+                            <li>
+                                <dl class="chujiajilu">
+                                    <dt>
+                                         <span class="status">状态</span>
+                                         <span class="price">价格</span>
+                                         <span class="user">竞拍人</span>
+                                         <span class="time">时间</span>
+                                    </dt>
+                                    <!-- {foreach from=$auction_log item=log name=fe_bid_log} -->
+                                    <dd{if $smarty.foreach.fe_bid_log.iteration eq 1} class="get"{/if}>
+                                        <span class="status">
+                                        {if $smarty.foreach.fe_bid_log.iteration eq 1}领先
+                                        {else}出局{/if}
+                                        </span>
+                                        <span class="price">¥<em class="pm-num">{$log.formated_bid_price}</em></span>
+                                        <span class="user">{$log.user_name}</span>
+                                        <span class="time"><em class="pm-num">{$log.formated_bid_time}</em></span>
+                                    </dd>
+                                    <!-- {/foreach} -->
+                                </dl>
+                            </li>
+                            <li>
+                                <p>一、服务承诺<br>
+
+                                A.作者本人委托作品或经专家鉴定作品，作品介绍备注栏注明“保真”。<br>
+                                B. 商家未经认证或无能力认证作品以实物为准，不负责瑕疵。
+
+                                <p>二、竞拍活动基础服务<br>
+
+                                1.如实描述承诺：卖家承诺如实描述，一旦发现描述不符的拍品，买家可在交易成功后指定期限内通过路路通平台投诉卖家。<br>
+
+                                2.保证金保障：卖家入驻竞拍平台需缴纳较高的经营保证金，买家维权有保障。</p>
+
+                                <p>三、拍卖特色服务<br>
+                                A. 不支持7天无理由退货<br>
+
+                                拍卖拍品不同于普通网购商品，多数属于孤品或者数量较少，消费者通过竞价方式购买拍品，一旦售出将影响拍品价值，不支持7天无理由退货。<br>
+
+                                B. 支持线下预览<br>
+
+                                支持线下预览是指卖家已选定场地预展拍品，竞买人可在竞拍结束前，亲自或委托他人查看竞拍品实物。<br>
+
+                                C. 提供鉴定证书<br>
+
+                                选择提供鉴定证书即卖家承诺所发布的拍品已取得省级以上鉴定证书或作者本人出具的书面鉴定文本。</p>
+                            </li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="r">
+                <div class="seller">
+                    <p>送拍机构：{$brand_info.brand_name}</p>
+                    <p>历史拍品<em>{$brand_info.total}</em>件</p>
+                    <div class="kefu"><a href="">在线客服</a></div>
+                </div>
+                <div class="jilu">
+                    <h3>出价记录({$auction_log_count})</h3>
+                    <dl>
+                        <dt>
+                             <span class="status">状态</span>
+                             <span class="price">价格</span>
+                             <span class="user">竞拍人</span>
+                             <span class="time">时间</span>
+                        </dt>
+                        <!-- {foreach from=$auction_log item=log name=fe_bid_log} -->
+                        <dd{if $smarty.foreach.fe_bid_log.iteration eq 1} class="get"{/if}>
+                            <span class="status">
+                            {if $smarty.foreach.fe_bid_log.iteration eq 1}领先
+                            {else}出局{/if}
+                            </span>
+                            <span class="price">¥<em class="pm-num">{$log.formated_bid_price}</em></span>
+                            <span class="user">{$log.user_name}</span>
+                            <span class="time"><em class="pm-num">{$log.formated_bid_time}</em></span>
+                        </dd>
+                        <!-- {/foreach} -->
+                    </dl>
+                    <a class="seemore" id="seemore">查看更多&gt;</a>
+                    <div class="clear"></div>
+                </div>
+                <!-- TemplateBeginEditable name="精品展示" -->
+                <!-- #BeginLibraryItem "/library/recommend_best.lbi" -->
+                <!-- #EndLibraryItem -->
+                <!-- TemplateEndEditable -->
+            </div>
+            <div class="clear"></div>
+        </div>
+	</div>
+    <!-- #BeginLibraryItem "/library/page_paimai_footer.lbi" --><!-- #EndLibraryItem -->
+    <script type="text/javascript" src="js/jquery-1.6.js"></script>
+    <script type="text/javascript" src="js/jquery.jqzoom-core.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#jqzoom1').jqzoom({
+                zoomType: 'standard',
+                lens: true,
+                preloadImages: false,
+                alwaysOn: false,
+                zoomWidth:350,
+                zoomHeight:350,
+                title:false,
+                showPreload:false
+            });
+        });
+    </script>
+    <script type="text/javascript" src="js/setHdTime.js"></script>
+</body>
+</html>

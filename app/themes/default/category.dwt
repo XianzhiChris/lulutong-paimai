@@ -1,0 +1,23 @@
+<div class="cgy_left ub-ver bc-grey">
+{foreach from=$category item=level1 name=category}
+   <div class="cgy-left-div ubb border-hui ulev-9 f-color-zi {if $smarty.foreach.category.iteration gt 1}ubr{else}curr{/if}" id="cgy_name{$smarty.foreach.category.iteration}" onClick=setTabCatGoods('cgy_name',{$smarty.foreach.category.iteration},{$cat_count})>{$level1.cat_name}</div>
+{/foreach}
+</div>
+{foreach from=$category item=level1 name=category}
+<div class="cgy_right bg-color-w" id="cgy_name_{$smarty.foreach.category.iteration}" {if $smarty.foreach.category.iteration gt 1}style='display:none;'{/if}>
+	<div class="cgy_ad_div cat_id" cat_id='{$level1.cat_id}'>
+	  <img src="img/ad-img.jpg">           
+	</div>
+{foreach from=$level1.list item=level2}
+	<div class="cgy_name2 cat_id" cat_id='{$level2.cat_id}'>{$level2.cat_name}</div>
+	<div class="cgy_name3_div">
+	{foreach from=$level2.children item=level3}
+	<div class="cgy_name3 ub-ver cat_id"  cat_id='{$level3.cat_id}'>
+			<img src="img/cty-icon.png"/>
+			<div>{$level3.cat_name}</div>
+		</div>    
+	{/foreach}
+		</div>
+{/foreach}
+</div>
+{/foreach}

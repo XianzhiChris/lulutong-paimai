@@ -1,0 +1,12 @@
+<div id='goods_attr' style='background-color:#fff'>
+<div>
+{foreach from=$spe_array item=level1}
+<div attr_type="{$level1.attr_type}" attr_id="{$level1.attr_id}" >{$level1.name}
+{foreach from=$level1.values item=level2}
+<div price="{$level2.price}" format_price="{$level2.format_price}" id="{$level2.id}" >{$level2.label}</div>
+{/foreach}
+</div>
+{/foreach}
+<div>确定</div>
+</div>
+</div>

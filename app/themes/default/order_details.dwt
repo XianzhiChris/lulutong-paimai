@@ -1,0 +1,266 @@
+<ul class="uinn-p2 m-bottom1">
+  <li class="ubb ub border-hui bc-text ub-ac lis bg-color-w1 uinn-eo3">
+    <div class="lis-icon-s ub-img" style="background-image:url(img/icons/myImg1.png)"></div>
+    <div class="lv_title f-color-black ulev-1 ulev-1 ub-f1 marg-l ub ub-ver ut-m line1">{$lang.order_status}</div>
+  </li>
+   <div class="uinn-eo3 uinn-eo6 bg-color-w1">
+    <div class="ub ub-ac umar-at2">
+      <div class="t-gra-82 ulev-1"> {$lang.detail_order_sn}： </div>
+      <div class="ub-f1 ulev-1 umar-l-ec">{$order.order_sn}</div>
+    </div>
+	<div class="ub ub-ac umar-at2">
+      <div class="t-gra-82 ulev-1"> {$lang.detail_order_status}： </div>
+      <div class="ub-f1 ulev-1 umar-l-ec">{$order.order_status}&nbsp;&nbsp;&nbsp;&nbsp;{$order.confirm_time}</div>
+    </div>
+    <div class="ub ub-ac umar-at2">
+      <div class="t-gra-82 ulev-1"> {$lang.detail_pay_status}： </div>
+      <div class="ub-f1 ulev-1 umar-l-ec">{$order.pay_status}&nbsp;&nbsp;&nbsp;&nbsp;{if $order.order_amount gt 0}{$order.pay_online}{/if}{$order.pay_time}</div>
+    </div>
+    <div class="ub ub-ac umar-at2">
+      <div class="t-gra-82 ulev-1"> {$lang.detail_shipping_status}： </div>
+      <div class="ub-f1 ulev-1 umar-l-ec">{$order.shipping_status}&nbsp;&nbsp;&nbsp;&nbsp;{$order.shipping_time}</div>
+    </div>
+	<!-- {if $order.invoice_no}-->
+	<div class="ub ub-ac umar-at2">
+      <div class="t-gra-82 ulev-1"> {$lang.consignment}： </div>
+      <div class="ub-f1 ulev-1 umar-l-ec">{$order.invoice_no}</div>
+    </div>
+    <!--{/if}--> 
+  </div>
+</ul>
+<div class="ub bg-color-w uinn-eo1 ub-ac">
+  <div class="ub-img umw1 umh1 address-icon mar-ar1"></div>
+  <div class="ub ub-f1 ub-ver  t-wh">
+    <div class="ub">
+      <div class="ulev-app2 ulev-1 ub-f1"> {$lang.consignee_name}：{$order.consignee|escape}</div>
+      <div class="ulev-app2 ulev-1 ub-pe ufm1"> {$lang.email_address}：{$order.email|escape} </div>
+    </div>
+	{if $order.exist_real_goods}
+    <div class="ulev-4 line-hei umar-t"> {$lang.detailed_address}：{$order.address|escape} {$lang.postalcode}：{$order.zipcode|escape}</div>
+	{/if}
+	<div class="ub">
+      <div class="ulev-app2 ulev-1 ub-f1"> {$lang.phone}：{$order.tel|escape}</div>
+      <div class="ulev-app2 ulev-1 ub-pe ufm1"> {$lang.backup_phone}：{$order.mobile|escape} </div>
+    </div>
+	{if $order.exist_real_goods}
+	<div class="ub">
+      <div class="ulev-app2 ulev-1 ub-f1"> {$lang.sign_building}：{$order.sign_building|escape}</div>
+      <div class="ulev-app2 ulev-1 ub-pe ufm1"> {$lang.deliver_goods_time}：{$order.best_time|escape} </div>
+    </div>
+	{/if}
+  </div>
+</div>
+<ul class="uinn-p2">
+  <li class="ubb ub border-hui bg-color-w bc-text ub-ac lis">
+    <div class="lis-icon-s ub-img" style="background-image:url(img/icons/myImg1.png)"></div>
+    <div class="lv_title f-color-black ulev-1 ub-f1 marg-l ub ub-ver ut-m line1">{$order.referer}</div>
+    <div class="f-color-red f-color-gray1 ulev-1 umar-r lv_subTitle">></div>
+  </li>
+</ul>
+{foreach from=$goods_list item=goods}
+{if $goods.goods_id gt 0 && $goods.extension_code neq 'package_buy'}
+<div class="uinn-eo3 bg-color-w1">
+  <div class="uinn-eo4 ub ubb b-gra-d6">
+    <div class="uh-app1 uw-app2 mar-ar1 ub-img" style="background-image:url({$url}{$goods.goods_thumb});"></div>
+    <div class=" ub-f1 ulev-1 mar-ar1"> {$goods.goods_name}
+		{if $goods.parent_id > 0}
+		<span style="color:#DD0000">（{$lang.accessories}）</span> 
+		{elseif $goods.is_gift}
+		<span style="color:#DD0000">（{$lang.largess}）</span> 
+		{/if}
+	</div>
+    <div class="ub ub-ver ub-ae">
+      <div class="sc-text-hui ufm1 ulev-4"> {$goods.goods_price} </div>
+      <div class="sc-text-hui ufm1 ulev-4"> x{$goods.goods_number} </div>
+    </div>
+  </div>
+</div>
+{elseif $goods.goods_id gt 0 && $goods.extension_code eq 'package_buy'}
+{/if}
+{/foreach}
+<ul class="uinn-p2 m-bottom1 m-top3 bg-color-w1">
+  <li class="ubb ub border-hui bc-text ub-ac lis uinn-eo3">
+    <div class="lis-icon-s ub-img" style="background-image:url(img/icons/myImg1.png)"></div>
+    <div class="lv_title f-color-black ulev-1 ub-f1 marg-l ub ub-ver ut-m line1">{$lang.fee_total}</div>
+  </li>
+  <div class="uinn-eo3 uinn-eo6">
+    <div class="ub ub-ac umar-at2">
+    {$lang.goods_all_price}<!-- {if $order.extension_code eq "group_buy"} -->{$lang.gb_deposit}<!-- {/if} -->: {$order.formated_goods_amount} 
+	<!-- {if $order.discount gt 0} 折扣 --> 
+	- {$lang.discount}: {$order.formated_discount} 
+	<!-- {/if} --> 
+	<!-- {if $order.tax gt 0} --> 
+	+ {$lang.tax}: {$order.formated_tax} 
+	<!-- {/if} --> 
+	<!-- {if $order.shipping_fee > 0} --> 
+	+ {$lang.shipping_fee}: {$order.formated_shipping_fee} 
+	<!-- {/if} --> 
+	<!-- {if $order.insure_fee > 0} --> 
+	+ {$lang.insure_fee}: {$order.formated_insure_fee} 
+	<!-- {/if} --> 
+	<!-- {if $order.pay_fee > 0} --> 
+	+ {$lang.pay_fee}: {$order.formated_pay_fee} 
+	<!-- {/if} --> 
+	<!-- {if $order.pack_fee > 0} --> 
+	+ {$lang.pack_fee}: {$order.formated_pack_fee} 
+	<!-- {/if} --> 
+	<!-- {if $order.card_fee > 0} --> 
+	+ {$lang.card_fee}: {$order.formated_card_fee} 
+	<!-- {/if} -->
+    </div>
+    <div class="ub ub-ac umar-at2">
+    <!-- {if $order.money_paid > 0} --> 
+	- {$lang.order_money_paid}: {$order.formated_money_paid} 
+	<!-- {/if} --> 
+	<!-- {if $order.surplus > 0} --> 
+	- {$lang.use_surplus}: {$order.formated_surplus} 
+	<!-- {/if} --> 
+	<!-- {if $order.integral_money > 0} --> 
+	- {$lang.use_integral}: {$order.formated_integral_money} 
+	<!-- {/if} --> 
+	<!-- {if $order.bonus > 0} --> 
+	- {$lang.use_bonus}: {$order.formated_bonus} 
+	<!-- {/if} -->
+    </div>
+    <div class="ub ub-ac umar-at2">
+    {$lang.order_amount}: {$order.formated_order_amount} 
+	<!-- {if $order.extension_code eq "group_buy"} -->
+	<br />
+	{$lang.notice_gb_order_amount}
+	<!-- {elseif $order.extension_code eq "pre_sale"} -->
+	<br />
+	{$lang.notice_ps_order_amount}
+	<!-- {/if} -->
+    </div>
+  </div>
+</ul>
+<ul class="uinn-p2 m-bottom1 m-top3 bg-color-w1">
+  <li class="ubb ub border-hui bc-text ub-ac lis uinn-eo3">
+    <div class="lis-icon-s ub-img" style="background-image:url(img/icons/myImg1.png)"></div>
+    <div class="lv_title f-color-black ulev-1 ub-f1 marg-l ub ub-ver ut-m line1">{$lang.other_info}</div>
+  </li>
+  <div class="uinn-eo3 uinn-eo6">
+	<!-- {if $order.shipping_id > 0} 配送方式 -->
+    <div class="ub ub-ac umar-at2">
+      <div class="t-gra-82 ulev-1"> {$lang.shipping}：</div>
+      <div class="ub-f1 ulev-1 umar-l-ec">{$order.shipping_name}</div>
+    </div>
+	<!-- {/if} -->
+	<!-- {if $order.pay_id > 0} 支付方式 -->
+    <div class="ub ub-ac umar-at2">
+      <div class="t-gra-82 ulev-1"> {$lang.payment}： </div>
+      <div class="ub-f1 ulev-1 umar-l-ec">{$order.pay_name}</div>
+    </div>
+	<!--{/if}-->
+	<!--{if $order.insure_fee > 0} 保价费 --> 
+	<div class="ub ub-ac umar-at2">
+      <div class="t-gra-82 ulev-1"> {$lang.insure_fee}： </div>
+      <div class="ub-f1 ulev-1 umar-l-ec">{$order.insure_fee}</div>
+    </div>
+	<!--{/if}--> 
+	<!-- {if $order.pack_name} 是否使用包装 -->
+    <div class="ub ub-ac umar-at2">
+      <div class="t-gra-82 ulev-1"> {$lang.use_pack}： </div>
+      <div class="ub-f1 ulev-1 umar-l-ec">{$order.pack_name}</div>
+    </div>
+	<!-- {/if} -->
+	<!-- {if $order.card_name} 是否使用贺卡 -->
+	<div class="ub ub-ac umar-at2">
+      <div class="t-gra-82 ulev-1"> {$lang.use_card}： </div>
+      <div class="ub-f1 ulev-1 umar-l-ec">{$order.card_name}</div>
+    </div>
+	<!-- {/if} -->
+	<!-- {if $order.card_message} 是否使用贺卡 -->
+	<div class="ub ub-ac umar-at2">
+      <div class="t-gra-82 ulev-1"> {$lang.bless_note}： </div>
+      <div class="ub-f1 ulev-1 umar-l-ec">{$order.card_message}</div>
+    </div>
+	<!-- {/if} -->
+	<!-- {if $order.surplus > 0} 是否使用余额 --> 
+	<div class="ub ub-ac umar-at2">
+      <div class="t-gra-82 ulev-1"> {$lang.use_surplus}： </div>
+      <div class="ub-f1 ulev-1 umar-l-ec">{$order.surplus}</div>
+    </div>
+	<!-- {/if} -->
+	<!-- {if $order.integral > 0} 是否使用积分 -->
+	<div class="ub ub-ac umar-at2">
+      <div class="t-gra-82 ulev-1"> {$lang.use_integral}： </div>
+      <div class="ub-f1 ulev-1 umar-l-ec">{$order.integral}</div>
+    </div>
+	<!-- {/if} -->
+	<!-- {if $order.bonus > 0} 是否使用红包 --> 
+	<div class="ub ub-ac umar-at2">
+      <div class="t-gra-82 ulev-1"> {$lang.bonus}： </div>
+      <div class="ub-f1 ulev-1 umar-l-ec">{$order.bonus}</div>
+    </div>
+	<!-- {/if} --> 
+	<!-- {if $order.inv_type eq 'vat_invoice'} 增值税发票 -->
+	<table>
+	<tbody>
+	<tr>
+	  <td width="15%" align="right" bgcolor="#ffffff">{$lang.inv_type}：</td>
+	  <td width="36%" align="left" bgcolor="#ffffff">{$lang[$order.inv_type]}</td>
+	</tr>
+	<tr>
+	  <td width="15%" align="right" bgcolor="#ffffff">{$lang.inv_content}：</td>
+	  <td width="36%" align="left" bgcolor="#ffffff">{$order.inv_content}</td>
+	  <td width="19%" align="right" bgcolor="#ffffff">{$lang.label_company_name1}</td>
+	  <td width="25%" align="left" bgcolor="#ffffff">{$order.vat_inv_company_name}</td>
+	</tr>
+	<tr>
+	  <td width="15%" align="right" bgcolor="#ffffff">{$lang.label_taxpayer_id}</td>
+	  <td width="36%" align="left" bgcolor="#ffffff">{$order.vat_inv_taxpayer_id}</td>
+	  <td width="19%" align="right" bgcolor="#ffffff">{$lang.label_registration_address}</td>
+	  <td width="25%" align="left" bgcolor="#ffffff">{$order.vat_inv_registration_address}</td>
+	</tr>
+	<tr>
+	  <td width="15%" align="right" bgcolor="#ffffff">{$lang.label_registration_phone}</td>
+	  <td width="36%" align="left" bgcolor="#ffffff">{$order.vat_inv_registration_phone}</td>
+	  <td width="19%" align="right" bgcolor="#ffffff">{$lang.label_deposit_bank}</td>
+	  <td width="25%" align="left" bgcolor="#ffffff">{$order.vat_inv_deposit_bank}</td>
+	</tr>
+	<tr>
+	  <td width="15%" align="right" bgcolor="#ffffff">{$lang.label_bank_account}</td>
+	  <td width="36%" align="left" bgcolor="#ffffff">{$order.vat_inv_bank_account}</td>
+	  <td width="19%" align="right" bgcolor="#ffffff">{$lang.label_inv_consignee_name}</td>
+	  <td width="25%" align="left" bgcolor="#ffffff">{$order.inv_consignee_name}</td>
+	</tr>
+	<tr>
+	  <td width="15%" align="right" bgcolor="#ffffff">{$lang.label_inv_consignee_phone}</td>
+	  <td width="36%" align="left" bgcolor="#ffffff">{$order.inv_consignee_phone}</td>
+	  <td width="19%" align="right" bgcolor="#ffffff">{$lang.label_inv_consignee_address}</td>
+	  <td width="25%" align="left" bgcolor="#ffffff">{$order.inv_complete_address}</td>
+	</tr>
+	</tbody>
+	</table>
+	<!-- {/if} --> 
+	<!-- {if $order.inv_type eq 'normal_invoice'} 普通发票 -->
+	<table>
+	<tbody>
+	<tr>
+	  <td width="15%" align="right" bgcolor="#ffffff">{$lang.inv_type}：</td>
+	  <td width="36%" align="left" bgcolor="#ffffff">{$lang[$order.inv_type]}</td>
+	  <td width="19%" align="right" bgcolor="#ffffff">{$lang.inv_payee}：</td>
+	  <td width="25%" align="left" bgcolor="#ffffff">{$order.inv_payee}</td>
+	</tr>
+	<tr>
+	  <td width="15%" align="right" bgcolor="#ffffff">{$lang.inv_content}：</td>
+	  <td width="36%" align="left" bgcolor="#ffffff">{$order.inv_content}</td>
+	</tr>
+	</tbody>
+	</table>
+	<!--{/if}-->
+	<!-- {if $order.postscript} 是否有订单附言 -->
+	<div class="ub ub-ac umar-at2">
+      <div class="t-gra-82 ulev-1"> {$lang.order_postscript}： </div>
+      <div class="ub-f1 ulev-1 umar-l-ec">{$order.postscript}</div>
+    </div>
+	<!-- {/if} -->
+	<!-- {if $order.how_oos_name} 缺货处理 -->
+	<div class="ub ub-ac umar-at2">
+      <div class="t-gra-82 ulev-1"> {$lang.booking_process}： </div>
+      <div class="ub-f1 ulev-1 umar-l-ec">{$order.how_oos_name}</div>
+    </div>
+	<!-- {/if} -->
+  </div>
+</ul>

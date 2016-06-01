@@ -1,0 +1,17 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<dl class="jrpp l">
+    <dt>今日拍品</dt>
+    <!-- {foreach from=$today_auction item=auction}-->
+    <dd>
+        <a href="{$auction.url}"><img src="{$auction.thumb}" alt=""></a>
+        <div class="zt">
+            <div class="chujia">
+            <i></i>
+            <em>{$auction.chujia_count}</em>次出价</div>
+            <div class="name"><a href="{$auction.url}">{$auction.short_name}</a></div>
+            <div class="sysj" data-startTime="{$auction.start_time}" data-endTime="{$auction.end_time}">{$lang.please_waiting}</div>
+        </div>
+        <div class="clear"></div>
+    </dd>
+    <!--{/foreach}-->
+</dl>

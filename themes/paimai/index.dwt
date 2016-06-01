@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- #BeginLibraryItem "/library/header.lbi" --><!-- #EndLibraryItem -->
+	<title>{$page_title}</title>
+	<meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+</head>
+<body>
+	<!-- #BeginLibraryItem "/library/page_paimai_header.lbi" --><!-- #EndLibraryItem -->
+	<div id="banner">
+		<div class="w">
+			<div class="sortlist">
+				<!-- TemplateBeginEditable name="商品分类树" -->
+<!-- #BeginLibraryItem "/library/category_tree.lbi" -->
+
+<ul>
+    <!--{foreach from=get_categories_tree(0) item=cat name=cat0}-->
+    <li><a href="{$cat.url}">{$cat.name}</a><span>&gt;</span></li>
+    <!--{/foreach}-->
+</ul>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+			</div>
+		</div>
+		<div class="banner">
+		    <!-- TemplateBeginEditable name="全屏幻灯片" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+		</div>
+	</div>
+	<div id="main">
+		<div class="w">
+		    <!-- TemplateBeginEditable name="今日拍品" -->
+<!-- #BeginLibraryItem "/library/auction.lbi" -->
+
+<dl class="jrpp l">
+    <dt>今日拍品</dt>
+    <!-- {foreach from=$today_auction item=auction}-->
+    <dd>
+        <a href="{$auction.url}"><img src="{$auction.thumb}" alt=""></a>
+        <div class="zt">
+            <div class="chujia">
+            <i></i>
+            <em>{$auction.chujia_count}</em>次出价</div>
+            <div class="name"><a href="{$auction.url}">{$auction.short_name}</a>送拍机构：{$auction.brand_name}</div>
+            <div class="sysj" data-startTime="{$auction.start_time}" data-endTime="{$auction.end_time}">{$lang.please_waiting}</div>
+        </div>
+        <div class="clear"></div>
+    </dd>
+    <!--{/foreach}-->
+</dl>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+			<!-- TemplateBeginEditable name="精品展示" -->
+<!-- #BeginLibraryItem "/library/recommend_best.lbi" -->
+
+<dl class="jpzs r">
+    <dt>精品展示</dt>
+    <!--{foreach from=$best_goods item=goods}-->
+    <dd>
+        <a href="{$goods.url}"><img src="{$goods.thumb}" alt=""></a>
+        <div class="title">
+            <a href="{$goods.url}">{$goods.short_name}</a>
+            <span>￥{$goods.shop_price}</span>
+            <a href="{$goods.url}">立即购买</a>
+        </div>
+    </dd>
+    <!--{/foreach}-->
+</dl>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+			<div class="clear"></div>
+			<!-- TemplateBeginEditable name="书法字画" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<dl class="sortproduct">
+    <dt>{$goods_cat.name|escape:html}</dt>
+    <!--{foreach from=$cat_goods item=goods}-->
+    <dd>
+        <a href="{$goods.url}" style="background:url({$goods.thumb}) center no-repeat;"></a>
+        <div class="zt">
+            <div class="chujia">
+            <i></i>
+            <em>{$goods.act_count}</em>次围观</div>
+            <div class="name"><a href="{$goods.url}">{$goods.short_name|escape:html}</a>送拍机构：{$goods.songpeiren}</div>
+            <div class="sysj" data-startTime="{$goods.start_time}" data-endTime="{$goods.end_time}">{$lang.please_waiting}</div>
+        </div>
+        <div class="clear"></div>
+    </dd>
+    <!--{/foreach}-->
+    <div class="clear"></div>
+</dl>
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+            <!-- TemplateBeginEditable name="文玩收藏" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<dl class="sortproduct">
+    <dt>{$goods_cat.name|escape:html}</dt>
+    <!--{foreach from=$cat_goods item=goods}-->
+    <dd>
+        <a href="{$goods.url}" style="background:url({$goods.thumb}) center no-repeat;"></a>
+        <div class="zt">
+            <div class="chujia">
+            <i></i>
+            <em>{$goods.act_count}</em>次围观</div>
+            <div class="name"><a href="{$goods.url}">{$goods.short_name|escape:html}</a>送拍机构：{$goods.songpeiren}</div>
+            <div class="sysj" data-startTime="{$goods.start_time}" data-endTime="{$goods.end_time}">{$lang.please_waiting}</div>
+        </div>
+        <div class="clear"></div>
+    </dd>
+    <!--{/foreach}-->
+    <div class="clear"></div>
+</dl>
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+            <!-- TemplateBeginEditable name="紫砂陶器" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<dl class="sortproduct">
+    <dt>{$goods_cat.name|escape:html}</dt>
+    <!--{foreach from=$cat_goods item=goods}-->
+    <dd>
+        <a href="{$goods.url}" style="background:url({$goods.thumb}) center no-repeat;"></a>
+        <div class="zt">
+            <div class="chujia">
+            <i></i>
+            <em>{$goods.act_count}</em>次围观</div>
+            <div class="name"><a href="{$goods.url}">{$goods.short_name|escape:html}</a>送拍机构：{$goods.songpeiren}</div>
+            <div class="sysj" data-startTime="{$goods.start_time}" data-endTime="{$goods.end_time}">{$lang.please_waiting}</div>
+        </div>
+        <div class="clear"></div>
+    </dd>
+    <!--{/foreach}-->
+    <div class="clear"></div>
+</dl>
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+            <!-- TemplateBeginEditable name="珠宝玉器" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<dl class="sortproduct">
+    <dt>{$goods_cat.name|escape:html}</dt>
+    <!--{foreach from=$cat_goods item=goods}-->
+    <dd>
+        <a href="{$goods.url}" style="background:url({$goods.thumb}) center no-repeat;"></a>
+        <div class="zt">
+            <div class="chujia">
+            <i></i>
+            <em>{$goods.act_count}</em>次围观</div>
+            <div class="name"><a href="{$goods.url}">{$goods.short_name|escape:html}</a>送拍机构：{$goods.songpeiren}</div>
+            <div class="sysj" data-startTime="{$goods.start_time}" data-endTime="{$goods.end_time}">{$lang.please_waiting}</div>
+        </div>
+        <div class="clear"></div>
+    </dd>
+    <!--{/foreach}-->
+    <div class="clear"></div>
+</dl>
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+
+			<dl class="hzjg jg">
+				<dt><span>合作</span>机构</dt>
+				<!--{foreach from=$links2 item=links}-->
+                <dd><a href="{$links.url}" target="_blank">{$links.name}</a></dd>
+                <!--{/foreach}-->
+				<div class="clear"></div>
+			</dl>
+			<dl class="rzjg jg">
+				<dt><span>入驻</span>机构</dt>
+				<!--{foreach from=$links3 item=links}-->
+				<dd><a href="{$links.url}" target="_blank"><img src="{$links.logo}" alt=""></a></dd>
+				<!--{/foreach}-->
+				<div class="clear"></div>
+			</dl>
+		</div>
+	</div>
+	<!-- #BeginLibraryItem "/library/page_paimai_footer.lbi" -->
+        <!-- #EndLibraryItem -->
+	<script type="text/javascript" src="js/setHdTime.js"></script>
+</body>
+</html>

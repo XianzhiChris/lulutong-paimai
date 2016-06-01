@@ -1,0 +1,32 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $auction_list}
+<section class="index_floor">
+    <div class="floor_body1" >
+        <h2><em></em>今日拍品</h2>
+        <div id="scroll_auction" class="scroll_hot">
+            <div class="bd">
+            <ul>
+            {foreach from=$auction_list item=auction name=auction_list}
+            <li>
+                <a href="{$auction.url}" title="{$auction.goods_name|escape:html}">
+                    <div class="products_kuang">
+                    <img src="{$option.static_path}{$auction.thumb}"></div>
+                    <div class="goods_name">{$auction.goods_name}</div>
+                    <div class="price">
+                        <span href="{$auction.url}" class="price_pro">{$auction.chujia}</span><br>
+                        出价次数:{$auction.chujia_count}
+                    </div>
+                </a>
+            </li>
+
+            <!--{if $smarty.foreach.hot_goods.iteration%3 eq 0 && $smarty.foreach.hot_goods.iteration neq $smarty.foreach.hot_goods.total}--> </ul>
+            <ul>
+            <!--{/if}-->{/foreach}</div>
+            <div class="hd">
+            <ul></ul>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="black"></div>
+{/if}

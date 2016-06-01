@@ -1,0 +1,271 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{$page_title}</title>
+    <meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link href="css/public.css" rel="stylesheet" type="text/css"/>
+    <link href="css/index.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/TouchSlide.1.1.js"></script>
+    {insert_scripts files='jquery.json.js,transport.js'}
+    <script type="text/javascript" src="js/touchslider.dev.js"></script>
+    <script type="text/javascript" src="js/jquery.more.js"></script>
+
+    {insert_scripts files='common.js'}
+</head>
+<body>
+<div id="page" class="showpage">
+    <div>
+        <!--banner-->
+        <!-- #BeginLibraryItem "/library/index_ad.lbi" --> <!-- #EndLibraryItem -->
+        <!--banner end-->
+        <!---搜索--->
+        <div id="fake-search" class="index_search">
+            <div class="index_search_mid">
+                <span><img src="images/xin/icosousuo.png"></span>
+                <input  type="text" id="search_text" class="search_text" value="请输入您所搜索的商品"/>
+            </div>
+        </div>
+        <!-- #BeginLibraryItem "/library/index_icon.lbi" --><!-- #EndLibraryItem -->
+
+        <!-- TemplateBeginEditable name="今日拍品" -->
+<!-- #BeginLibraryItem "/library/auction.lbi" -->
+
+{if $auction_list}
+<section class="index_floor">
+    <div class="floor_body1" >
+        <h2><em></em>今日拍品</h2>
+        <div id="scroll_auction" class="scroll_hot">
+            <div class="bd">
+            <ul>
+            {foreach from=$auction_list item=auction name=auction_list}
+            <li>
+                <a href="{$auction.url}" title="{$auction.goods_name|escape:html}">
+                    <div class="products_kuang">
+                    <img src="{$option.static_path}{$auction.thumb}"></div>
+                    <div class="goods_name">{$auction.goods_name}</div>
+                    <div class="price">
+                        <span href="{$auction.url}" class="price_pro">{$auction.chujia}</span><br>
+                        出价次数:{$auction.chujia_count}
+                    </div>
+                </a>
+            </li>
+
+            <!--{if $smarty.foreach.hot_goods.iteration%3 eq 0 && $smarty.foreach.hot_goods.iteration neq $smarty.foreach.hot_goods.total}--> </ul>
+            <ul>
+            <!--{/if}-->{/foreach}</div>
+            <div class="hd">
+            <ul></ul>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="black"></div>
+{/if}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+
+        <!--商品楼层调用 start-->
+        <!-- TemplateBeginEditable name="书法字画" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<?php
+ $GLOBALS['smarty']->assign('thiscid1',get_wap_parent_id_tree($GLOBALS['smarty']->_var['goods_cat']['id']));
+?>
+<section class="index_floor_lou">
+    <div class="floor_body ">
+        <h2>
+            <em></em>{$goods_cat.name|escape:html}<span class="geng"><a href="../category.php?id={$goods_cat.id}" >更多 <i></i></a></span>
+         </h2>
+        <ul>
+            <!--{foreach from=$cat_goods item=goods name=name}-->
+            <li>
+                <a href="{$goods.url}" title="{$goods.name|escape:html}">
+                    <div class="products_kuang">
+                        <img src="{$option.static_path}{$goods.thumb}"></div>
+                    <div class="goods_name">{$goods.name}</div>
+                    <div class="price">
+                        <a href="{$goods.url}" class="price_pro">
+                            {$goods.chujia}
+                        </a>
+                        <br><span>围观:{$goods.act_count}人</span>
+
+                    </div>
+                </a>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+</section>
+
+
+
+
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+
+        <!-- TemplateBeginEditable name="文玩收藏" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<?php
+ $GLOBALS['smarty']->assign('thiscid1',get_wap_parent_id_tree($GLOBALS['smarty']->_var['goods_cat']['id']));
+?>
+<section class="index_floor_lou">
+    <div class="floor_body ">
+        <h2>
+            <em></em>{$goods_cat.name|escape:html}<span class="geng"><a href="../category.php?id={$goods_cat.id}" >更多 <i></i></a></span>
+         </h2>
+        <ul>
+            <!--{foreach from=$cat_goods item=goods name=name}-->
+            <li>
+                <a href="{$goods.url}" title="{$goods.name|escape:html}">
+                    <div class="products_kuang">
+                        <img src="{$option.static_path}{$goods.thumb}"></div>
+                    <div class="goods_name">{$goods.name}</div>
+                    <div class="price">
+                        <a href="{$goods.url}" class="price_pro">
+                            {$goods.chujia}
+                        </a>
+                        <br><span>围观:{$goods.act_count}人</span>
+
+                    </div>
+                </a>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+</section>
+
+
+
+
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+
+        <!-- TemplateBeginEditable name="紫砂陶器" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<?php
+ $GLOBALS['smarty']->assign('thiscid1',get_wap_parent_id_tree($GLOBALS['smarty']->_var['goods_cat']['id']));
+?>
+<section class="index_floor_lou">
+    <div class="floor_body ">
+        <h2>
+            <em></em>{$goods_cat.name|escape:html}<span class="geng"><a href="../category.php?id={$goods_cat.id}" >更多 <i></i></a></span>
+         </h2>
+        <ul>
+            <!--{foreach from=$cat_goods item=goods name=name}-->
+            <li>
+                <a href="{$goods.url}" title="{$goods.name|escape:html}">
+                    <div class="products_kuang">
+                        <img src="{$option.static_path}{$goods.thumb}"></div>
+                    <div class="goods_name">{$goods.name}</div>
+                    <div class="price">
+                        <a href="{$goods.url}" class="price_pro">
+                            {$goods.chujia}
+                        </a>
+                        <br><span>围观:{$goods.act_count}人</span>
+
+                    </div>
+                </a>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+</section>
+
+
+
+
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+
+        <!-- TemplateBeginEditable name="珠宝玉器" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<?php
+ $GLOBALS['smarty']->assign('thiscid1',get_wap_parent_id_tree($GLOBALS['smarty']->_var['goods_cat']['id']));
+?>
+<section class="index_floor_lou">
+    <div class="floor_body ">
+        <h2>
+            <em></em>{$goods_cat.name|escape:html}<span class="geng"><a href="../category.php?id={$goods_cat.id}" >更多 <i></i></a></span>
+         </h2>
+        <ul>
+            <!--{foreach from=$cat_goods item=goods name=name}-->
+            <li>
+                <a href="{$goods.url}" title="{$goods.name|escape:html}">
+                    <div class="products_kuang">
+                        <img src="{$option.static_path}{$goods.thumb}"></div>
+                    <div class="goods_name">{$goods.name}</div>
+                    <div class="price">
+                        <a href="{$goods.url}" class="price_pro">
+                            {$goods.chujia}
+                        </a>
+                        <br><span>围观:{$goods.act_count}人</span>
+
+                    </div>
+                </a>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+</section>
+
+
+
+
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+        <!--商品楼层调用 end-->
+
+        <footer>
+            <!-- #BeginLibraryItem "/library/footer_nav.lbi" -->
+            <!-- #EndLibraryItem -->
+        </footer>
+
+        <!---返回顶部-->
+        <script>
+        function goTop(){
+        $('html,body').animate({'scrollTop':0},600);
+        }
+        </script>
+        <a href="javascript:goTop();" class="gotop"><img src="images/topup.png"></a>
+    </div>
+    <!---搜索弹出层--->
+    <!-- #BeginLibraryItem "/library/search_page.lbi" --><!-- #EndLibraryItem -->
+</div>
+
+<script type="Text/Javascript" language="JavaScript">
+
+{literal}
+function selectPage(sel)
+{
+sel.form.submit();
+}
+{/literal}
+
+</script>
+<script type="text/javascript">
+{foreach from=$lang.compare_js item=item key=key}
+{if $key neq 'button_compare'}
+var {$key} = "{$item}";
+{else}
+var button_compare = "";
+{/if}
+{/foreach}
+var compare_no_goods = "{$lang.compare_no_goods}";
+var btn_buy = "{$lang.btn_buy}";
+var is_cancel = "{$lang.is_cancel}";
+var select_spe = "{$lang.select_spe}";
+</script>
+</body>
+</html>

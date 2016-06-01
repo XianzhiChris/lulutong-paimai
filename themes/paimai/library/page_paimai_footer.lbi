@@ -1,0 +1,53 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<?php
+    $GLOBALS['smarty']->assign('pmbz',     assign_articles(10, 5));       // 拍卖保障
+    $GLOBALS['smarty']->assign('zfbz',     assign_articles(9, 5));       // 支付帮助
+    $GLOBALS['smarty']->assign('sqsp',     assign_articles(21, 5));       // 申请送拍
+    $GLOBALS['smarty']->assign('xsbz',     assign_articles(8, 5));       // 新手帮助
+    ?>
+<div id="foot">
+    <div class="fc">
+        <div class="w">
+            <dl>
+                <dt>拍卖保障</dt>
+                <!--{foreach from=$pmbz['arr'] item=article_item name=name}-->
+                <dd><i></i><a target="_blank" href="{$article_item.url}" title="{$article_item.title}">{$article_item.short_title}</a></dd>
+                <!--{/foreach}-->
+            </dl>
+            <dl>
+                <dt>支付帮助</dt>
+                <!--{foreach from=$zfbz['arr'] item=article_item name=name}-->
+                <dd><i></i><a target="_blank" href="{$article_item.url}" title="{$article_item.title}">{$article_item.short_title}</a></dd>
+                <!--{/foreach}-->
+            </dl>
+            <dl class="ewm">
+                <dd><img src="images/ewm.png" alt=""></dd>
+            </dl>
+            <dl>
+                <dt>申请送拍</dt>
+                <!--{foreach from=$sqsp['arr'] item=article_item name=name}-->
+                <dd><i></i><a target="_blank" href="{$article_item.url}" title="{$article_item.title}">{$article_item.short_title}</a></dd>
+                <!--{/foreach}-->
+            </dl>
+            <dl>
+                <dt>新手帮助</dt>
+                <!--{foreach from=$xsbz['arr'] item=article_item name=name}-->
+                <dd><i></i><a target="_blank" href="{$article_item.url}" title="{$article_item.title}">{$article_item.short_title}</a></dd>
+                <!--{/foreach}-->
+            </dl>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="ppcopyright">
+        <div class="w">
+            <div class="footmenu">
+                <!-- {foreach name=nav_bottom_list from=$navigator_list.bottom item=nav } -->
+                |<a href="{$nav.url}">{$nav.name}</a>
+                <!--{/foreach}-->|
+            </div>
+            {$copyright}
+        </div>
+
+    </div>
+    <div style="display:none"><script src="http://s4.cnzz.com/stat.php?id=1259134342&web_id=1259134342" language="JavaScript"></script></div>
+</div>

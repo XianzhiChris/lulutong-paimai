@@ -1,0 +1,20 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $promotion_goods} -->
+<div id="sales" class="product_value">
+     <h2>疯狂促销</h2>
+       <ul>
+         <!--{foreach from=$promotion_goods item=goods name="promotion_foreach"}-->
+         {if $smarty.foreach.promotion_foreach.index <= 3}
+           <li>
+           <a href="{$goods.url}">
+           <span>
+           <img src="{$goods.thumb}" border="0" alt="{$goods.name|escape:html}"/></span>
+           <span class="p_info">{$goods.short_name|truncate:10}</span>
+           <span><font class="f1"> {$lang.promote_price}</font><font class="f2">{$goods.promote_price}</font></span>
+           </a>
+           </li>
+         {/if}
+         <!--{/foreach}-->
+       </ul>
+      </div>
+<!-- {/if} -->

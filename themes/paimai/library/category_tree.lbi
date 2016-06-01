@@ -1,0 +1,6 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<ul>
+    <!--{foreach from=get_categories_tree(0) item=cat name=cat0}-->
+    <li><a href="{$cat.url}">{$cat.name}</a><span>&gt;</span></li>
+    <!--{/foreach}-->
+</ul>

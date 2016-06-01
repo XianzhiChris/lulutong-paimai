@@ -1,0 +1,49 @@
+{if $is_full_page eq 1}
+<div id="page_0" class="up ub ub-ver bc-bg" tabindex="0">
+  <!--header开始-->
+  <div class="p-fixed" id='header'>
+        <div class="uh bc-text-head ub head-h bc-head-glist">
+            <div class="nav-btn2" id="nav-left">
+              <div class="ub-img icon-back1 umw2 umh3"></div>
+            </div>
+            <div class="ub-f1 ub ub-ac">
+              <div class="ub-f1 uinn1 f-color-6 ulev-1">搜索：{$keywords}</div>
+            </div>
+        </div>
+        <div class="ub ub-ac top-glist bc-grey f-color-6">
+		<div class="ub ub-ac ub-pc sort" sort='last_update' order="{if $pager.search.sort == 'last_update'}{$pager.search.order}{else}ASC{/if}">
+            <div class="ulev-9 {if $pager.search.sort == 'last_update'}f-color-red{/if}">更新</div>
+			<div class="ub-img uwh-bus1 t-bus-icon m-l3 {if $pager.search.sort == 'last_update'}{$pager.search.order}{/if}"></div>
+          </div>
+          <div class="ub ub-ac ub-pc sort" sort='salenum' order="{if $pager.search.sort == 'salenum'}{$pager.search.order}{else}ASC{/if}">
+            <div class="ulev-9 {if $pager.search.sort == 'shop_price'}f-color-red{/if}">销量</div>
+			<div class="ub-img uwh-bus1 t-bus-icon m-l3 {if $pager.search.sort == 'salenum'}{$pager.search.order}{/if}"></div>
+          </div>
+          <div class="ub ub-ac ub-pc ub-pc sort" sort='shop_price' order="{if $pager.search.sort == 'shop_price'}{$pager.search.order}{else}ASC{/if}">
+            <div class="ulev-9 {if $pager.search.sort == 'shop_price'}f-color-red{/if}">价格</div>
+            <div class="ub-img uwh-bus1 t-bus-icon m-l3 {if $pager.search.sort == 'shop_price'}{$pager.search.order}{/if}"></div>
+          </div>
+          <div class="ub ub-ac ub-pc sort" sort='click_count' order="{if $pager.search.sort == 'click_count'}{$pager.search.order}{else}ASC{/if}">
+            <div class="ulev-9 {if $pager.search.sort == 'shop_price'}f-color-red{/if}">人气</div>
+			<div class="ub-img uwh-bus1 t-bus-icon m-l3 {if $pager.search.sort == 'click_count'}{$pager.search.order}{/if}"></div>
+          </div>
+          <div class="ub ub-ac ub-pc ubl border-hui" id="change-list">
+          <div class="ub-img top-r-glist2 top-r-size" id='style_button'></div>
+          </div>
+        </div>
+  </div>
+  <!--header结束-->
+  <!--content开始-->
+  <div class="ub-f1 tx-l m-top6">
+  <div class="goodlist-s" id='goods_list_container'>
+{/if}  
+	{include file='library/goods_list.lib'}
+{if $is_full_page eq 1}
+ </div>
+  </div>
+  <!--content结束--> 
+  
+     
+</div>
+<div id='scroll_to_top' class="ub-img"></div>
+{/if}

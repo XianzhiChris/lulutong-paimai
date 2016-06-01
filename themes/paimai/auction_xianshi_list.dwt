@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- #BeginLibraryItem "/library/header.lbi" --><!-- #EndLibraryItem -->
+	<title>{$page_title}</title>
+	<meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+    <link href="{$themes_dir}/css/auction.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+        $(function(){
+            switch({$time}) {
+                case 10:
+                    $(".auction_xianshi_type li:eq(0)").addClass("act");
+                    break;
+                case 12:
+                    $(".auction_xianshi_type li:eq(1)").addClass("act");
+                    break;
+                case 14:
+                    $(".auction_xianshi_type li:eq(2)").addClass("act");
+                    break;
+                case 16:
+                    $(".auction_xianshi_type li:eq(3)").addClass("act");
+                    break;
+                case 18:
+                    $(".auction_xianshi_type li:eq(4)").addClass("act");
+                    break;
+                case 20:
+                    $(".auction_xianshi_type li:eq(5)").addClass("act");
+                    break;
+                case 22:
+                    $(".auction_xianshi_type li:eq(6)").addClass("act");
+                    break;
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <!-- #BeginLibraryItem "/library/page_paimai_header.lbi" --><!-- #EndLibraryItem -->
+    <div id="banner">
+      		<div class="banner">
+      		    <!-- TemplateBeginEditable name="全屏幻灯片" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+      		</div>
+      	</div>
+    <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+    <div id="nymain" class="lishi">
+        <div class="w">
+
+            <ul class="auction_xianshi_type">
+                <li><a href="auction.php?act=xianshi&type=10">10:00</a></li>
+                <li><a href="auction.php?act=xianshi&type=12">12:00</a></li>
+                <li><a href="auction.php?act=xianshi&type=14">14:00</a></li>
+                <li><a href="auction.php?act=xianshi&type=16">16:00</a></li>
+                <li><a href="auction.php?act=xianshi&type=18">18:00</a></li>
+                <li><a href="auction.php?act=xianshi&type=20">20:00</a></li>
+                <li><a href="auction.php?act=xianshi&type=22">22:00</a></li>
+                <div class="clear"></div>
+            </ul>
+            <!-- {if $auction_list} 如果有拍卖活动 -->
+            <div class="daojishi" data-startTime="{$starttime}" data-endTime="{$endtime}">{$lang.please_waiting}</div>
+            <div class="layout_list">
+                <ul class="clearfix">
+                    <!-- {foreach from=$auction_list item=goods name=name} 循环拍卖活动开始 -->
+                    <li {if $smarty.foreach.name.iteration mod 5 eq 1}class="layout_list_1"{/if}>
+                    <a href="{$goods.url}" target="_blank" class="layout_pic"><img class="err-product" src="{$goods.goods_thumb}" width="220" height="220"></a>
+                    <div class="layout_cont">
+                    <a class="layout_name" target="_blank" href="{$goods.url}">{$goods.act_name|truncate:26}</a>
+                    <a target="_blank" href="{$goods.url}" class="bid_btn bid_ing">{$goods.click_count}次围观</a>
+                    </div>
+                    </li>
+                    <!--{/foreach}-->
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <!-- {/if} -->
+        </div>
+    </div>
+    <!-- #BeginLibraryItem "/library/page_paimai_footer.lbi" --><!-- #EndLibraryItem -->
+    <script type="text/javascript" src="js/setHdTime.js"></script>
+</div>
+</body>
+</html>

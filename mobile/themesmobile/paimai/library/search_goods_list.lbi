@@ -1,0 +1,30 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $goods_list}
+
+<!--{foreach name=goods_list from=$goods_list item=goods}-->
+{if $goods.goods_id}
+    <li>
+        <a href="{$goods.url}" class="item">
+            <div class="pic_box">
+                <img src="{$goods.goods_thumb}">
+            </div>
+            <div class="title_box">
+                {$goods.goods_name}
+            </div>
+            <div class="price_box">
+                <span class="new_price">
+                    <i>{$goods.click_count}次围观</i>
+                </span>
+            </div>
+        </a>
+    </li>
+{/if}    
+<!--{/foreach}-->
+
+{include file='library/pages.lbi'}
+{else}
+<div class="new_prom2">
+<strong>抱歉暂时没有相关结果，换个词试试吧!</strong>
+</div>
+{/if}
+                    

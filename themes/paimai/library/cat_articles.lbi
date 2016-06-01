@@ -1,0 +1,6 @@
+<dl>
+    <dt>{$articles_cat.name|escape:html}</dt>
+    <!--{foreach from=$articles item=article_item name=name}-->
+    <dd><i></i><a target="_blank" href="{$article_item.url}" title="{$article_item.title}">{$article_item.short_title}</a></dd>
+    <!--{/foreach}-->
+</dl>

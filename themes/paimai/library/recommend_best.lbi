@@ -1,0 +1,16 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<?php
+$GLOBALS['smarty']->assign('best_goods',      get_yupai_auction());    // 精品展示
+?>
+<dl class="jpzs r">
+    <dt>拍品展示</dt>
+    <!--{foreach from=$best_goods item=goods}-->
+    <dd>
+        <a href="{$goods.url}"><img src="{$goods.thumb}" alt=""></a>
+        <div class="title">
+            {$goods.short_name}
+            <span>开拍日期:{$goods.format_start_time}</span>
+        </div>
+    </dd>
+    <!--{/foreach}-->
+</dl>

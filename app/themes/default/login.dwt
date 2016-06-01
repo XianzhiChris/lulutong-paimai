@@ -1,0 +1,50 @@
+
+
+<div class="uc-a1 bg-color-w m-top3 reg-p ubb ubt border-hui f-color-zi">
+	<div class="ub uinn-eo8 ubb border-hui ulev-9 ub-ac p-r1">
+      <div class="uw-reg"> 账户名 </div>
+      <div class="ub-f1">
+        <div class="uinput ub-f1">
+          <input id="username" name="username" placeholder="手机号/用户名/邮箱" type="text" class="f-color-6">
+        </div>
+      </div>
+	  <div class="ub-img input-del h-w-6 uhide" id='clear_username'></div>
+    </div>
+	
+    <div class="ub uinn-eo8 ubb border-hui ulev-9 ub-ac p-r1">
+      <div class="uw-reg"> 密码 </div>
+      <div class="ub-f1">
+        <div class="uinput ub-f1">
+          <input  id="password" name="password"  placeholder="输入6~20位字符" type="password" class="f-color-6">
+        </div>
+      </div>
+	  <div class="ub-img input-del h-w-6 uhide" id='clear_password'></div>
+      <div class="ub-img input-eye-off h-w-5 uhide" id='show_password'></div>
+    </div>
+	{if $enabled_captcha}
+    <div class="ub uinn-eo8 ulev-9 ub-ac">
+      	<div class="uw-reg ulev-app1"> 验证码 </div>
+        <div class="uinput ub-f1" style="width:6em">
+          <input id="captcha" name="captcha"  placeholder="请输入验证码" type="text" class="f-color-6">
+        </div>
+        <div class="uinput ub-f1">
+        <div id='captcha_image' style='background:url({$url}captcha.php?is_login=1&{$rand}) no-repeat center; width:5em; height:2em;'>&nbsp;</div>
+        </div>
+    </div>
+    {/if}
+    
+	
+  </div>
+      <div class="ub ub-ver">
+          <div class="m-all2">
+                <div class="user-btn" id="login_button">
+                    登录
+                </div>
+            </div>
+      
+        <div class="uinn-at2 ub sc-text-active1 p-all4 ulev-4">
+          <div class="ub-f1" id="check_reg"> 立即注册 </div>
+          <div class="ub-f1 tx-r" id='forget_pass_button'> 忘记密码 </div>
+        </div>
+      </div>
+      <button type="submit"class="uinvisible"></button>

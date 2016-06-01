@@ -1,0 +1,10 @@
+<ul class="f-color-zi ">
+{foreach from=$articlecat item=cat key=key}
+    <li class="ubb ub border-hui article_p2 ub-ac lis article_{$cat.parent_id} level_{$cat.level} {if $cat.level neq 0} uhide {/if}"  cat_id='{$cat.cat_id}'>
+      <div class="lv_title ub-f1 ub ulev-9 ub-ver ut-m  article_cat">{$cat.cat_name}</div>
+	  {if $cat.has_children gt 0}
+      <div class="fa fa-angle-right ulev2 article_p2 sc-text article_toggle"></div>
+	  {/if}
+    </li>
+{/foreach}
+</ul>

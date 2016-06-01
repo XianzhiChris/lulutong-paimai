@@ -1,0 +1,75 @@
+<div class="activity">
+<!--优惠活动开始-->
+<!-- {foreach from=$list item=val name=val} -->
+<div class="activity-p2 ubb border-hui">
+	<div class="ub ub-ver">
+		<div class="ub ub-f1 p-t-b3">
+			<div class="ulev-9 activity-m activity-bg f-color-red">
+				活动{$smarty.foreach.val.iteration}
+			</div>
+			<div class="ulev-2 activity-m sc-text-hui ub ub-ae">
+				{$val.act_name}
+			</div>
+		</div>
+		<div>
+			<img src="{$url}{$val.logo|default:images/ceshi.jpg}" class="phone1">
+		</div>
+		<div class="ulev-1 f-color-zi p-t-b2">
+		{$lang.label_user_rank} 
+			<!-- {foreach from=$val.user_rank item=user} --> 
+                {$user}&nbsp;&nbsp; 
+                <!-- {/foreach} --> 
+		</div>
+		<div class="ulev-1 f-color-zi activity-p2">
+			{$lang.label_end_time}<span class="f-color-red">{$val.end_time}</span>
+		</div>
+		<div class="ub ub-pj">
+			<div class="ulev-1 f-color-zi p-t-b2">
+				{$lang.label_max_amount}  
+				<!-- {if $val.max_amount > 0} --> 
+                {$val.max_amount} 
+                <!-- {else} --> 
+                无 
+                <!-- {/if} --> 
+			</div>
+			<div class="ulev-1 f-color-zi p-t-b2">
+				{$lang.label_min_amount}{$val.min_amount}
+			</div>
+		</div>
+		<div class="ulev-1 sc-text-hui activity-p2">
+		{$lang.label_act_range}
+		<!-- {if $val.act_range eq $lang.far_all} --> 
+		{$val.act_range}
+		<!-- {else} -->
+                <!-- {foreach from=$val.act_range_ext item=ext} --> 
+				<span class="f-color-red">{$ext.name}</span>
+                <!-- {/foreach} --> 
+                <!-- {/if} -->
+		</div>
+		<div class="ub">
+			<div class="ulev-1 sc-text-hui p-t-b2">
+				{$lang.label_act_type}{$val.act_type}<!-- {if $val.act_type ne $lang.fat_goods} -->{$val.act_type_ext}<!-- {/if} --> 
+			</div>
+		</div>
+	</div>
+	<!--享受赠品开始-->
+	<!-- {if $val.gift} -->
+	<div class="mar-aL1" id="act1" >
+		<div class="ub uinn-p2" style='width:100%;overflow-x:scroll;'>
+		<!-- {foreach from=$val.gift item=goods name=name1} -->
+		<div class="bg-color-w ub ub-ver ub-f1 mar-ar1 ">
+				<div class="ub-img uwh-eleL ub-fh"><img src="{$url}{$goods.thumb}" />
+				</div>
+				<div class="bc-text ub ub-ver ut-m ulev-1 ulev-1 line1">
+					{$goods.name}
+				</div>
+			</div>
+		<!-- {/foreach} -->
+		</div>
+	</div>
+	<!-- {/if} -->
+	<!--享受赠品结束-->
+</div>
+<!--优惠活动结束-->
+<!-- {/foreach} -->
+</div>
