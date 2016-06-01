@@ -107,7 +107,12 @@ $ecs = new ECS($db_name, $prefix);
 define('DATA_DIR', $ecs->data_dir());
 define('IMAGE_DIR', $ecs->image_dir());
 
-
+//域名判断,防止盗用 李云鹏20160601
+$url=$GLOBALS['ecs']->url();
+if ($url!="http://ys.lltqc.com/" && $url!="http://localhost/"){
+    die('<meta charset=UTF-8>服务器配置错误');
+}
+//var_dump($GLOBALS['ecs']->url());exit;
 /* 初始化数据库类 */
 require(ROOT_PATH . 'includes/cls_mysql.php');
 require(ROOT_PATH . 'includes/lib_soap.php');
