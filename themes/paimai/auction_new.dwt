@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- #BeginLibraryItem "/library/header.lbi" --><!-- #EndLibraryItem -->
+	<title>{$page_title}</title>
+	<meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+    <link href="css/category.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="site-nav"> 
+    <!-- #BeginLibraryItem "/library/page_paimai_header.lbi" --><!-- #EndLibraryItem -->
+    <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+    <div id="main">
+        <div class="w">
+
+            <!--{if $auction_list}-->
+            <dl class="sortproduct">
+                <dt></dt>
+                <!--{foreach from=$auction_list item=goods name=name}-->
+                <dd>
+                    <a href="{$goods.url}" style="background:url({$goods.goods_thumb2}) center no-repeat;"></a>
+                    <div class="zt">
+                        <div class="chujia">
+                            <a href="{$goods.url}"><span>￥{$goods.chujia}</span></a></div>
+                        <div class="name"><a href="{$goods.url}" title="{$goods.act_name}">{$goods.act_name}</a>送拍机构：{$goods.songpairen}<br><em>{$goods.chujia_count}</em>次出价</div>
+                        <div class="sysj" data-startTime="{$goods.start_time}" data-endTime="{$goods.end_time}">{$lang.please_waiting}</div>
+                    </div>
+                    <div class="clear"></div>
+                </dd>
+                <!--{/foreach}-->
+            </dl>
+            <div class="clear"></div>
+            <!--{/if}-->
+        </div>
+        <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+
+    </div>
+</div>
+<!-- #BeginLibraryItem "/library/page_paimai_footer.lbi" --><!-- #EndLibraryItem -->
+<script type="text/javascript" src="js/setHdTime.js"></script>
+</body>
+</html>

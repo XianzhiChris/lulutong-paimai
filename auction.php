@@ -117,6 +117,59 @@ if ($_GET['act'] == 'lishi')
     $smarty->display('auction_lishi_list.dwt', $cache_id);
 }
 /*------------------------------------------------------ */
+//-- 拍卖未开始和已结束  李云鹏20160602
+/*------------------------------------------------------ */
+if ($_GET['act'] == 'new' || $_GET['act'] == 'old')
+{
+    $count = new_auction_count($_GET['act']);
+
+    if ($count > 0)
+    {
+        /* 取得每页记录数 */
+        $size = isset($_CFG['page_size']) && intval($_CFG['page_size']) > 0 ? intval($_CFG['page_size']) : 10;
+
+        /* 计算总页数 */
+        $page_count = ceil($count / $size);
+
+        /* 取得当前页 */
+        $page = isset($_REQUEST['page']) && intval($_REQUEST['page']) > 0 ? intval($_REQUEST['page']) : 1;
+        $page = $page > $page_count ? $page_count : $page;
+
+        /* 缓存id：语言 - 每页记录数 - 当前页 */
+        $cache_id = $_CFG['lang'] . '-' . $size . '-' . $page;
+        $cache_id = sprintf('%X', crc32($cache_id));
+    }
+    else
+    {
+        /* 缓存id：语言 */
+        $cache_id = $_CFG['lang'];
+        $cache_id = sprintf('%X', crc32($cache_id));
+    }
+    /* 缓存id：语言 */
+    $cache_id = $_CFG['lang'];
+    $cache_id = sprintf('%X', crc32($cache_id));
+
+    /* 如果没有缓存，生成缓存 */
+    if (!$smarty->is_cached('auction_new.dwt', $cache_id))
+    {
+        /* 模板赋值 */
+        $smarty->assign('cfg', $_CFG);
+        assign_template();
+        $pager = get_pager('auction.php', array('act' => $_GET['act']), $count, $page, $size);
+        $smarty->assign('pager', $pager);
+        $auction_list = new_list($size, $page,$_GET['act']);
+        $position = assign_ur_here();
+        $smarty->assign('page_title', $position['title']);    // 页面标题
+        $smarty->assign('ur_here',    $position['ur_here']);  // 当前位置
+        $smarty->assign('auction_list',      $auction_list);
+
+        assign_dynamic('auction_new');
+    }
+
+    /* 显示模板 */
+    $smarty->display('auction_new.dwt', $cache_id);
+}
+/*------------------------------------------------------ */
 //-- 拍卖限时拍列表  李云鹏20160516
 /*------------------------------------------------------ */
 if ($_GET['act'] == 'xianshi')
@@ -594,7 +647,24 @@ function get_goods_gallery_attr_www_ecshop68_com($goods_id, $goods_attr_id)
     ksort($ret);
     return array_values($ret);
 }
-
+/**
+ * 取得未开始和已结束拍卖活动数量  李云鹏20160602
+ * @return  int
+ */
+function new_auction_count($act)
+{
+    $now = gmtime();
+    if($act=="new"){
+        $where.=" and start_time > '$now'";
+    }elseif($act=="old"){
+        $where.=" and end_time < '$now'";
+    }
+    $sql = "SELECT COUNT(*) " .
+        "FROM " . $GLOBALS['ecs']->table('goods_activity') .
+        "WHERE act_type = '" . GAT_AUCTION . "' " .
+        " AND is_finished < 2".$where;
+    return $GLOBALS['db']->getOne($sql);
+}
 /* 代码增加_end By www.ecshop68.com */
 /**
  * 取得拍卖活动数量
@@ -734,5 +804,52 @@ function xianshipai_list($time)
     }
     //var_dump($sql);
     return $auction;
+}
+/**
+ * 未开始和已结束拍品 李云鹏20160602
+ * @param str  new|old
+ */
+function new_list($size, $page, $act)
+{
+    $now = gmtime();
+    $auction_list = array();
+    $where="";
+    if($act=="new"){
+        $where.=" and a.start_time > '$now' ORDER BY a.start_time ASC,a.act_id DESC";
+    }elseif($act=="old"){
+        $where.=" and a.end_time < '$now' ORDER BY a.act_id DESC";
+    }
+    $sql = "SELECT a.*,g.original_img, g.goods_thumb,goods_thumb2 " .
+        "FROM " . $GLOBALS['ecs']->table('goods_activity') . " AS a " .
+        "LEFT JOIN " . $GLOBALS['ecs']->table('goods') . " AS g ON a.goods_id = g.goods_id " .
+        "WHERE a.act_type = '" . GAT_AUCTION . "' " .
+        " AND a.is_finished < 2".$where;
+
+    $res = $GLOBALS['db']->selectLimit($sql, $size, ($page - 1) * $size);
+    while ($row = $GLOBALS['db']->fetchRow($res)){
+        $auction_list[$row['goods_id']]['act_name']   = $row['act_name'];
+        $auction_list[$row['goods_id']]['goods_thumb']   = get_image_path($row['goods_id'], $row['goods_thumb'], true);
+        $auction_list[$row['goods_id']]['goods_thumb2']   = get_image_path($row['goods_id'], $row['goods_thumb2'], true);
+        $auction_list[$row['goods_id']]['goods_img']     = get_image_path($row['goods_id'], $row['goods_img']);
+        $auction_list[$row['goods_id']]['url']           = build_uri('auction', array('auid' => $row['act_id']), $row['act_name']);
+        $auction_list[$row['goods_id']]['click_count']  = $row['click_count'];
+
+    //出价次数
+        $auction_list[$row['goods_id']]['chujia_count']=$GLOBALS['db']->getOne("select count(*) from ". $GLOBALS['ecs']->table('auction_log') ." where act_id='".$row['act_id']."'");
+    //最后出价价格
+    $chujia=$GLOBALS['db']->getOne("select bid_price from ". $GLOBALS['ecs']->table('auction_log') ." where act_id='".$row['act_id']."' order by log_id desc");
+
+    //如果当前商品无人出价，则显示设定起拍价
+        $auction_list[$row['goods_id']]['chujia']=$chujia?price_format($chujia):price_format($ext_info['start_price']);
+    //送拍人：商家
+        $auction_list[$row['goods_id']]['songpairen']=$GLOBALS['db']->getOne("select supplier_name from ". $GLOBALS['ecs']->table('supplier') ." where supplier_id='".$row['supplier_id']."'");
+    //结束时间：倒计时
+        $auction_list[$row['goods_id']]['end_time']=$row['end_time'];
+    //开始时间：
+        $auction_list[$row['goods_id']]['start_time']=$row['start_time'];
+
+    }
+    //var_dump($auction_list);exit;
+    return $auction_list;
 }
 ?>

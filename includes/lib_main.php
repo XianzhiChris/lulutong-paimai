@@ -238,6 +238,14 @@ function assign_ur_here($cat = 0, $str = '')
                 $page_title = '限时拍_' . $page_title;
                 $args       = array('auid' => '0');
                 $ur_here   .= ' <code>&gt;</code> <a href="auction.php?act=xianshi">限时拍</a>';
+                }elseif($_GET['act']=="new"){
+                    $page_title = '拍品展示_' . $page_title;
+                    $args       = array('auid' => '0');
+                    $ur_here   .= ' <code>&gt;</code> <a href="auction.php?act=new">拍品展示</a>';
+                }elseif($_GET['act']=="old"){
+                    $page_title = '历史拍品_' . $page_title;
+                    $args       = array('auid' => '0');
+                    $ur_here   .= ' <code>&gt;</code> <a href="auction.php?act=old">历史拍品</a>';
                 }else{
                     $page_title = $GLOBALS['_LANG']['auction'] . '_' . $page_title;
                     $args       = array('auid' => '0');
