@@ -147,7 +147,7 @@
 			<dl class="hzjg jg">
 				<dt><span>合作</span>机构</dt>
 				<!--{foreach from=$links2 item=links}-->
-                <dd><a href="{$links.url}" target="_blank">{$links.name}</a></dd>
+                <dd><a href="{$links.url}" target="_blank"><img src="{$links.logo}" alt=""></a></a></dd>
                 <!--{/foreach}-->
 				<div class="clear"></div>
 			</dl>
