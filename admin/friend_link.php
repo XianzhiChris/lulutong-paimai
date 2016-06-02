@@ -219,7 +219,7 @@ elseif ($_REQUEST['act'] == 'update')
     $id         = (!empty($_REQUEST['id']))      ? intval($_REQUEST['id'])      : 0;
     $show_order = (!empty($_POST['show_order'])) ? intval($_POST['show_order']) : 0;
     $link_name  = (!empty($_POST['link_name']))  ? trim($_POST['link_name'])    : '';
-    $lin_cat = $_POST['link_cat'];  //增加链接类别  李云鹏20160426
+    $link_cat = $_POST['link_cat'];  //增加链接类别  李云鹏20160426
 
     /* 如果有图片LOGO要上传 */
     if ((isset($_FILES['link_img']['error']) && $_FILES['link_img']['error'] == 0) || (!isset($_FILES['link_img']['error']) && isset($_FILES['link_img']['tmp_name']) && $_FILES['link_img']['tmp_name'] != 'none'))
@@ -264,7 +264,7 @@ elseif ($_REQUEST['act'] == 'update')
             "link_name = '$link_name', ".
             "link_url = '$link_url' ".
             $link_logo.','.
-            "show_order = '$show_order' ".
+            "show_order = '$show_order', ".
             "link_cat = '$link_cat' ".
             "WHERE link_id = '$id'";
 
