@@ -51,7 +51,7 @@
                         <div class="start">
                             <div class="dqj">当前价：<span>￥{$auction.formated_current_price}</span><span id="dqj">{$auction.current_price}</span></div>
                             <!-- {if $auction.status_no eq 0} 未开始 -->
-                            <div class="swks">尚未开始</div>
+                            <div class="swks">{$auction.start_time}开始</div>
                             <!-- {elseif $auction.status_no eq 1} 进行中 -->
                             <!-- {if $smarty.session.user_id} -->
                             <div class="cj">
