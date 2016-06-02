@@ -356,11 +356,11 @@ function index_get_auction()
             " WHERE a.goods_id = g.goods_id" .
             " AND a.act_type = '" . GAT_AUCTION . "'" .
             " AND a.is_finished = 0" .
-            " AND a.start_time <= '$now'" .
+            //" AND a.start_time <= '$now'" .
             " AND a.end_time >= '$now'" .
             " AND g.is_delete = 0" .
             " AND g.is_on_sale = 1" .
-            " ORDER BY a.act_id desc,a.start_time DESC" .
+            " ORDER BY a.start_time ASC,a.act_id desc" .
             " LIMIT $limit";
     $res = $GLOBALS['db']->query($sql);
 
