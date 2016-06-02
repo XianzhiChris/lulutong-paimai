@@ -181,7 +181,7 @@
                 <div class="seller">
                     <p>送拍机构：{$brand_info.brand_name}</p>
                     <p>历史拍品<em>{$brand_info.total}</em>件</p>
-                    <div class="kefu"><a href="">在线客服</a></div>
+                    <div class="kefu"><a href="tencent://message/?uin=3387089776">在线客服</a></div>
                 </div>
                 <div class="jilu">
                     <h3>出价记录({$auction_log_count})</h3>
