@@ -588,7 +588,9 @@ else
         //如果当前商品无人出价，则显示设定起拍价
         $arr[$row['goods_id']]['chujia']=$chujia?price_format($chujia):price_format($ext_info['start_price']);
         //送拍人：商家
-        $arr[$row['goods_id']]['songpairen']=$GLOBALS['db']->getOne("select supplier_name from ". $GLOBALS['ecs']->table('supplier') ." where supplier_id='".$row['supplier_id']."'");
+        //$arr[$row['goods_id']]['songpairen']=$GLOBALS['db']->getOne("select supplier_name from ". $GLOBALS['ecs']->table('supplier') ." where supplier_id='".$row['supplier_id']."'");
+        //送拍机构:品牌  用品牌代替送拍机构  李云鹏20160509
+        $arr[$row['goods_id']]['songpairen']=$GLOBALS['db']->getOne("select brand_name from ". $GLOBALS['ecs']->table('brand') ." where brand_id='".$row['brand_id']."'");
         //结束时间：倒计时
         $arr[$row['goods_id']]['end_time']=$row['end_time'];
         //开始时间：
