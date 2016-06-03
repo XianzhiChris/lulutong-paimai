@@ -7,11 +7,11 @@
   <meta name="Keywords" content="{$keywords}" />
   <meta name="Description" content="{$description}" />
   <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-  <link rel="stylesheet" type="text/css" href="themesmobile/68ecshopcom_mobile/css/public.css"/>
-<link rel="stylesheet" href="themesmobile/68ecshopcom_mobile/css/articlexin.css">
-<script type="text/javascript" src="themesmobile/68ecshopcom_mobile/js/jquery.js"></script>
+  <link href="css/public.css" rel="stylesheet" type="text/css"/>
+  <link href="css/articlexin.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.js"></script>
 
-	</head>
+</head>
 <body >
   <!----------------------------------header----------------------------------->
   <div class="tab_nav">
@@ -22,13 +22,7 @@
       <div class="h-mid">
         <h6>文章详情</h6>
       </div>
-      <div class="h-right">
-        <aside class="top_bar">
-          <div onClick="show_menu();$('#close_btn').addClass('hid');" id="show_more">
-            <a href="javascript:;"></a>
-          </div>
-        </aside>
-      </div>
+      <div class="h-right"></div>
     </header>
   </div>
   <!-- #BeginLibraryItem "/library/up_menu.lbi" -->
@@ -48,6 +42,10 @@
 			{/if}
 </div>
 </div>
+<footer>
+        <!-- #BeginLibraryItem "/library/footer_nav.lbi" -->
+        <!-- #EndLibraryItem -->
+    </footer>
 </body>
 
 </html>
