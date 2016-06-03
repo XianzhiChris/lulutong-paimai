@@ -8,8 +8,7 @@
                 <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav } -->
                 <li><a href="{$nav.url}">{$nav.name}</a></li>
                 <!-- {/foreach} -->
-                <li><a href="">关注我们</a></li>
-                <li><a href="">手机端</a></li>
+                <li><a href="/mobile/">手机端</a></li>
             </ul>
         </div>
     </div>
