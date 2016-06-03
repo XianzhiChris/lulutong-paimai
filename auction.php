@@ -154,6 +154,7 @@ if ($_GET['act'] == 'new' || $_GET['act'] == 'old')
     {
         /* 模板赋值 */
         $smarty->assign('cfg', $_CFG);
+       
         assign_template();
         $pager = get_pager('auction.php', array('act' => $_GET['act']), $count, $page, $size);
         $smarty->assign('pager', $pager);
@@ -819,7 +820,7 @@ function new_list($size, $page, $act)
     }elseif($act=="old"){
         $where.=" and a.end_time < '$now' ORDER BY a.act_id DESC";
     }
-    $sql = "SELECT a.*,g.original_img, g.goods_thumb,goods_thumb2 " .
+    $sql = "SELECT a.*,g.original_img, g.goods_thumb,g.goods_thumb2,g.goods_img,g.click_count " .
         "FROM " . $GLOBALS['ecs']->table('goods_activity') . " AS a " .
         "LEFT JOIN " . $GLOBALS['ecs']->table('goods') . " AS g ON a.goods_id = g.goods_id " .
         "WHERE a.act_type = '" . GAT_AUCTION . "' " .
