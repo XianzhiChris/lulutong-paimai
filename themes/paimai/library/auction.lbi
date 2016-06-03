@@ -1,6 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <dl class="jrpp l">
-    <dt>今日拍品</dt>
+    <dt>&nbsp;</dt>
     <!-- {foreach from=$today_auction item=auction}-->
     <dd>
         <a href="{$auction.url}"><img src="{$auction.thumb}" alt=""></a>
