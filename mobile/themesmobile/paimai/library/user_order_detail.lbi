@@ -53,16 +53,6 @@
 {/if}
 		</dd>
 </dl>
-<!--物流信息-->
-
-<dl style="border-top:1px solid #eeeeee; margin-top:10px; height:70px; padding-bottom:0px;">
-<dt class="dingdan_4"><img src="themesmobile/68ecshopcom_mobile/images/wuliuimg.png" width="30" height="70"></dt>
-<dd><h3>物流信息</h3>
-<p>已签收，签收为柜台签收</p>
-<strong>2015-8-17  12:24:34</strong>
-
-		</dd>
-</dl>
 
 </div>
 <!---订单-->
@@ -139,23 +129,5 @@
        </div>      
 </section>
 <!--底部按钮-->
-<div style=" height:50px;"></div> 
-<div class="detail_dowm">
-<div class="anniu1">
-          <a href="kuaidi_list.php?order_id={$order.order_id}" class="on_comment">查看物流</a>
-                  <!-- {if $item.shipping_status eq 2} --> 
-                  <!-- {if $item.comment_s eq 0} --> 
-                  <!-- {else} --> 
-                  <a href="user.php?act=my_comment&s={$item.comment_s}&order_id={$item.order_id}#commtr_{$item.comment_s}" class="on_comment">评价订单</a> 
-                  <!-- {/if} -->
-                  
-                  <!-- {if $item.shaidan_s eq 0} --> 
-                  <!-- {else} --> 
-                  <a href="user.php?act=shaidan_send&id={$item.shaidan_s}" class="on_comment">晒单</a> 
-                  <!-- {/if} -->
-                  
-                  <!-- {/if} -->{$item.handler}
-          </div> 
-          </div>
 <!--end--> 
 </div>
