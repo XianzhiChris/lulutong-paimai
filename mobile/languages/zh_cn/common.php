@@ -309,7 +309,7 @@ $_LANG['need_insure'] = '配送是否需要保价';
 $_LANG['cod'] = '配送决定';
 
 $_LANG['curr_stauts'] = '当前状态';
-$_LANG['use_bonus'] = '使用红包';
+$_LANG['use_bonus'] = '使用优惠券';
 $_LANG['use_bonus_kill'] = '使用线下红包';
 $_LANG['invoice'] = '开发票';
 $_LANG['invoice_type'] = '发票类型';
