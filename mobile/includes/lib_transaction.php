@@ -1092,10 +1092,14 @@ function save_order_address($address, $user_id)
  */
 function get_user_bouns_list($user_id, $num = 10, $start = 0)
 {
-    $sql = "SELECT u.bonus_sn, u.order_id, b.type_name, b.type_money, b.min_goods_amount, b.use_start_date, b.use_end_date ".
-           " FROM " .$GLOBALS['ecs']->table('user_bonus'). " AS u ,".
-           $GLOBALS['ecs']->table('bonus_type'). " AS b".
-           " WHERE u.bonus_type_id = b.type_id AND u.user_id = '" .$user_id. "'";
+//    $sql = "SELECT u.bonus_sn, u.order_id, b.type_name, b.type_money, b.min_goods_amount, b.use_start_date, b.use_end_date ".
+//           " FROM " .$GLOBALS['ecs']->table('user_bonus'). " AS u ,".
+//           $GLOBALS['ecs']->table('bonus_type'). " AS b".
+//           " WHERE u.bonus_type_id = b.type_id AND u.user_id = '" .$user_id. "'";
+    $sql = "SELECT u.bonus_sn,u.supplier_id, u.order_id, b.type_name, b.type_money, b.min_goods_amount, b.use_start_date, b.use_end_date ".
+        " FROM " .$GLOBALS['ecs']->table('user_bonus'). " AS u ,".
+        $GLOBALS['ecs']->table('bonus_type'). " AS b".
+        " WHERE u.bonus_type_id = b.type_id AND u.user_id = '" .$user_id. "' order by u.order_id asc,u.bonus_id desc";
     $res = $GLOBALS['db']->selectLimit($sql, $num, $start);
     $arr = array();
 
