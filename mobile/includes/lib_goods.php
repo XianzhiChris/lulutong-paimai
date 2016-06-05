@@ -1266,6 +1266,13 @@ function auction_info($act_id, $config = false)
     /* 当前价 */
     $auction['current_price'] = isset($auction['last_bid']) ? $auction['last_bid']['bid_price'] : $auction['start_price'];
     $auction['formated_current_price'] = price_format($auction['current_price'], false);
+    //获得当前商品品牌id 李云鹏20160509
+    $sql = "SELECT brand_id from ".$GLOBALS['ecs']->table('goods') ." where goods_id=".$auction['goods_id'];
+    $auction['brand_id'] = $GLOBALS['db']->getOne($sql);
+
+    //点击数调用商品点击数 李云鹏20160513
+    $sql="select click_count from ".$GLOBALS['ecs']->table('goods')." where goods_id=".$auction['goods_id'];
+    $auction['act_count']=$GLOBALS['db']->getOne($sql);
 
     return $auction;
 }

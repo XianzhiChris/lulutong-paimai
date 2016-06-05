@@ -179,7 +179,8 @@
         <section id="search_ka" class="nr">
             <div class="ui-sx bian1">
                 <div class="subNavBox" >
-                    <div class="subNav"><strong>送拍机构：</strong>{$brand_info.brand_name}</div>
+                    <div class="subNav"><strong>送拍机构：</strong></div>
+                    {$brand_info.brand_name}
                 </div>
             </div>
         </section>
