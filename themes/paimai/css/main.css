@@ -326,10 +326,10 @@ width: 390px;
 position: relative;}
 .auction .head .img .goods_img {width: 350px;
 height: 350px;
-margin: 20px 0 20px 20px;}
+margin: 20px 0 20px 20px;position:relative;}
 .auction .head .img .goods_img .zoomPad>img {max-width: 350px;
 max-height: 350px;}
-.auction .head .img .goods_img .zoomWindow {left:350px!important;}
+.auction .head .img .goods_img .zoomWindow {left:360px!important;overflow:hidden;}
 .auction .head .img #gallery_list .items li .zoomThumbActive img{
 	border: 2px solid #e4393c;
 	padding: 0;
