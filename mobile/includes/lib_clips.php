@@ -841,7 +841,7 @@ function get_user_auction ($user_id)
     $idx = 0;
     $sql = "SELECT DISTINCT act_id " .
         "FROM " . $GLOBALS['ecs']->table('auction_log') .
-        " WHERE bid_user=".$user_id;
+        " WHERE bid_user=".$user_id." order by act_id desc";
 
     $res = $GLOBALS['db']->query($sql);
     while ($row = $GLOBALS['db']->fetchRow($res))
