@@ -119,6 +119,7 @@ function get_user_orders_1($user_id, $num = 10, $start = 0,$where='')
 						'comment_s'      => $comment_s,
 						'shaidan_s'      => $shaidan_s,
 						'total_fee'      => price_format($row['total_fee'], false),
+						'order_amount'      => price_format($row['order_amount'], false),
 						'goods_list'     => $goods_list_r,
 						'pay_online'       => $row['pay_online'],
 						'is_suborder' => $row['parent_order_id'] ? "(子订单)" : "",  //代码增加   By  www.68ecshop.com

@@ -16,7 +16,7 @@
           </dl>
         {/foreach}
           </a>
-          <div class="pic">共{$item.count}件商品<span>实付：</span><strong>{$item.total_fee}</strong></div>
+          <div class="pic">共{$item.count}件商品<span>实付：</span><strong>{$item.order_amount}</strong></div>
           <div class="anniu">
          
                   {$item.handler}
