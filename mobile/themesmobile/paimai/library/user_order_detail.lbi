@@ -100,6 +100,9 @@
 						{if $order.card_fee > 0}
 						+ {$lang.card_fee}{$lang.colon}&nbsp;:&nbsp;<span class="price">{$order.formated_card_fee}</span>
 						{/if}
+						<!-- {if $order.yongjin_fee > 0} -->
+                                        + 拍卖佣金&nbsp;:&nbsp;<span class="price">{$order.formated_yongjin_fee}</span>
+                                        <!-- {/if} -->
 						{if $order.money_paid > 0} - {$lang.order_money_paid}{$lang.colon}&nbsp;:&nbsp;<span class="price">{$order.formated_money_paid}</span>{/if}
 						{if $order.surplus > 0} - {$lang.use_surplus}{$lang.colon}&nbsp;:&nbsp;<span class="price">{$order.formated_surplus}</span>{/if}
 						{if $order.integral_money > 0} - {$lang.use_integral}{$lang.colon}&nbsp;:&nbsp;<span class="price">{$order.formated_integral_money}</span>{/if}
