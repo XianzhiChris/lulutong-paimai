@@ -4163,6 +4163,7 @@ function action_bonus()
 	$db = $GLOBALS['db'];
 	$ecs = $GLOBALS['ecs'];
 	$user_id = $GLOBALS['user_id'];
+	$action = $GLOBALS['action'];
 
 
 	include_once (ROOT_PATH . 'includes/lib_transaction.php');
