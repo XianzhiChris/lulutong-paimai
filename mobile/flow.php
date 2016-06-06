@@ -2697,14 +2697,15 @@ elseif ($_REQUEST['step'] == 'done')
 
         $pay_obj    = new $payment['pay_code'];
 
-        if ($payment[0] > 0)
-	{
-		$pay_online = $pay_obj->get_code($order, unserialize_config($payment['pay_config']));
-	}
-	else
-	{
-		$pay_online = '';
-	}
+//        if ($payment[0] > 0)
+//        {
+//            $pay_online = $pay_obj->get_code($order, unserialize_config($payment['pay_config']));
+//        }
+//        else
+//        {
+//            $pay_online = '';
+//        }
+        $pay_online = $pay_obj->get_code($order, unserialize_config($payment['pay_config'])); //修改支付宝支付pc方式 李云鹏 20160606
 
         $order['pay_desc'] = $payment['pay_desc'];
 

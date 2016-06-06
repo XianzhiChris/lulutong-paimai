@@ -52,12 +52,12 @@ $req_id = date('Ymdhis');
 //**req_data详细信息**
 
 //服务器异步通知页面路径
-$notify_url = "http://ecsmart.68ecshop.com/mobile/pay/ajax_url.php";
+$notify_url = "/mobile/pay/ajax_url.php";
 //$notify_url = "http://www.duudoo.com/test.asp";
 //需http://格式的完整路径，不允许加?id=123这类自定义参数
 
 //页面跳转同步通知页面路径
-$call_back_url = "http://ecsmart.68ecshop.com/mobile/pay/result_url.php";
+$call_back_url = "/mobile/pay/result_url.php";
 //需http://格式的完整路径，不允许加?id=123这类自定义参数
 
 //卖家支付宝帐户

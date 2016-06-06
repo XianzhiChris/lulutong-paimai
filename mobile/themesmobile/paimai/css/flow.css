@@ -294,6 +294,7 @@ em.qxz { font-size: 14px; color: #999; margin-left: 10px; }
 .successtijiao { border-bottom: #ddd 1px solid; font-size: 16px; color: #9EC069; font-weight: bold; background: url(../images/flow/iconfont-duihao.png) no-repeat 10px center; background-size: 30px; text-indent: 60px; height: 50px; line-height: 50px; margin-bottom: 15px; }
 .pay-btn { margin-top: 15px; }
 .pay-btn a { color: #FFF; }
+.pay-btn input { color: #FFF;line-height:42px;border:0;border-radius:5px;background:#f60;width:100%; }
 .content_success li em { color: #000 }
 /*优惠活动代码*/
 .huodong_list { width: 100%; overflow: hidden; border-bottom: 1px dotted #CCC; padding-top: 10px; }

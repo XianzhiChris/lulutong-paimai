@@ -1044,21 +1044,23 @@ function close_gift(suitId){
     </div>
     {if $pay_online}
         {if $iswei}
-   {if $order.pay_id == 6}
-  <div class="pay-btn">
-    <a href="weixinpay.php?oid={$order.order_id}" class="sub-btn btnRadius">微支付</a>
-  </div>
-  {else}
-  <div class="pay-btn">
-    <a href="./pay/alipayapi.php?out_trade_no={$order.order_sn}&total_fee={$total.amount_formated_wap}" class="sub-btn btnRadius">去支付宝支付</a>
-  </div>
-  {/if}
-    {else}
-  <div class="pay-btn">
-    <a href="./pay/alipayapi.php?out_trade_no={$order.order_sn}&total_fee={$total.amount_formated_wap}" class="sub-btn btnRadius">去支付宝支付</a>
-  </div>
-  {/if}
-      {/if}
+           {if $order.pay_id == 8}
+          <div class="pay-btn">
+            <a href="weixinpay.php?oid={$order.order_id}" class="sub-btn btnRadius">微支付</a>
+          </div>
+          {else}
+          <div class="pay-btn">
+            <a href="./pay/alipayapi.php?out_trade_no={$order.order_sn}&total_fee={$total.amount_formated_wap}" class="sub-btn btnRadius">去支付宝支付</a>
+          </div>
+          {/if}
+        {else}
+
+      <div class="pay-btn">
+        {$pay_online}
+        <!--<a href="./pay/alipayapi.php?out_trade_no={$order.order_sn}&total_fee={$total.amount_formated_wap}" class="sub-btn btnRadius">去支付宝支付</a>-->
+      </div>
+    {/if}
+{/if}
 {if $virtual_card}
   <div class="con-ct radius shadow fo-con">
     <ul class="ct-list">
