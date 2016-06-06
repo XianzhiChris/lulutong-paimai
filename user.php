@@ -3418,6 +3418,7 @@ function action_account_detail ()
 	$db = $GLOBALS['db'];
 	$ecs = $GLOBALS['ecs'];
 	$user_id = $_SESSION['user_id'];
+	$action = $GLOBALS['action'];
 	
 	include_once (ROOT_PATH . 'includes/lib_clips.php');
 	
