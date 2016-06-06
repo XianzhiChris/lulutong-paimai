@@ -112,7 +112,7 @@
                         </form>
                     </div>
                     <!-- {else}-->
-                    <div class="qdl">请登录会员参与竞拍</div>
+                    <div class="qdl"><a href="user.php">本次拍品仅供注册会员参与</a></div>
                     <!--{/if}-->
                     <!-- {else} 已结束 -->
                     <!-- {if $auction.is_winner} -->
