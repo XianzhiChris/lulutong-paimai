@@ -2556,8 +2556,8 @@ elseif ($_REQUEST['step'] == 'done')
     }
     if($order['bonus_id'] == '')
     {
-	$order['bonus_id'] = $bonus['bonus_id'];
-	use_bonus($order['bonus_id'], $new_order_id);
+        $order['bonus_id'] = $bonus['bonus_id'];
+        if($order['bonus_id']>0){use_bonus($order['bonus_id'], $new_order_id);}
     }
 	    
     $split_order['suborder_list'][$ok]['order_sn'] = $order['order_sn'];
