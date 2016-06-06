@@ -382,16 +382,33 @@ function changeIntegralResponse(obj)
 /* *
  * 改变红包
  */
-function changeBonus(val,suppid)
-{
-  if (selectedBonus == val)
-  {
-    //return;
+function changeBonus(val, suppid) {
+
+  //增加样式和取消样式
+  var this_li=document.getElementById(val);
+  console.log(this_li.className);
+  if(this_li.className){
+    this_li.className="";
+  }else{
+    this_li.className="selected";
+    //nval.push(val);
   }
-  else
-  {
-    //selectedBonus = val;
+
+
+  var nval=new Array();
+  //优惠券叠加使用  李云鹏20160522
+  var selected=document.getElementsByClassName("selected");
+  if(selected.length>0){
+    for(var i=0;i<selected.length;i++){
+      nval[i]=selected[i].id;
+    }
   }
+
+
+  val=nval.toString();
+
+  //把选中的优惠券id给input
+  document.getElementById("bonus").value=val;
 
   Ajax.call('flow.php?step=change_bonus', 'bonus=' + val + '&suppid=' + suppid, changeBonusResponse, 'GET', 'JSON');
 }
@@ -413,7 +430,7 @@ function changeBonusResponse(obj)
   }
   else
   {
-	  document.getElementById('bonus_sn_'+obj.suppid).value = '';
+      //document.getElementById('bonus_sn_'+obj.suppid).value='';
 	orderSelectedResponse(obj.content);
   }
 }

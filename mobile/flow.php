@@ -1878,20 +1878,20 @@ elseif ($_REQUEST['step'] == 'change_bonus')
 
         if ((!empty($bonus) && $bonus['user_id'] == $_SESSION['user_id'] && $bonus['supplier_id'] == $suppid) || intval($_GET['bonus']) == 0)
         {
-		$bonus_info = (isset($order['bonus_id_info'])) ? $order['bonus_id_info'] : array();
-		if(intval($_GET['bonus']) == 0){
-			unset($bonus_info[$suppid]);
-		}else{
-			$bonus_info[$suppid] = $_GET['bonus'];
-		}
-		$order['bonus_id_info'] = $bonus_info = array_filter($bonus_info);
-            $order['bonus_id_info2'] = explode(",",$_GET['bonus']);  //优惠券叠加 这里为数组 李云鹏20160522
-		$order['bonus_id'] = implode(',',$bonus_info);
+            $bonus_info = (isset($order['bonus_id_info'])) ? $order['bonus_id_info'] : array();
+            if(intval($_GET['bonus']) == 0){
+                unset($bonus_info[$suppid]);
+            }else{
+                $bonus_info[$suppid] = $_GET['bonus'];
+            }
+            $order['bonus_id_info'] = $bonus_info = array_filter($bonus_info);
+                $order['bonus_id_info2'] = explode(",",$_GET['bonus']);  //优惠券叠加 这里为数组 李云鹏20160522
+            $order['bonus_id'] = implode(',',$bonus_info);
 
-		$bonus_sn_info = (isset($order['bonus_sn_info'])) ? $order['bonus_sn_info'] : array();
-		unset($bonus_sn_info[$suppid]);
-		$order['bonus_sn_info'] = $bonus_sn_info = array_filter($bonus_sn_info);
-		$order['bonus_sn'] = implode(',',$bonus_sn_info);
+            $bonus_sn_info = (isset($order['bonus_sn_info'])) ? $order['bonus_sn_info'] : array();
+            unset($bonus_sn_info[$suppid]);
+            $order['bonus_sn_info'] = $bonus_sn_info = array_filter($bonus_sn_info);
+            $order['bonus_sn'] = implode(',',$bonus_sn_info);
         }
         else
         {

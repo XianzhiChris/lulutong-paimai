@@ -489,6 +489,9 @@ a.a_other1_h {
 .checkout_other2 .subbox_other {
 	display: block;
 }
+#bonus_list {max-height:110px;overflow-y: scroll;}
+#bonus_list li {float:left;width:23%;margin-left:1%;text-align:center;line-height:3;background:#999;margin-bottom:5px;}
+#bonus_list li.selected {background:#8d0001;color:#fff;}
 .jmbag {
 	color: #E31939;
 	text-decoration: none; font-size:14px

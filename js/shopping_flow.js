@@ -447,7 +447,7 @@ function changeBonusResponse(obj) {
 		} catch (ex) {
 		}
 	} else {
-		document.getElementById('bonus_sn_' + obj.suppid).value = '';
+		//document.getElementById('bonus_sn_' + obj.suppid).value = '';
 		orderSelectedResponse(obj.content);
 	}
 }

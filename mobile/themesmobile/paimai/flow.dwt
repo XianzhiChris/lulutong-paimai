@@ -7,12 +7,12 @@
   <meta name="Keywords" content="{$keywords}" />
   <meta name="Description" content="{$description}" />
   <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-  <link rel="stylesheet" href="themesmobile/68ecshopcom_mobile/css/public.css">
-  <link rel="stylesheet" href="themesmobile/68ecshopcom_mobile/css/flow.css">
-  <link rel="stylesheet" href="themesmobile/68ecshopcom_mobile/css/style_jm.css">
-  <script type="text/javascript" src="themesmobile/68ecshopcom_mobile/js/jquery.js"></script>
-  <script type="text/javascript" src="themesmobile/68ecshopcom_mobile/js/ecsmart.js"></script>
-  <link rel="stylesheet" type="text/css" href="themesmobile/68ecshopcom_mobile/css/login.css"/> 
+  <link href="css/public.css" rel="stylesheet" type="text/css">
+  <link href="css/flow.css" rel="stylesheet" type="text/css">
+  <link href="css/style_jm.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/ecsmart.js"></script>
+  <link href="css/login.css" rel="stylesheet" type="text/css"/>
 {insert_scripts files='jquery.json.js,transport.js'}
 
 {insert_scripts files='common.js,utils.js,shopping_flow.js'}
@@ -74,7 +74,7 @@
                     <a href="goods.php?id={$goods_li.goods_id}">
                         <img src="{$goods_li.goods_thumb}"></a>
                         {else}
-                        <img src="themesmobile/68ecshopcom_mobile/images/flow/libao.png">
+                        <img src="images/flow/libao.png">
                         {/if}
                   </div>
                   
@@ -408,7 +408,7 @@ else
                 <p>{$fittings.fittings_price}</p>
               </a>
               <a href="javascript:fittings_to_flow({$fittings.goods_id},{$fittings.parent_id})" class="car">
-                <img src="themesmobile/68ecshopcom_mobile/images/xin/cutp.png"></a>
+                <img src="images/xin/cutp.png"></a>
             </div>
 
           </li>
@@ -438,7 +438,7 @@ else
                 <p>{$goods.shop_price}</p>
               </a>
               <a href="javascript:addToCart({$goods.goods_id})" class="car">
-                <img src="themesmobile/68ecshopcom_mobile/images/index_flow.png"></a>
+                <img src="images/index_flow.png"></a>
             </div>
 
           </li>
@@ -489,7 +489,7 @@ else
 {else}
 <section id="cart-content">
       <div class="qb_tac" style="padding:50px 0">
-        <img src="themesmobile/68ecshopcom_mobile/images/flow/empty_cart.png" width="100" height="95">
+        <img src="images/flow/empty_cart.png" width="100" height="95">
         <br>购物车还是空的</div>
       <div class="qb_gap" style="width:60%; margin:0 auto;">
         <a href="./" class="mod_btn btn_strong" >马上逛逛</a>
@@ -565,7 +565,7 @@ var {$key} = "{$item}";
     <div  class="order-info" style="margin-top:0;">
   
                     <h4 class="seller-name" >
-                      <img src="themesmobile/68ecshopcom_mobile/images/flow/dingdan.png" width="28"> 订单详情
+                      <img src="images/flow/dingdan.png" width="28"> 订单详情
                       <!--{if $allow_edit_cart} --><a class="modify" href="flow.php">修改</a>  <!--{/if} -->
                     </h4>
 
@@ -605,7 +605,7 @@ var {$key} = "{$item}";
                         <div class="list-img">
                           <a href="goods.php?id={$goods.goods_id}">
          
-                           <img src="themesmobile/68ecshopcom_mobile/images/flow/libao.png" style="border:#eee 1px solid;"></a>
+                           <img src="images/flow/libao.png" style="border:#eee 1px solid;"></a>
                         </div>
                         <div class="list-cont">
                   <h5 class="goods-title">{$goods.goods_name}   
@@ -654,26 +654,26 @@ function close_gift(suitId){
         <!-- {/if} --> 
         <!-- {if ($allow_use_bonus || $allow_use_integral) && $goodsinfo.goodlist} 是否使用红包或者积分 -->
         <li class="flow_youhui">
-         
+
             <div class="checkout_other"> 
               <div class="jmbag" href="javascript:void(0);" onclick="showCheckoutOther(this);"><span class="right_arrow_flow"></span>使用优惠券</div>
+
               <table class="subbox_other sub_bonus" width="100%">
                 <!-- {if $allow_use_bonus} 是否使用优惠券 -->
                 <tr>
-             
-                  <td  colspan="2"><select name="bonus[{$key}]" onchange="changeBonus(this.value,{$key})" id="ECS_BONUS_{$key}" >
-                      <option value="0" {if $order.bonus_id eq 0}selected{/if}>{$lang.please_select}优惠券</option>
-                      <!-- {foreach from=$goodsinfo.redbag item=bonus} -->
-                      <option value="{$bonus.bonus_id}" {if $order.bonus_id_info[$key] eq $bonus.bonus_id}selected{/if}>{$bonus.type_name}[{$bonus.bonus_money_formated}]</option>
-                      <!-- {/foreach} -->
-                      
-                    </select></td>
-                  <td> &nbsp;或 &nbsp;<a href="javascript:void(0);" onclick="javascript:document.getElementById('Bonus_span_{$key}').style.display='block';document.getElementById('Bonus_a_{$key}').style.display='none';" class="a_other1_h" id="Bonus_a_{$key}">直接输入优惠券号</a></td>
-                  <td><label id="Bonus_span_{$key}" style="display:none;">
-                      <input name="bonus_sn[{$key}]" id="bonus_sn_{$key}" type="text"   value="{if $order.bonus_sn_info[$key]}{$order.bonus_sn_info[$key]}{else}输入优惠券{/if}" onfocus="if (value =='输入优惠券'){value =''}" onblur="if (value ==''){value='输入优惠券'}" class="txt1" style="width:100px;"/><input name="validate_bonus" type="button" value="使用" onclick="validateBonus(document.getElementById('bonus_sn_{$key}').value,{$key})" class="BonusButton" />
-                    </label></td>
+                   <td colspan="4">
+                   <div id="bonus_list">
+                       <ul>
+                           <!-- {foreach from=$goodsinfo.redbag item=bonus key=index} -->
+                           <li id="{$bonus.bonus_id}" {if in_array($bonus.bonus_id,$order.bonus_id_info2)} class="selected"{else} class=""{/if} onclick="changeBonus({$bonus.bonus_id},{$key})">[{$bonus.bonus_money_formated}]</li>
+                           <!-- {/foreach} -->
+                           <input type="hidden" name="bonus" id="bonus" value="{$order.bonus_id}">
+                       </ul>
+                     </div>
+                   </td>
+
                 </tr>
-                <!-- {/if} --> 
+                <!-- {/if} -->
                 <!-- {if $allow_use_integral} 是否使用积分 -->
                 <tr>
                   <td align=right width="80">使用积分：</td>
@@ -789,7 +789,7 @@ function close_gift(suitId){
 		<div class="panel panel-default info-box">
             <div class="orderInfo " >
                     <h4 class="seller-name">
-                      <img src="themesmobile/68ecshopcom_mobile/images/flow/dingdan.png" width="28"> 其他选项
+                      <img src="images/flow/dingdan.png" width="28"> 其他选项
                    
                     </h4>
       </div>
