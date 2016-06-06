@@ -1169,7 +1169,7 @@ data-widget="tab-item">
 
 <div class="blank"></div>
 <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
-<script type="text/javascript" src="themes/68ecshopcom_360buy/js/lib-v1.js"></script> 
+<script type="text/javascript" src="js/lib-v1.js"></script>
 <script type="text/javascript">$("#store-selector").Jdropdown();</script> 
 <script type="text/javascript">$.jdCalcul([537]);</script> 
 <script type="text/javascript">pageConfig.FN_InitContrast();</script>  
