@@ -1584,7 +1584,7 @@ menu.className=i==cursel?"active":"";
                     <!-- {if $goods.goods_id gt 0 && $goods.extension_code neq 'package_buy'} 商品 --> 
                     <img src="{$goods.thumb}" alt="查看宝贝详情" width="50" height="50"> 
                     <!-- {elseif $goods.goods_id gt 0 && $goods.extension_code eq 'package_buy'} --> 
-                    <img src="themes/68ecshopcom_360buy/images/jmpic/ico_cart_package.gif" alt="查看宝贝详情" width="50" height="50"/> 
+                    <img src="images/jmpic/ico_cart_package.gif" alt="查看宝贝详情" width="50" height="50"/>
                     <!-- {/if} --> 
                     </a>
                     <div class="goods_name">{if $goods.extension_code eq 'virtual_good'}【虚拟团购】{/if} {$goods.goods_name}</div>
@@ -2878,7 +2878,7 @@ function updateEndTime(){
                     <!--{/foreach}-->
                   </select>
                   <div class="payment_subbox" id="payment_subbox" style="display:none">
-                    <link href="themes/68ecshopcom_360buy/css/style_jm.css" rel="stylesheet" type="text/css" />
+                    <link href="css/style_jm.css" rel="stylesheet" type="text/css" />
                     <!-- #BeginLibraryItem "/Library/alipay_bank.lbi" --><!-- #EndLibraryItem --> </div>
                   <input type="hidden" name="act" value="act_edit_payment" />
                   <input type="hidden" name="order_id" value="{$order.order_id}" />

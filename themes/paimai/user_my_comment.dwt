@@ -13,7 +13,7 @@
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
 <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="themes/68ecshopcom_360buy/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 {insert_scripts files='jquery.json.js,transport.js'}
 {* 包含脚本文件 *}
 {insert_scripts files='common.js,user.js'}
@@ -196,7 +196,7 @@ $(document).ready(function(e) {
 </script>
 </head>
 <body>
-<script type="text/javascript" src="themes/68ecshopcom_360buy/js/base-2011.js"></script>
+<script type="text/javascript" src="js/base-2011.js"></script>
 <div id="site-nav">
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
 <div class="blank"></div>
@@ -241,7 +241,7 @@ $(document).ready(function(e) {
                     <!-- {if $value.goods_id gt 0 && $value.extension_code neq 'package_buy'} 商品 -->
                        <img height="50" width="50" src="{$value.thumb}" />
                     <!-- {elseif $value.goods_id gt 0 && $value.extension_code eq 'package_buy'} -->
-                                 <img src="themes/68ecshopcom_360buy/images/jmpic/ico_cart_package.gif" height="50" width="50"/>
+                                 <img src="images/jmpic/ico_cart_package.gif" height="50" width="50"/>
                     <!-- {/if} --> 
                     </a></td>
                     <td><a href="{$value.url}" target="_blank">{$value.goods_name}</a></td>
@@ -281,7 +281,7 @@ $(document).ready(function(e) {
                       <input type="hidden" name="rec_id" value="{$value.rec_id}" />
                       <table width="70%" border="0" cellspacing="1" cellpadding="0" style="float:left">
                       	<!--评分 start--> 
-                      	<script src="themes/68ecshopcom_360buy/js/jquery.raty.js" type="text/javascript"></script>
+                      	<script type="text/javascript" src="js/jquery.raty.js"></script>
                       	<tr>
                         	
                         	<th>描述：</th>
@@ -368,7 +368,7 @@ $(document).ready(function(e) {
 						
 							$(star).raty({
 								hints: ['1','2', '3', '4', '5'],
-								path: "themes/68ecshopcom_360buy/images",
+								path: "themes/paimai/images",
 								starOff: 'star-off-big.png',
 								starOn: 'star-on-big.png',
 								size: 24,

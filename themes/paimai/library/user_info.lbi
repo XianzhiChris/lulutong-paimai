@@ -6,7 +6,7 @@
       <div class="photo">
         <div class="mask"></div>
         <!--默认女士头像-->
-        <img id="headImagePath" src="{if $smarty.session.headimg}{$smarty.session.headimg}{else}themes/68ecshopcom_360buy/images/shengji_ad/peopleicon_01.gif{/if}" height="80" width="80">
+        <img id="headImagePath" src="{if $smarty.session.headimg}{$smarty.session.headimg}{else}themes/paimai/images/shengji_ad/peopleicon_01.gif{/if}" height="80" width="80">
         <!--男士头像-->
        <!-- <img id="headImagePath" src="../images/shengji_ad/peopleicon_02.gif" height="80" width="80">-->
       </div>

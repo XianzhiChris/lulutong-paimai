@@ -3,7 +3,7 @@
 <!--{foreach from=$shops_list item=shop}--> 
 	<div class="flow-item first"> 
       <a href="supplier.php?suppId={$shop.supplier_id}" class="flow-datu" title="{$shop.shop_name}"> 
-        <img title="{$shop.supplier_name}" width="150" height="150" alt="" data-original="{$shop.logo}" src="themes/68ecshopcom_360buy/images/loading.gif" >
+        <img title="{$shop.supplier_name}" width="150" height="150" alt="" data-original="{$shop.logo}" src="images/loading.gif" >
       </a>
       <div class="flow-content">
       	<h4 class="flow-title">
@@ -11,7 +11,7 @@
             <!---{if $shop.shop_closed}--><span class="guanzhu">装修中..</span><!---{else}--><span onclick='guanzhu({$shop.supplier_id});' class="guanzhu">关注</span><!---{/if}-->
         </h4>
         <p class="flow-logo">
-        <a href="supplier.php?suppId={$shop.supplier_id}" style="float:none; display:inline-block;"><img id="j_logo_{$shop.supplier_id}" alt="" width="90" height="45" data-original="{$logopath}logo_supplier{$shop.supplier_id}.jpg" src="themes/68ecshopcom_360buy/images/loading.gif"></a>
+        <a href="supplier.php?suppId={$shop.supplier_id}" style="float:none; display:inline-block;"><img id="j_logo_{$shop.supplier_id}" alt="" width="90" height="45" data-original="{$logopath}logo_supplier{$shop.supplier_id}.jpg" src="images/loading.gif"></a>
         </p>
 	  	<p class="flow-desc">
         	<span>卖家：</span>

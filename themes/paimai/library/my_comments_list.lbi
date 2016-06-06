@@ -3,7 +3,7 @@
 <!--{foreach from=$comments.item_list item=value}-->
 <dl class="clearfix">
   <dt>
-    <div><img src="{if $value.headimg eq ''}themes/68ecshopcom_360buy/images/upgrade_ad/peopleicon_01.gif{else}{$value.headimg}{/if}" height="80" width="80" /></div>
+    <div><img src="{if $value.headimg eq ''}images/upgrade_ad/peopleicon_01.gif{else}{$value.headimg}{/if}" height="80" width="80" /></div>
     <p>{if $value.hide_username eq 1}匿名{else}{$value.user_name}{/if}</p>
     <p>{$value.user_rank.rank_name}</p>
   </dt>

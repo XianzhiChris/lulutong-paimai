@@ -15,7 +15,7 @@
     <div class="cart_goods_list">
     <ul class="unstyled">
      {foreach from=$goods item=goods name=goods}
-      <li><a href="{$goods.url}"><img src="{if $goods.goods_thumb eq 'package_img'}themes/68ecshopcom_360buy/images/jmpic/ico_cart_package.gif{else}{$goods.goods_thumb}{/if}">
+      <li><a href="{$goods.url}"><img src="{if $goods.goods_thumb eq 'package_img'}themes/paimai/images/jmpic/ico_cart_package.gif{else}{$goods.goods_thumb}{/if}">
         <h4>{$goods.short_name}</h4>
         <span>{$goods.goods_price}<strong style="margin:0 7px;">×</strong>{$goods.goods_number}</span></a> <i class="del-btn" title="删除" onClick="deleteCartGoods({$goods.rec_id})">×</i></li>
      {/foreach}

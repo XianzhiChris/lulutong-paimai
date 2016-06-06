@@ -104,7 +104,7 @@
 		<!-- {if $goods.is_best eq 1} --><span class="little_pic">精品</span><!--{/if}-->
 		<!-- {if $goods.is_new eq 1} --><span class="little_pic">新品</span><!--{/if}--> 
             </span>
-            <div class="goods-pic" ><a href="{$goods.url}" target="_blank"  title="{$goods.name|escape:html}"><img data-original="{$goods.goods_thumb}" src="themes/68ecshopcom_360buy/images/loading.gif" title="{$goods.name|escape:html}" class="pic_img_{$goods.goods_id}"></a> </div>
+            <div class="goods-pic" ><a href="{$goods.url}" target="_blank"  title="{$goods.name|escape:html}"><img data-original="{$goods.goods_thumb}" src="images/loading.gif" title="{$goods.name|escape:html}" class="pic_img_{$goods.goods_id}"></a> </div>
 		<!--{if $goods.goods_number eq 0}--><a href="{$goods.url}" class="shop_over1"></a><!-- {/if} -->
             <div class="goods-info"> 
               <div class="goods-name"><a href="{$goods.url}" target="_blank" title="{$goods.name|escape:html}">{$goods.name|escape:html}<em></em></a></div>

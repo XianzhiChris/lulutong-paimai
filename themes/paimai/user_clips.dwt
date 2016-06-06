@@ -113,7 +113,7 @@
                       <!-- {if $jiao.goods_id gt 0 && $jiao.extension_code neq 'package_buy'} 商品 --> 
                       <img src="{$jiao.goods_thumb}" alt="{$jiao.goods_name}" /> 
                       <!-- {elseif $jiao.goods_id gt 0 && $jiao.extension_code eq 'package_buy'} --> 
-                      <img src="themes/68ecshopcom_360buy/images/jmpic/ico_cart_package.gif" border="0" title="{$jiao.goods_name|escape:html}" /> 
+                      <img src="images/jmpic/ico_cart_package.gif" border="0" title="{$jiao.goods_name|escape:html}" />
                       <!-- {/if} --> 
                       </a> <span style="height:15px;line-height:15px;position:absolute;top:0px;right:0px;z-index:10;background:#ED5854;color:#fff;padding:0px 3px;">{$jiao.shu}</span> </li>
                   </ul>
@@ -137,7 +137,7 @@
             {else} 
             <!-- *购物车内数量为0时 end--> 
             <!-- *购物车内数量不为0时 start--> 
-            <script type="text/javascript" charset="utf-8" src="themes/68ecshopcom_360buy/js/easyscroll.js"></script>
+            <script type="text/javascript" charset="utf-8" src="js/easyscroll.js"></script>
             <div class="proListUc_cart">
               <div class="div_scroll">
                 <div style="float:left; height:auto; width:auto">
