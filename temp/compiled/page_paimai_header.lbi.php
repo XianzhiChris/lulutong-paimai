@@ -16,8 +16,7 @@ if ($this->_foreach['nav_top_list']['total'] > 0):
 ?>
                 <li><a href="<?php echo $this->_var['nav']['url']; ?>"><?php echo $this->_var['nav']['name']; ?></a></li>
                 <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-                <li><a href="">关注我们</a></li>
-                <li><a href="">手机端</a></li>
+                <li><a href="/mobile/">手机端</a></li>
             </ul>
         </div>
     </div>

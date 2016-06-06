@@ -53,7 +53,7 @@
                         <div class="start">
                             <div class="dqj">当前价：<span>￥<?php echo $this->_var['auction']['formated_current_price']; ?></span><span id="dqj"><?php echo $this->_var['auction']['current_price']; ?></span></div>
                             <?php if ($this->_var['auction']['status_no'] == 0): ?>
-                            <div class="swks">尚未开始</div>
+                            <div class="swks"><?php echo $this->_var['auction']['start_time']; ?>开始</div>
                             <?php elseif ($this->_var['auction']['status_no'] == 1): ?>
                             <?php if ($_SESSION['user_id']): ?>
                             <div class="cj">
@@ -154,29 +154,12 @@ if ($this->_foreach['fe_bid_log']['total'] > 0):
                                 </dl>
                             </li>
                             <li>
-                                <p>一、服务承诺<br>
+                                <p>服务承诺<br>
 
                                 A.作者本人委托作品或经专家鉴定作品，作品介绍备注栏注明“保真”。<br>
                                 B. 商家未经认证或无能力认证作品以实物为准，不负责瑕疵。
 
-                                <p>二、竞拍活动基础服务<br>
-
-                                1.如实描述承诺：卖家承诺如实描述，一旦发现描述不符的拍品，买家可在交易成功后指定期限内通过路路通平台投诉卖家。<br>
-
-                                2.保证金保障：卖家入驻竞拍平台需缴纳较高的经营保证金，买家维权有保障。</p>
-
-                                <p>三、拍卖特色服务<br>
-                                A. 不支持7天无理由退货<br>
-
-                                拍卖拍品不同于普通网购商品，多数属于孤品或者数量较少，消费者通过竞价方式购买拍品，一旦售出将影响拍品价值，不支持7天无理由退货。<br>
-
-                                B. 支持线下预览<br>
-
-                                支持线下预览是指卖家已选定场地预展拍品，竞买人可在竞拍结束前，亲自或委托他人查看竞拍品实物。<br>
-
-                                C. 提供鉴定证书<br>
-
-                                选择提供鉴定证书即卖家承诺所发布的拍品已取得省级以上鉴定证书或作者本人出具的书面鉴定文本。</p>
+                                </p>
                             </li>
                         </ul>
                         <div class="clear"></div>
@@ -187,7 +170,7 @@ if ($this->_foreach['fe_bid_log']['total'] > 0):
                 <div class="seller">
                     <p>送拍机构：<?php echo $this->_var['brand_info']['brand_name']; ?></p>
                     <p>历史拍品<em><?php echo $this->_var['brand_info']['total']; ?></em>件</p>
-                    <div class="kefu"><a href="">在线客服</a></div>
+                    <div class="kefu"><a href="tencent://message/?uin=3387089776">在线客服</a></div>
                 </div>
                 <div class="jilu">
                     <h3>出价记录(<?php echo $this->_var['auction_log_count']; ?>)</h3>

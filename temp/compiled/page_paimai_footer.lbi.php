@@ -56,12 +56,12 @@ if ($this->_foreach['name']['total'] > 0):
     <div class="ppcopyright">
         <div class="w">
             <div class="footmenu">
-                <?php $_from = $this->_var['navigator_list']['bottom']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'nav_0_09562100_1464702574');$this->_foreach['nav_bottom_list'] = array('total' => count($_from), 'iteration' => 0);
+                <?php $_from = $this->_var['navigator_list']['bottom']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'nav_0_70429900_1465194877');$this->_foreach['nav_bottom_list'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['nav_bottom_list']['total'] > 0):
-    foreach ($_from AS $this->_var['nav_0_09562100_1464702574']):
+    foreach ($_from AS $this->_var['nav_0_70429900_1465194877']):
         $this->_foreach['nav_bottom_list']['iteration']++;
 ?>
-                |<a href="<?php echo $this->_var['nav_0_09562100_1464702574']['url']; ?>"><?php echo $this->_var['nav_0_09562100_1464702574']['name']; ?></a>
+                |<a href="<?php echo $this->_var['nav_0_70429900_1465194877']['url']; ?>"><?php echo $this->_var['nav_0_70429900_1465194877']['name']; ?></a>
                 <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>|
             </div>
             <?php echo $this->_var['copyright']; ?>

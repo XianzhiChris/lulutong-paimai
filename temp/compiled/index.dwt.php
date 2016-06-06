@@ -11,20 +11,6 @@
 </head>
 <body>
 	<?php echo $this->fetch('library/page_paimai_header.lbi'); ?>
-	<div id="banner">
-		<div class="w">
-			<div class="sortlist">
-				
-<?php echo $this->fetch('library/category_tree.lbi'); ?>
-
-			</div>
-		</div>
-		<div class="banner">
-		    
-<?php $this->assign('ads_id','1'); ?><?php $this->assign('ads_num','3'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
-
-		</div>
-	</div>
 	<div id="main">
 		<div class="w">
 		    
@@ -52,7 +38,7 @@
 				<?php $_from = $this->_var['links2']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'links');if (count($_from)):
     foreach ($_from AS $this->_var['links']):
 ?>
-                <dd><a href="<?php echo $this->_var['links']['url']; ?>" target="_blank"><?php echo $this->_var['links']['name']; ?></a></dd>
+                <dd><a href="<?php echo $this->_var['links']['url']; ?>" target="_blank"><img src="<?php echo $this->_var['links']['logo']; ?>" alt=""></a></a></dd>
                 <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
 				<div class="clear"></div>
 			</dl>

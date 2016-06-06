@@ -1,5 +1,5 @@
 <dl class="jrpp l">
-    <dt>今日拍品</dt>
+    <dt>&nbsp;</dt>
     <?php $_from = $this->_var['today_auction']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'auction');if (count($_from)):
     foreach ($_from AS $this->_var['auction']):
 ?>
