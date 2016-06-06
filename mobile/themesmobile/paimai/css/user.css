@@ -109,7 +109,7 @@
 .zhifu{display:block; height:25px;right:5px;text-align:center; font-size:14px; line-height:25px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;background-color:#5D6B85; margin-top:10px; width:60%; margin:auto}
 .zhif{ display:block; line-height:150%;}
 .jiage{ width:100%;margin-right:8px; overflow:hidden;text-align:right; font-size:14px; line-height:150%; color:#333; padding-top:10px; padding-bottom:10px;}
-.jiage p{ width:80%; float:right; margin-right:10px;}
+.jiage p{ float:right; margin-right:10px;}
 .price{ color:#f19149}
 .price1{ color:#F60; font-size:20px;}
 .qita{ width:100%; overflow:hidden; margin-top:10px; background:#FFF; border-bottom:1px solid #CCC; border-top:1px solid #CCC;}
