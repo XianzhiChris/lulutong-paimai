@@ -12,7 +12,7 @@ function updateEndTime()
 		var endTime =$(this).attr("data-endTime"); //结束时间字符串
 		var lbg = startTime-serverNowTime;//当前时间和开始时间之间的秒数，>0未开始,<0已开始
 		var lag = endTime - serverNowTime; //当前时间和结束时间之间的秒数，>0未结束，<0已结束
-		console.log(startTime+"|"+serverNowTime+"|"+lbg+"|||"+endTime+"|"+serverNowTime+"|"+lag);
+		//console.log(startTime+"|"+serverNowTime+"|"+lbg+"|||"+endTime+"|"+serverNowTime+"|"+lag);
 			if(lbg > 0)
 			{
 				var str="<i></i>距离开拍";
