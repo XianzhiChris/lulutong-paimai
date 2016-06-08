@@ -30,7 +30,27 @@ function orderShipping(result) {
 		}
 	}
 }
+/***
+ * 改变拍卖出价记录 李云鹏 20160608
+ */
+function auction_log(id){
+	Ajax.call('auction.php?act=log', 'id=' + id, auctionLogResponse, 'GET', 'JSON');
+}
+function auctionLogResponse(result) {
+	//出价次数
+	document.getElementById('cjcs1').innerHTML = result.count;
+	document.getElementById('cjcs2').innerHTML = result.count;
+	//当前价
+	document.getElementById('dqj').innerHTML = result.dqj;
+	document.getElementById('dqj2').innerHTML = result.dqj;
+	//围观次数
+	document.getElementById('wg').innerHTML = result.act_count;
 
+	document.getElementById('auction_log').innerHTML = result.content;
+	document.getElementById('auction_log_more').innerHTML = result.content2;
+
+
+}
 /*******************************************************************************
  * 改变配送方式
  */

@@ -90,6 +90,36 @@ if ($_REQUEST['act'] == 'list')
     $smarty->display('auction_list.dwt', $cache_id);
 }
 /*------------------------------------------------------ */
+//-- 拍卖记录列表 用于动态刷新 李云鹏20160608
+/*------------------------------------------------------ */
+if ($_GET['act'] == 'log')
+{
+    include_once('includes/cls_json.php');
+    $result = array('error' => '', 'content' => '');
+    $id = isset($_REQUEST['id']) ? intval($_REQUEST['id']) : 0;
+    if ($id <= 0)
+    {
+        ecs_header("Location: ./\n");
+        exit;
+    }
+    $auction = auction_info($id);
+    if (empty($auction))
+    {
+        ecs_header("Location: ./\n");
+        exit;
+    }
+    $smarty->assign('auction_log', auction_log($id));
+
+    $result['dqj']=$auction['current_price'];
+    $result['act_count']=$auction['act_count'];
+    $result['content'] = $smarty->fetch('library/auction_log.lbi');
+    $result['content2'] = $smarty->fetch('library/auction_log_more.lbi');
+    $result['count']=auction_log_count($id)?auction_log_count($id):0;
+    $json = new JSON();
+    die($json->encode($result));
+}
+
+/*------------------------------------------------------ */
 //-- 拍卖预展`历史列表  李云鹏20160513
 /*------------------------------------------------------ */
 if ($_GET['act'] == 'lishi')
@@ -344,6 +374,7 @@ elseif ($_REQUEST['act'] == 'view')
 
         $position = assign_ur_here(0, $goods['goods_name']);
         $smarty->assign('page_title', $position['title']);    // 页面标题
+        $smarty->assign('id', $id);    // id
         $smarty->assign('ur_here',    $position['ur_here']);  // 当前位置
         $smarty->assign('pictures',            get_goods_gallery_attr_www_ecshop68_com($goods['goods_id'])); // 商品相册_李云鹏20160428
         //var_dump(get_goods_gallery_attr_www_ecshop68_com($goods['goods_id']));

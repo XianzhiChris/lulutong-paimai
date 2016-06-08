@@ -6,7 +6,15 @@
 	<title>{$page_title}</title>
 	<meta name="Keywords" content="{$keywords}" />
     <meta name="Description" content="{$description}" />
-    <link href="css/jquery.jqzoom.css" rel="stylesheet" type="text/css">
+    <link href="{$themes_dir}/css/jquery.jqzoom.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="js/jquery-1.6.js"></script>
+    {insert_scripts files='jquery.json.js,transport.js'}
+    {insert_scripts files='common.js,shopping_flow.js'}
+    <script>
+        $(function(){
+            setInterval("auction_log({$id})",1000);
+        })
+    </script>
 </head>
 <body>
 	<!-- #BeginLibraryItem "/library/page_paimai_header.lbi" --><!-- #EndLibraryItem -->
@@ -42,14 +50,14 @@
                             <!-- {/if} -->
 
                             <div class="people">
-                                <span class="cj"><em>{$auction_log_count}</em>次出价</span>
-                                <span class="wg"><em>{$auction.act_count}</em>次围观</span>
+                                <span class="cj"><em id="cjcs1">{$auction_log_count}</em>次出价</span>
+                                <span class="wg"><em id="wg">{$auction.act_count}</em>次围观</span>
                                 <span class="wg">起拍价:<em>￥{$auction.formated_start_price}</em></span>
                                 <span class="wg">保证金:<em>￥{$auction.formated_deposit}</em></span>
                             </div>
                         </div>
                         <div class="start">
-                            <div class="dqj">当前价：<span>￥{$auction.formated_current_price}</span><span id="dqj">{$auction.current_price}</span></div>
+                            <div class="dqj">当前价：<span>￥<em id="dqj2">{$auction.formated_current_price}</em></span><span id="dqj">{$auction.current_price}</span></div>
                             <!-- {if $auction.status_no eq 0} 未开始 -->
                             <div class="swks">{$auction.start_time}开始</div>
                             <!-- {elseif $auction.status_no eq 1} 进行中 -->
@@ -132,17 +140,7 @@
                                          <span class="user">竞拍人</span>
                                          <span class="time">时间</span>
                                     </dt>
-                                    <!-- {foreach from=$auction_log item=log name=fe_bid_log} -->
-                                    <dd{if $smarty.foreach.fe_bid_log.iteration eq 1} class="get"{/if}>
-                                        <span class="status">
-                                        {if $smarty.foreach.fe_bid_log.iteration eq 1}领先
-                                        {else}出局{/if}
-                                        </span>
-                                        <span class="price">¥<em class="pm-num">{$log.formated_bid_price}</em></span>
-                                        <span class="user">{$log.user_name}</span>
-                                        <span class="time"><em class="pm-num">{$log.formated_bid_time}</em></span>
-                                    </dd>
-                                    <!-- {/foreach} -->
+                                    <!-- #BeginLibraryItem "/library/auction_log_more.lbi" --><!-- #EndLibraryItem -->
                                 </dl>
                             </li>
                             <li>
@@ -165,7 +163,7 @@
                     <div class="kefu"><a href="tencent://message/?uin=3387089776">在线客服</a></div>
                 </div>
                 <div class="jilu">
-                    <h3>出价记录({$auction_log_count})</h3>
+                    <h3>出价记录(<em id="cjcs2">{$auction_log_count}</em>)</h3>
                     <dl>
                         <dt>
                              <span class="status">状态</span>
@@ -173,17 +171,7 @@
                              <span class="user">竞拍人</span>
                              <span class="time">时间</span>
                         </dt>
-                        <!-- {foreach from=$auction_log item=log name=fe_bid_log} -->
-                        <dd{if $smarty.foreach.fe_bid_log.iteration eq 1} class="get"{/if}>
-                            <span class="status">
-                            {if $smarty.foreach.fe_bid_log.iteration eq 1}领先
-                            {else}出局{/if}
-                            </span>
-                            <span class="price">¥<em class="pm-num">{$log.formated_bid_price}</em></span>
-                            <span class="user">{$log.user_name}</span>
-                            <span class="time"><em class="pm-num">{$log.formated_bid_time}</em></span>
-                        </dd>
-                        <!-- {/foreach} -->
+                        <!-- #BeginLibraryItem "/library/auction_log.lbi" --><!-- #EndLibraryItem -->
                     </dl>
                     <a class="seemore" id="seemore">查看更多&gt;</a>
                     <div class="clear"></div>
@@ -197,7 +185,6 @@
         </div>
 	</div>
     <!-- #BeginLibraryItem "/library/page_paimai_footer.lbi" --><!-- #EndLibraryItem -->
-    <script type="text/javascript" src="js/jquery-1.6.js"></script>
     <script type="text/javascript" src="js/jquery.jqzoom-core.js"></script>
     <script type="text/javascript">
 
