@@ -448,7 +448,7 @@ background:#d23030 url(../images/hammer2.png) no-repeat 10px 10px;margin-left: 2
 .auction .head .info .start .cjkj a {display:inline-block; line-height: 30px;background: #999;color:#fff; margin-right: 15px;font-size: 14px;width:90px;text-align: center;}
 .auction .head .info .start .cjkj a:hover {background: #d23030;}
 .auction .head .info .beizhu {border-top: 1px solid #f5f5f5;margin-top: 20px; padding-top: 15px;color:#999;}
-.auction .head .info .beizhu li {float: left; width:70px;line-height: 22px;}
+.auction .head .info .beizhu li {float: left; line-height: 22px;}
 .auction .head .info .beizhu li:nth-child(even){width:470px;}
 .auction .more .jplc {position: relative;
 overflow: hidden;
