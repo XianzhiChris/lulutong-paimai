@@ -1365,7 +1365,7 @@ function auction_info($act_id, $config = false)
     }
 
     /* 当前价 */
-    $auction['current_price'] = isset($auction['last_bid']) ? $auction['last_bid']['bid_price'] : $auction['start_price'];
+    $auction['current_price'] = isset($auction['last_bid']) ? $auction['last_bid']['bid_price'] : $auction['formated_start_price'];
     $auction['formated_current_price'] = price_format($auction['current_price'], false);
 
     //获得当前商品品牌id 李云鹏20160509
