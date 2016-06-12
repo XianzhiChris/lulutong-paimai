@@ -20,8 +20,3 @@
   <div style="display:none"><script src="http://s4.cnzz.com/stat.php?id=1259134342&web_id=1259134342" language="JavaScript"></script></div>
 </div>
 <!-- footer end  -->
-<script type="text/javascript">
-Ajax.call('api/okgoods.php', '', '', 'GET', 'JSON');
-//预售
-Ajax.call('pre_sale.php?act=check_order', '', '', 'GET', 'JSON');
-</script>
