@@ -10,11 +10,13 @@
         <script type="text/javascript" src="js/jquery-1.6.js"></script>
     {insert_scripts files='jquery.json.js,transport.js'}
     {insert_scripts files='common.js,shopping_flow.js'}
+    {if $auction.status_no eq 1}
     <script>
         $(function(){
             setInterval("auction_log({$id})",1000);
         })
     </script>
+    {/if}
 </head>
 <body>
 	<!-- #BeginLibraryItem "/library/page_paimai_header.lbi" --><!-- #EndLibraryItem -->
