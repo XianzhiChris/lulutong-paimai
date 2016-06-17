@@ -80,7 +80,7 @@
                                 <a data-cj="10">+10元</a><a data-cj="50">+50元</a><a data-cj="100">+100元</a><a data-cj="200">+200元</a>
                             </div>
                             <!-- {else}-->
-                            <div class="qdl"><a href="user.php">本次拍品仅供注册会员参与</a></div>
+                            <div class="qdl"><a href="user.php">我要参与</a></div>
                             <!--{/if}-->
                             <!-- {else} 已结束 -->
                             <!-- {if $auction.is_winner} -->

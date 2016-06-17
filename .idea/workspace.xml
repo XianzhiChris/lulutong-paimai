@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="42bf9458-d529-447b-8a2e-a1aa29173dd0" name="Default" comment="加入手机版流量统计">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/themesmobile/paimai/auction.dwt" afterPath="$PROJECT_DIR$/mobile/themesmobile/paimai/auction.dwt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/paimai/auction.dwt" afterPath="$PROJECT_DIR$/themes/paimai/auction.dwt" />
     </list>
     <ignored path="lulutong-paimai.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,7 +25,28 @@
     <favorites_list name="lulutong-paimai" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="auction.dwt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/paimai/auction.dwt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1230">
+              <caret line="82" column="68" selection-start-line="82" selection-start-column="68" selection-end-line="82" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auction.dwt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mobile/themesmobile/paimai/auction.dwt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="114" column="70" selection-start-line="114" selection-start-column="70" selection-end-line="114" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,7 +56,6 @@
       <list>
         <option value="$PROJECT_DIR$/mobile/themesmobile/paimai/library/auction_goods_list.lbi" />
         <option value="$PROJECT_DIR$/mobile/themesmobile/paimai/auction_new.dwt" />
-        <option value="$PROJECT_DIR$/mobile/auction.php" />
         <option value="$PROJECT_DIR$/mobile/article.php" />
         <option value="$PROJECT_DIR$/mobile/themesmobile/paimai/article.dwt" />
         <option value="$PROJECT_DIR$/mobile/themesmobile/paimai/library/auction.lbi" />
@@ -55,7 +77,6 @@
         <option value="$PROJECT_DIR$/mobile/flow.php" />
         <option value="$PROJECT_DIR$/mobile/themesmobile/paimai/flow.dwt" />
         <option value="$PROJECT_DIR$/mobile/themesmobile/paimai/css/flow.css" />
-        <option value="$PROJECT_DIR$/mobile/themesmobile/paimai/auction.dwt" />
         <option value="$PROJECT_DIR$/mobile/includes/init.php" />
         <option value="$PROJECT_DIR$/themes/paimai/flow.dwt" />
         <option value="$PROJECT_DIR$/../../xiaojingdong/themes/paimai/user_clips.dwt" />
@@ -77,11 +98,13 @@
         <option value="$PROJECT_DIR$/themes/paimai/library/auction_log.lbi" />
         <option value="$PROJECT_DIR$/themes/paimai/library/auction_log_more.lbi" />
         <option value="$PROJECT_DIR$/mobile/themesmobile/paimai/library/footer_nav.lbi" />
-        <option value="$PROJECT_DIR$/themes/paimai/auction.dwt" />
-        <option value="$PROJECT_DIR$/auction.php" />
         <option value="$PROJECT_DIR$/js/shopping_flow.js" />
         <option value="$PROJECT_DIR$/includes/lib_goods.php" />
         <option value="$PROJECT_DIR$/themes/paimai/library/page_footer.lbi" />
+        <option value="$PROJECT_DIR$/auction.php" />
+        <option value="$PROJECT_DIR$/mobile/auction.php" />
+        <option value="$PROJECT_DIR$/themes/paimai/auction.dwt" />
+        <option value="$PROJECT_DIR$/mobile/themesmobile/paimai/auction.dwt" />
       </list>
     </option>
   </component>
@@ -96,9 +119,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="75" />
+    <option name="x" value="61" />
     <option name="y" value="23" />
-    <option name="width" value="1365" />
+    <option name="width" value="1379" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -126,7 +149,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -202,6 +224,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -225,7 +248,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="498" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
-    <property name="SearchEverywhereHistoryKey" value="auction.php&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/auction.php&#10;header.lbi&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/library/header.lbi&#10;set&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/js/setHdTime.js&#10;flow_jm&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/flow_jm.dwt&#10;flow.php&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/flow.php&#10;auction.dwt&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/auction.dwt&#10;main.css&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/css/main.css&#10;sethd&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/js/setHdTime.js&#10;flow.dwt&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/flow.dwt&#10;index.php&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/index.php&#10;flow.css&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/mobile/themesmobile/paimai/css/flow.css&#10;user.css&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/mobile/themesmobile/paimai/css/user.css&#10;shopping&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/js/shopping_flow.js&#10;style_jm.css&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/mobile/themesmobile/paimai/css/style_jm.css&#10;flow_j&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/flow_jm.dwt&#10;user.php&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/mobile/user.php&#10;user&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/mobile/user.php&#10;init.php&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/includes/init.php&#10;auction.lbi&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/library/auction.lbi&#10;paimaihead&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/library/page_paimai_header.lbi&#10;auction&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/auction.dwt&#10;new_list&#9;null&#9;null&#10;index.dwt&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/index.dwt&#10;friend&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/admin/friend_link.php&#10;search.php&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/search.php&#10;index_get&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="auction.dwt&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/mobile/themesmobile/paimai/auction.dwt&#10;auction.php&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/mobile/auction.php&#10;auction&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/auction.dwt&#10;header.lbi&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/library/header.lbi&#10;set&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/js/setHdTime.js&#10;flow_jm&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/flow_jm.dwt&#10;flow.php&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/flow.php&#10;main.css&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/css/main.css&#10;sethd&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/js/setHdTime.js&#10;flow.dwt&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/flow.dwt&#10;index.php&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/index.php&#10;flow.css&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/mobile/themesmobile/paimai/css/flow.css&#10;user.css&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/mobile/themesmobile/paimai/css/user.css&#10;shopping&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/js/shopping_flow.js&#10;style_jm.css&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/mobile/themesmobile/paimai/css/style_jm.css&#10;flow_j&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/flow_jm.dwt&#10;user.php&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/mobile/user.php&#10;user&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/mobile/user.php&#10;init.php&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/includes/init.php&#10;auction.lbi&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/library/auction.lbi&#10;paimaihead&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/library/page_paimai_header.lbi&#10;new_list&#9;null&#9;null&#10;index.dwt&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/themes/paimai/index.dwt&#10;friend&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/admin/friend_link.php&#10;search.php&#9;FILE&#9;file:///Users/yunpengli/Documents/web/github/lulutong-paimai/search.php&#10;index_get&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -288,6 +311,8 @@
       <workItem from="1465363114872" duration="11946000" />
       <workItem from="1465427994943" duration="290000" />
       <workItem from="1465696511920" duration="4214000" />
+      <workItem from="1466148660864" duration="881000" />
+      <workItem from="1466200371797" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="删掉全屏幻灯片">
       <created>1464768914907</created>
@@ -604,21 +629,27 @@
       <option name="project" value="LOCAL" />
       <updated>1465717376134</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="修改围观次数+5">
+      <created>1466148856988</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1466148856988</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59329000" />
+    <option name="totallyTimeSpent" value="60221000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="75" y="23" width="1365" height="877" extended-state="0" />
-    <editor active="false" />
+    <frame x="61" y="23" width="1379" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24981685" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24945612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32920793" sideWeight="0.5838828" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32920793" sideWeight="0.41611722" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920793" sideWeight="0.4974359" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -629,6 +660,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32920793" sideWeight="0.41611722" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -645,7 +677,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改&quot;我的竞拍&quot;列表为act_id倒序" />
     <MESSAGE value="修改手机版&quot;我的红包&quot;列表未使用红包在前" />
     <MESSAGE value="去掉手机版订单详情物流相关信息" />
     <MESSAGE value="修改手机版我的订单列表显示价格为需支付价格" />
@@ -670,20 +701,14 @@
     <MESSAGE value="ajax刷新只在拍卖进行中的时候运行" />
     <MESSAGE value="修改&quot;无人出价显示起拍价&quot;格式化" />
     <MESSAGE value="去掉底部的ajax查询" />
-    <option name="LAST_COMMIT_MESSAGE" value="去掉底部的ajax查询" />
+    <MESSAGE value="修改围观次数+5" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改围观次数+5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/includes/modules/payment/alipay.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
-          <caret line="97" column="21" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/alipay.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -737,13 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="362" column="37" selection-start-line="362" selection-start-column="36" selection-end-line="362" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mobile/themesmobile/paimai/auction.dwt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="114" column="78" selection-start-line="114" selection-start-column="78" selection-end-line="114" selection-end-column="78" />
         </state>
       </provider>
     </entry>
@@ -954,7 +972,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -962,7 +979,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1059" column="151" selection-start-line="1059" selection-start-column="151" selection-end-line="1059" selection-end-column="151" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -970,9 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -980,36 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="1367" column="128" selection-start-line="1367" selection-start-column="128" selection-end-line="1367" selection-end-column="128" />
-          <folding>
-            <marker date="1465698507000" expanded="true" signature="982:1071" ph="SELECT paren... ${$GLOBALS['ecs']-&gt;table('category')}" />
-            <marker date="1465698507000" expanded="true" signature="1268:1378" ph="SELECT count... ${$GLOBALS['ecs']-&gt;table('category')}" />
-            <marker date="1465698507000" expanded="true" signature="2458:2566" ph="SELECT count... ${$GLOBALS['ecs']-&gt;table('category')}" />
-            <marker date="1465698507000" expanded="true" signature="7624:7722" ph="select count... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
-            <marker date="1465698507000" expanded="true" signature="7774:7894" ph="select bid_p... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
-            <marker date="1465698507000" expanded="true" signature="8175:8273" ph="select brand... ${$GLOBALS['ecs']-&gt;table('brand')}" />
-            <marker date="1465698507000" expanded="true" signature="29265:29416" ph="select thumb... ${$GLOBALS['ecs']-&gt;table('goods_gallery')}" />
-            <marker date="1465698507000" expanded="true" signature="37556:37631" ph="select click... ${$GLOBALS['ecs']-&gt;table('goods')}" />
-            <marker date="1465698507000" expanded="true" signature="37791:37889" ph="select count... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
-            <marker date="1465698507000" expanded="true" signature="38185:38283" ph="select brand... ${$GLOBALS['ecs']-&gt;table('brand')}" />
-            <marker date="1465698507000" expanded="true" signature="38644:38732" ph="SELECT cat_n... ${$GLOBALS['ecs']-&gt;table('category')}" />
-            <marker date="1465698507000" expanded="true" signature="41557:41648" ph="SELECT brand... ${$GLOBALS['ecs']-&gt;table('brand')}" />
-            <marker date="1465698507000" expanded="true" signature="42109:42185" ph="SELECT goods... ${$GLOBALS['ecs']-&gt;table('goods_cat')}" />
-            <marker date="1465698507000" expanded="true" signature="43289:43382" ph="SELECT SUM(a... ${$GLOBALS['ecs']-&gt;table('goods_attr')}" />
-            <marker date="1465698507000" expanded="true" signature="45820:45894" ph="select goods... ${$GLOBALS['ecs']-&gt;table('goods')}" />
-            <marker date="1465698507000" expanded="true" signature="50052:50139" ph="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('goods_activity')}" />
-            <marker date="1465698507000" expanded="true" signature="51306:51425" ph="SELECT COUNT... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
-            <marker date="1465698507000" expanded="true" signature="52881:52954" ph="SELECT brand... ${$GLOBALS['ecs']-&gt;table('goods')}" />
-            <marker date="1465698507000" expanded="true" signature="53075:53150" ph="select click... ${$GLOBALS['ecs']-&gt;table('goods')}" />
-            <marker date="1465698507000" expanded="true" signature="56025:56129" ph="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('favourable_activity')}" />
-            <marker date="1465698507000" expanded="true" signature="56851:56945" ph="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('wholesale')}" />
-            <marker date="1465698507000" expanded="true" signature="62245:62370" ph="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('products')}" />
-            <marker date="1465698507000" expanded="true" signature="63028:63248" ph="select sum(g... ${$GLOBALS['ecs']-&gt;table('order_goods')}" />
-            <marker date="1465698507000" expanded="true" signature="63513:63678" ph="select bc.*,... ${$ecs-&gt;table('bar_code')}" />
-            <marker date="1465698507000" expanded="true" signature="66209:66404" ph="SELECT produ... ${$GLOBALS['ecs']-&gt;table('products')}" />
-            <marker date="1465698507000" expanded="true" signature="67235:67339" ph="select goods... ${$GLOBALS['ecs']-&gt;table('goods')}" />
-            <marker date="1465698507000" expanded="true" signature="70848:70922" ph="select goods... ${$GLOBALS['ecs']-&gt;table('goods')}" />
-            <marker date="1465698507000" expanded="true" signature="74693:74817" ph="select count... ${$GLOBALS['ecs']-&gt;table('comment')}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1017,31 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="44" column="58" selection-start-line="44" selection-start-column="58" selection-end-line="44" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2312">
-          <caret line="116" column="69" selection-start-line="116" selection-start-column="69" selection-end-line="116" selection-end-column="69" />
-          <folding>
-            <marker date="1465698361000" expanded="true" signature="10381:10444" ph="select user_... ${$ecs-&gt;table('users')}" />
-            <marker date="1465698361000" expanded="true" signature="24466:24552" ph="SELECT COUNT... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
-            <marker date="1465698361000" expanded="true" signature="24739:24884" ph="select bid_p... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
-            <marker date="1465698361000" expanded="true" signature="25924:26016" ph="select disti... " />
-            <marker date="1465698361000" expanded="true" signature="29534:29632" ph="select count... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
-            <marker date="1465698361000" expanded="true" signature="29685:29805" ph="select bid_p... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
-            <marker date="1465698361000" expanded="true" signature="30047:30157" ph="select suppl... ${$GLOBALS['ecs']-&gt;table('supplier')}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/paimai/auction.dwt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,7 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1057,7 +1014,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3011">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1065,7 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="488" column="41" selection-start-line="488" selection-start-column="41" selection-end-line="488" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1073,7 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-446">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1081,6 +1035,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/auction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="355" column="81" selection-start-line="355" selection-start-column="81" selection-end-line="355" selection-end-column="81" />
+          <folding>
+            <marker date="1466148781000" expanded="true" signature="9149:9212" ph="select user_... ${$ecs-&gt;table('users')}" />
+            <marker date="1466148781000" expanded="true" signature="22136:22228" ph="select disti... " />
+            <marker date="1466148781000" expanded="true" signature="25960:26058" ph="select count... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
+            <marker date="1466148781000" expanded="true" signature="26119:26239" ph="select bid_p... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
+            <marker date="1466148781000" expanded="true" signature="26489:26599" ph="select suppl... ${$GLOBALS['ecs']-&gt;table('supplier')}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="388" column="81" selection-start-line="388" selection-start-column="81" selection-end-line="388" selection-end-column="81" />
+          <folding>
+            <marker date="1466148759000" expanded="true" signature="10381:10444" ph="select user_... ${$ecs-&gt;table('users')}" />
+            <marker date="1466148759000" expanded="true" signature="24466:24552" ph="SELECT COUNT... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
+            <marker date="1466148759000" expanded="true" signature="24739:24884" ph="select bid_p... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
+            <marker date="1466148759000" expanded="true" signature="25924:26016" ph="select disti... " />
+            <marker date="1466148759000" expanded="true" signature="29534:29632" ph="select count... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
+            <marker date="1466148759000" expanded="true" signature="29685:29805" ph="select bid_p... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
+            <marker date="1466148759000" expanded="true" signature="30047:30157" ph="select suppl... ${$GLOBALS['ecs']-&gt;table('supplier')}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/paimai/auction.dwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="82" column="68" selection-start-line="82" selection-start-column="68" selection-end-line="82" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/themesmobile/paimai/auction.dwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="114" column="70" selection-start-line="114" selection-start-column="70" selection-end-line="114" selection-end-column="70" />
           <folding />
         </state>
       </provider>
