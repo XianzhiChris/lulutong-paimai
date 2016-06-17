@@ -353,7 +353,7 @@ elseif ($_REQUEST['act'] == 'view')
         assign_dynamic('auction');
     }
 
-    $sql = 'UPDATE ' . $ecs->table('goods') . ' SET click_count = click_count + 1 '.
+    $sql = 'UPDATE ' . $ecs->table('goods') . ' SET click_count = click_count + 5 '.
         "WHERE goods_id = '" . $auction['goods_id'] . "'";
     $db->query($sql);
 
