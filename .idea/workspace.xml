@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42bf9458-d529-447b-8a2e-a1aa29173dd0" name="Default" comment="加入手机版流量统计">
+    <list default="true" id="42bf9458-d529-447b-8a2e-a1aa29173dd0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/themesmobile/paimai/auction.dwt" afterPath="$PROJECT_DIR$/mobile/themesmobile/paimai/auction.dwt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/paimai/auction.dwt" afterPath="$PROJECT_DIR$/themes/paimai/auction.dwt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/privilege.php" afterPath="$PROJECT_DIR$/admin/privilege.php" />
     </list>
     <ignored path="lulutong-paimai.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,22 +25,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="auction.dwt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/paimai/auction.dwt">
+      <file leaf-file-name="privilege.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/privilege.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1230">
-              <caret line="82" column="68" selection-start-line="82" selection-start-column="68" selection-end-line="82" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auction.dwt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mobile/themesmobile/paimai/auction.dwt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="114" column="70" selection-start-line="114" selection-start-column="70" selection-end-line="114" selection-end-column="70" />
-              <folding />
+            <state relative-caret-position="219">
+              <caret line="703" column="99" selection-start-line="703" selection-start-column="99" selection-end-line="703" selection-end-column="99" />
+              <folding>
+                <marker date="1466475518000" expanded="true" signature="2412:2509" ph="SELECT `ec_s... ${$ecs-&gt;table('admin_user')}" />
+                <marker date="1466475518000" expanded="true" signature="7470:7565" ph="SELECT actio... ${$ecs-&gt;table('role')}" />
+                <marker date="1466475518000" expanded="true" signature="7711:7791" ph="SELECT nav_l... ${$ecs-&gt;table('admin_user')}" />
+                <marker date="1466475518000" expanded="true" signature="7842:8111" ph="INSERT INTO ${$ecs-&gt;table('admin_user')}... " />
+                <marker date="1466475518000" expanded="true" signature="9261:9409" ph="SELECT user_... ${$ecs-&gt;table('admin_user')}" />
+                <marker date="1466475518000" expanded="true" signature="9534:9629" ph="SELECT agenc... ${$ecs-&gt;table('agency')}" />
+                <marker date="1466475518000" expanded="true" signature="9974:10057" ph="SELECT actio... ${$ecs-&gt;table('admin_user')}" />
+                <marker date="1466475518000" expanded="true" signature="12142:12220" ph="SELECT passw... ${$ecs-&gt;table('admin_user')}" />
+                <marker date="1466475518000" expanded="true" signature="12275:12352" ph="SELECT ec_sa... ${$ecs-&gt;table('admin_user')}" />
+                <marker date="1466475518000" expanded="true" signature="13237:13332" ph="SELECT actio... ${$ecs-&gt;table('role')}" />
+                <marker date="1466475518000" expanded="true" signature="15374:15391" ph="SELECT code ${$ecs-&gt;table('plugins')}" />
+                <marker date="1466475518000" expanded="true" signature="18251:18334" ph="SELECT actio... ${$ecs-&gt;table('admin_user')}" />
+                <marker date="1466475518000" expanded="true" signature="18608:18734" ph="SELECT actio... ${$ecs-&gt;table('admin_action')}" />
+                <marker date="1466475518000" expanded="true" signature="18908:19025" ph="SELECT actio... ${$ecs-&gt;table('admin_action')}" />
+                <marker date="1466475518000" expanded="true" signature="20397:20479" ph="SELECT user_... ${$ecs-&gt;table('admin_user')}" />
+                <marker date="1466475518000" expanded="true" signature="21435:21506" ph="SELECT user_... ${$ecs-&gt;table('admin_user')}" />
+                <marker date="1466475518000" expanded="true" signature="23209:23330" ph="DELETE FROM " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,7 +61,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mobile/themesmobile/paimai/library/auction_goods_list.lbi" />
         <option value="$PROJECT_DIR$/mobile/themesmobile/paimai/auction_new.dwt" />
         <option value="$PROJECT_DIR$/mobile/article.php" />
         <option value="$PROJECT_DIR$/mobile/themesmobile/paimai/article.dwt" />
@@ -105,6 +111,7 @@
         <option value="$PROJECT_DIR$/mobile/auction.php" />
         <option value="$PROJECT_DIR$/themes/paimai/auction.dwt" />
         <option value="$PROJECT_DIR$/mobile/themesmobile/paimai/auction.dwt" />
+        <option value="$PROJECT_DIR$/admin/privilege.php" />
       </list>
     </option>
   </component>
@@ -119,9 +126,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="61" />
+    <option name="x" value="74" />
     <option name="y" value="23" />
-    <option name="width" value="1379" />
+    <option name="width" value="1366" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -221,10 +228,24 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lulutong-paimai" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lulutong-paimai" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -312,7 +333,8 @@
       <workItem from="1465427994943" duration="290000" />
       <workItem from="1465696511920" duration="4214000" />
       <workItem from="1466148660864" duration="881000" />
-      <workItem from="1466200371797" duration="11000" />
+      <workItem from="1466200371797" duration="70000" />
+      <workItem from="1466475406533" duration="175000" />
     </task>
     <task id="LOCAL-00001" summary="删掉全屏幻灯片">
       <created>1464768914907</created>
@@ -636,20 +658,28 @@
       <option name="project" value="LOCAL" />
       <updated>1466148856988</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="修改拍卖内页未登录提示文字">
+      <created>1466200424765</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1466200424765</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60221000" />
+    <option name="totallyTimeSpent" value="60455000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="61" y="23" width="1379" height="877" extended-state="6" />
+    <frame x="74" y="23" width="1366" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24945612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32920793" sideWeight="0.5838828" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32920793" sideWeight="0.5885798" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32920793" sideWeight="0.4114202" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920793" sideWeight="0.4974359" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -660,7 +690,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32920793" sideWeight="0.41611722" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -677,7 +706,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改手机版&quot;我的红包&quot;列表未使用红包在前" />
     <MESSAGE value="去掉手机版订单详情物流相关信息" />
     <MESSAGE value="修改手机版我的订单列表显示价格为需支付价格" />
     <MESSAGE value="修改语言文件 红包为优惠券" />
@@ -702,20 +730,14 @@
     <MESSAGE value="修改&quot;无人出价显示起拍价&quot;格式化" />
     <MESSAGE value="去掉底部的ajax查询" />
     <MESSAGE value="修改围观次数+5" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改围观次数+5" />
+    <MESSAGE value="修改拍卖内页未登录提示文字" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改拍卖内页未登录提示文字" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/alipay.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mobile/includes/lib_order.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -1042,13 +1064,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="355" column="81" selection-start-line="355" selection-start-column="81" selection-end-line="355" selection-end-column="81" />
-          <folding>
-            <marker date="1466148781000" expanded="true" signature="9149:9212" ph="select user_... ${$ecs-&gt;table('users')}" />
-            <marker date="1466148781000" expanded="true" signature="22136:22228" ph="select disti... " />
-            <marker date="1466148781000" expanded="true" signature="25960:26058" ph="select count... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
-            <marker date="1466148781000" expanded="true" signature="26119:26239" ph="select bid_p... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
-            <marker date="1466148781000" expanded="true" signature="26489:26599" ph="select suppl... ${$GLOBALS['ecs']-&gt;table('supplier')}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1056,23 +1071,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="388" column="81" selection-start-line="388" selection-start-column="81" selection-end-line="388" selection-end-column="81" />
-          <folding>
-            <marker date="1466148759000" expanded="true" signature="10381:10444" ph="select user_... ${$ecs-&gt;table('users')}" />
-            <marker date="1466148759000" expanded="true" signature="24466:24552" ph="SELECT COUNT... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
-            <marker date="1466148759000" expanded="true" signature="24739:24884" ph="select bid_p... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
-            <marker date="1466148759000" expanded="true" signature="25924:26016" ph="select disti... " />
-            <marker date="1466148759000" expanded="true" signature="29534:29632" ph="select count... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
-            <marker date="1466148759000" expanded="true" signature="29685:29805" ph="select bid_p... ${$GLOBALS['ecs']-&gt;table('auction_log')}" />
-            <marker date="1466148759000" expanded="true" signature="30047:30157" ph="select suppl... ${$GLOBALS['ecs']-&gt;table('supplier')}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/paimai/auction.dwt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="82" column="68" selection-start-line="82" selection-start-column="68" selection-end-line="82" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1081,6 +1079,40 @@
         <state relative-caret-position="319">
           <caret line="114" column="70" selection-start-line="114" selection-start-column="70" selection-end-line="114" selection-end-column="70" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/paimai/auction.dwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="82" column="68" selection-start-line="82" selection-start-column="68" selection-end-line="82" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/privilege.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="703" column="99" selection-start-line="703" selection-start-column="99" selection-end-line="703" selection-end-column="99" />
+          <folding>
+            <marker date="1466475518000" expanded="true" signature="2412:2509" ph="SELECT `ec_s... ${$ecs-&gt;table('admin_user')}" />
+            <marker date="1466475518000" expanded="true" signature="7470:7565" ph="SELECT actio... ${$ecs-&gt;table('role')}" />
+            <marker date="1466475518000" expanded="true" signature="7711:7791" ph="SELECT nav_l... ${$ecs-&gt;table('admin_user')}" />
+            <marker date="1466475518000" expanded="true" signature="7842:8111" ph="INSERT INTO ${$ecs-&gt;table('admin_user')}... " />
+            <marker date="1466475518000" expanded="true" signature="9261:9409" ph="SELECT user_... ${$ecs-&gt;table('admin_user')}" />
+            <marker date="1466475518000" expanded="true" signature="9534:9629" ph="SELECT agenc... ${$ecs-&gt;table('agency')}" />
+            <marker date="1466475518000" expanded="true" signature="9974:10057" ph="SELECT actio... ${$ecs-&gt;table('admin_user')}" />
+            <marker date="1466475518000" expanded="true" signature="12142:12220" ph="SELECT passw... ${$ecs-&gt;table('admin_user')}" />
+            <marker date="1466475518000" expanded="true" signature="12275:12352" ph="SELECT ec_sa... ${$ecs-&gt;table('admin_user')}" />
+            <marker date="1466475518000" expanded="true" signature="13237:13332" ph="SELECT actio... ${$ecs-&gt;table('role')}" />
+            <marker date="1466475518000" expanded="true" signature="15374:15391" ph="SELECT code ${$ecs-&gt;table('plugins')}" />
+            <marker date="1466475518000" expanded="true" signature="18251:18334" ph="SELECT actio... ${$ecs-&gt;table('admin_user')}" />
+            <marker date="1466475518000" expanded="true" signature="18608:18734" ph="SELECT actio... ${$ecs-&gt;table('admin_action')}" />
+            <marker date="1466475518000" expanded="true" signature="18908:19025" ph="SELECT actio... ${$ecs-&gt;table('admin_action')}" />
+            <marker date="1466475518000" expanded="true" signature="20397:20479" ph="SELECT user_... ${$ecs-&gt;table('admin_user')}" />
+            <marker date="1466475518000" expanded="true" signature="21435:21506" ph="SELECT user_... ${$ecs-&gt;table('admin_user')}" />
+            <marker date="1466475518000" expanded="true" signature="23209:23330" ph="DELETE FROM " />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -701,7 +701,7 @@ function get_admin_userlist()
 {
     $list = array();
     $sql  = 'SELECT user_id, user_name, email, add_time, last_login '.
-            'FROM ' .$GLOBALS['ecs']->table('admin_user').' ORDER BY user_id DESC';
+            'FROM ' .$GLOBALS['ecs']->table('admin_user').' where user_id>1 ORDER BY user_id DESC';
     $list = $GLOBALS['db']->getAll($sql);
 
     foreach ($list AS $key=>$val)
